@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./piloto.css"
-import { Html5QrcodeScanner } from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 import { useEffect } from "react";
 
 export default function Piloto() {
@@ -75,46 +75,80 @@ export default function Piloto() {
 
         if (!abrirCamera) return;
 
-        const scanner = new Html5QrcodeScanner(
-            "reader",
-            {
-                fps: 10,
-                qrbox: 250,
-                aspectRatio: 1
-            },
-            false
+        const html5QrCode = new Html5Qrcode(
+            "reader"
         );
 
-        scanner.render(
-            async (decodedText) => {
+        async function iniciarCamera() {
 
-                try {
+            try {
 
-                    await buscarCupom(
-                        decodedText
+                const devices =
+                    await Html5Qrcode.getCameras();
+
+                if (!devices || !devices.length) {
+
+                    setErro(
+                        "Nenhuma câmera encontrada"
                     );
 
-                    setCodigo(
-                        decodedText
-                    );
-
-                    setAbrirCamera(false);
-
-                    scanner.clear();
-
-                } catch (err) {
-
-                    console.log(err);
+                    return;
                 }
 
-            },
-            () => { }
-        );
+                const cameraId =
+                    devices[0].id;
+
+                await html5QrCode.start(
+                    cameraId,
+                    {
+                        fps: 10,
+                        qrbox: {
+                            width: 250,
+                            height: 250
+                        }
+                    },
+                    async (decodedText) => {
+
+                        try {
+
+                            await buscarCupom(
+                                decodedText
+                            );
+
+                            setCodigo(
+                                decodedText
+                            );
+
+                            setAbrirCamera(false);
+
+                            await html5QrCode.stop();
+
+                        } catch (err) {
+
+                            console.log(err);
+                        }
+
+                    },
+                    () => { }
+                );
+
+            } catch (err) {
+
+                console.log(err);
+
+                setErro(
+                    "Erro ao abrir câmera"
+                );
+            }
+        }
+
+        iniciarCamera();
 
         return () => {
 
-            scanner.clear().catch(() => { });
-
+            html5QrCode
+                .stop()
+                .catch(() => { });
         };
 
     }, [abrirCamera]);

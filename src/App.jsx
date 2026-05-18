@@ -26,7 +26,7 @@ export default function App() {
         />
 
         <Route
-          path="/"
+          path="/painel"
           element={<Painel />}
         />
 
