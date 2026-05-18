@@ -75,18 +75,22 @@ export default function Piloto() {
 
         if (!abrirCamera) return;
 
-        const html5QrCode = new Html5Qrcode(
-            "reader"
-        );
+        let html5QrCode;
+
+        let cameraAtiva = false;
 
         async function iniciarCamera() {
 
             try {
 
-                const devices =
+                html5QrCode = new Html5Qrcode(
+                    "reader"
+                );
+
+                const cameras =
                     await Html5Qrcode.getCameras();
 
-                if (!devices || !devices.length) {
+                if (!cameras.length) {
 
                     setErro(
                         "Nenhuma câmera encontrada"
@@ -95,19 +99,43 @@ export default function Piloto() {
                     return;
                 }
 
-                const cameraId =
-                    devices[0].id;
+                let cameraTraseira =
+                    cameras.find((camera) =>
+                        camera.label
+                            .toLowerCase()
+                            .includes("back")
+                    );
+
+                if (!cameraTraseira) {
+
+                    cameraTraseira =
+                        cameras[cameras.length - 1];
+                }
 
                 await html5QrCode.start(
-                    cameraId,
                     {
-                        fps: 10,
-                        qrbox: {
-                            width: 250,
-                            height: 250
+                        deviceId: {
+                            exact: cameraTraseira.id
                         }
                     },
+                    {
+                        fps: 10,
+
+                        qrbox: {
+                            width: 280,
+                            height: 280
+                        },
+
+                        aspectRatio: 1,
+
+                        disableFlip: false
+                    },
+
                     async (decodedText) => {
+
+                        if (!cameraAtiva) return;
+
+                        cameraAtiva = false;
 
                         try {
 
@@ -121,16 +149,24 @@ export default function Piloto() {
 
                             setAbrirCamera(false);
 
-                            await html5QrCode.stop();
+                            if (
+                                html5QrCode &&
+                                html5QrCode.isScanning
+                            ) {
+
+                                await html5QrCode.stop();
+                            }
 
                         } catch (err) {
 
                             console.log(err);
                         }
-
                     },
+
                     () => { }
                 );
+
+                cameraAtiva = true;
 
             } catch (err) {
 
@@ -146,12 +182,30 @@ export default function Piloto() {
 
         return () => {
 
-            html5QrCode
-                .stop()
-                .catch(() => { });
+            async function limpar() {
+
+                try {
+
+                    if (
+                        html5QrCode &&
+                        html5QrCode.isScanning
+                    ) {
+
+                        await html5QrCode.stop();
+                    }
+
+                } catch {
+
+                }
+            }
+
+            limpar();
         };
 
     }, [abrirCamera]);
+
+
+
     function abrirConfirmacao() {
 
         setMensagem("");

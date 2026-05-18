@@ -16,6 +16,42 @@
     align-items: center;
 }
 
+#reader {
+    width: 100% !important;
+
+    overflow: hidden !important;
+
+    border-radius: 24px !important;
+}
+
+#reader video {
+    width: 100% !important;
+
+    object-fit: cover !important;
+
+    border-radius: 24px !important;
+
+    background: black !important;
+}
+
+#reader__scan_region {
+    min-height: 320px !important;
+
+    border-radius: 24px !important;
+
+    overflow: hidden !important;
+
+    background: black !important;
+}
+
+#reader__dashboard {
+    padding-top: 16px !important;
+}
+
+#reader__dashboard_section_swaplink {
+    display: none !important;
+}
+
 .pilotoTituloUnico {
     font-size: 42px;
 
