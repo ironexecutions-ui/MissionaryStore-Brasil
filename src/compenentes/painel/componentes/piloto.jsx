@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./piloto.css"
 import { Html5Qrcode } from "html5-qrcode";
 import { useEffect } from "react";
-
+import { API_URL } from "../../../config";
 export default function Piloto() {
 
     const [codigo, setCodigo] = useState("");
@@ -44,7 +44,7 @@ export default function Piloto() {
         try {
 
             const resp = await fetch(
-                `http://localhost:8888/piloto/buscar/${codigoDigitado}`,
+                `${API_URL}/piloto/buscar/${codigoDigitado}`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -252,7 +252,7 @@ export default function Piloto() {
         try {
 
             const resp = await fetch(
-                "http://localhost:8888/piloto/retirar",
+                `${API_URL}/piloto/retirar`,
                 {
                     method: "POST",
 
