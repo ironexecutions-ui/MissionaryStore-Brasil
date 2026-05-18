@@ -4,4 +4,4 @@ const isLocalhost =
 
 export const API_URL = isLocalhost
     ? "http://localhost:8888"
-    : "https://ironexecutions-backend.onrender.com";
+    : "https://missionetwork-back.onrender.com";
