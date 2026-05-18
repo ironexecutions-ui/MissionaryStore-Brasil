@@ -25,6 +25,7 @@ export default function Piloto() {
 
     const [abrirModalSenha, setAbrirModalSenha] = useState(false);
     const [erroSenha, setErroSenha] = useState("");
+    const [processandoLeitura, setProcessandoLeitura] = useState(false);
     async function buscarCupom(codigoDigitado) {
 
         setCodigo(codigoDigitado);
@@ -114,9 +115,7 @@ export default function Piloto() {
 
                 await html5QrCode.start(
                     {
-                        deviceId: {
-                            exact: cameraTraseira.id
-                        }
+                        facingMode: "environment"
                     },
                     {
                         fps: 10,
@@ -133,21 +132,16 @@ export default function Piloto() {
 
                     async (decodedText) => {
 
-                        if (!cameraAtiva) return;
+                        if (
+                            !cameraAtiva ||
+                            processandoLeitura
+                        ) return;
+
+                        setProcessandoLeitura(true);
 
                         cameraAtiva = false;
 
                         try {
-
-                            await buscarCupom(
-                                decodedText
-                            );
-
-                            setCodigo(
-                                decodedText
-                            );
-
-                            setAbrirCamera(false);
 
                             if (
                                 html5QrCode &&
@@ -157,9 +151,29 @@ export default function Piloto() {
                                 await html5QrCode.stop();
                             }
 
+                            setAbrirCamera(false);
+
+                            setCodigo(decodedText);
+
+                            await buscarCupom(
+                                decodedText
+                            );
+
                         } catch (err) {
 
                             console.log(err);
+
+                            setErro(
+                                "Erro ao buscar código"
+                            );
+
+                        } finally {
+
+                            setTimeout(() => {
+
+                                setProcessandoLeitura(false);
+
+                            }, 1500);
                         }
                     },
 
@@ -312,6 +326,14 @@ export default function Piloto() {
                     }
                     onClick={() => {
 
+                        setErro("");
+
+                        setDados(null);
+
+                        setCodigo("");
+
+                        setProcessandoLeitura(false);
+
                         setTipoLeitor("qrcode");
 
                         setAbrirCamera(true);
@@ -331,6 +353,14 @@ export default function Piloto() {
             `
                     }
                     onClick={() => {
+
+                        setErro("");
+
+                        setDados(null);
+
+                        setCodigo("");
+
+                        setProcessandoLeitura(false);
 
                         setTipoLeitor("barcode");
 
