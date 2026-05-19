@@ -2,18 +2,28 @@ import React, {
     useState,
     useEffect
 } from "react";
-import "./lojas.css"
+
+import "./lojas.css";
+
 import Piloto from "../painel/componentes/piloto";
+
+import HistoricoVendas from "./historicoVendas";
+
 import logoMissionary from "../../../m.png";
+
 import { API_URL } from "../../config";
 
 export default function Lojascadastradas() {
 
     const [email, setEmail] = useState("");
+
     const [loadingLogin, setLoadingLogin] = useState(false);
+
     const [senha, setSenha] = useState("");
 
     const [loja, setLoja] = useState(null);
+
+    const [abaAtiva, setAbaAtiva] = useState("piloto");
 
     useEffect(() => {
 
@@ -112,16 +122,18 @@ export default function Lojascadastradas() {
                 onSubmit={fazerLogin}
             >
                 <div>
+
                     <img
                         className="parceriaLoginLogo"
                         src={logoMissionary}
                         alt="Missionary Store Brasil"
                     />
+
                     <h1 className="parceriaLoginTitulo">
                         Login Loja parceira com Missionary Store Brasil
                     </h1>
-                </div>
 
+                </div>
 
                 <p className="parceriaLoginSubtitulo">
                     Entre com o email da loja parceira
@@ -171,8 +183,6 @@ export default function Lojascadastradas() {
 
                 <div className="parceriaInfosLoja">
 
-
-
                     <h2 className="parceriaNomeLoja">
                         {loja.nome}
                     </h2>
@@ -192,9 +202,47 @@ export default function Lojascadastradas() {
 
             </div>
 
+            <div className="parceriaMenuAbas">
+
+                <button
+                    className={`parceriaBotaoAba ${abaAtiva === "piloto"
+                            ? "parceriaBotaoAbaAtiva"
+                            : ""
+                        }`}
+                    onClick={() => {
+                        setAbaAtiva("piloto");
+                    }}
+                >
+                    Piloto
+                </button>
+
+                <button
+                    className={`parceriaBotaoAba ${abaAtiva === "historico"
+                            ? "parceriaBotaoAbaAtiva"
+                            : ""
+                        }`}
+                    onClick={() => {
+                        setAbaAtiva("historico");
+                    }}
+                >
+                    Histórico de vendas
+                </button>
+
+            </div>
+
             <div className="parceriaPilotoWrapper">
 
-                <Piloto />
+                {
+                    abaAtiva === "piloto" && (
+                        <Piloto />
+                    )
+                }
+
+                {
+                    abaAtiva === "historico" && (
+                        <HistoricoVendas />
+                    )
+                }
 
             </div>
 
