@@ -45,6 +45,21 @@ export default function App() {
           element={<Tudo />}
         />
 
+        <Route
+          path="/painel/historico"
+          element={<Tudo />}
+        />
+
+        <Route
+          path="/painel/ganhos"
+          element={<Tudo />}
+        />
+
+        <Route
+          path="/painel/valor"
+          element={<Tudo />}
+        />
+
       </Routes>
 
     </BrowserRouter>
