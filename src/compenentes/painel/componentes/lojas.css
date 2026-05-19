@@ -1,0 +1,410 @@
+.lojasPaginaContainer {
+    width: 100%;
+
+    min-height: 100vh;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(180deg,
+            #f8fafc,
+            #eef2ff);
+
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+.lojasTopoArea {
+    margin-bottom: 28px;
+}
+
+.lojasTituloPrincipal {
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin-bottom: 6px;
+}
+
+.lojasSubtituloPrincipal {
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+.lojasFormularioContainer {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(220px, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+.lojasInputSistema {
+    width: 100%;
+
+    background: white;
+
+    border: 1px solid #dbe4ee;
+
+    border-radius: 16px;
+
+    padding: 14px 16px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+.lojasInputSistema:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.lojasBotaoSalvar {
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #6366f1);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    padding: 14px 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.18);
+}
+
+.lojasBotaoSalvar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(99, 102, 241, 0.25);
+}
+
+.lojasListaContainer {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.lojasCardItem {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid rgba(226, 232, 240, 0.8);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.lojasInfosArea {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.lojasNome {
+    font-size: 22px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin: 0;
+}
+
+.lojasEmail {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+    margin: 0;
+}
+
+.lojasBotoesArea {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.lojasBotaoEditar {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.lojasBotaoEditar:hover {
+    background: #bfdbfe;
+}
+
+.lojasBotaoApagar {
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 12px 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.lojasBotaoApagar:hover {
+    background: #fecaca;
+}
+
+@media (max-width: 992px) {
+
+    .lojasPaginaContainer {
+        padding: 20px;
+
+        border-radius: 24px;
+    }
+
+    .lojasTituloPrincipal {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .lojasPaginaContainer {
+        padding: 16px;
+
+        border-radius: 20px;
+    }
+
+    .lojasTituloPrincipal {
+        font-size: 26px;
+    }
+
+    .lojasSubtituloPrincipal {
+        font-size: 14px;
+    }
+
+    .lojasFormularioContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .lojasCardItem {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .lojasBotoesArea {
+        width: 100%;
+    }
+
+    .lojasBotaoEditar,
+    .lojasBotaoApagar,
+    .lojasBotaoSalvar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .lojasPaginaContainer {
+        padding: 14px;
+    }
+
+    .lojasTituloPrincipal {
+        font-size: 22px;
+    }
+
+    .lojasCardItem {
+        padding: 16px;
+
+        border-radius: 18px;
+    }
+
+    .lojasNome {
+        font-size: 18px;
+    }
+
+    .lojasEmail {
+        font-size: 13px;
+    }
+
+    .lojasInputSistema {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .lojasPaginaContainer {
+        padding: 10px;
+
+        border-radius: 16px;
+    }
+
+    .lojasTituloPrincipal {
+        font-size: 20px;
+    }
+
+    .lojasCardItem {
+        padding: 14px;
+
+        border-radius: 16px;
+    }
+
+    .lojasNome {
+        font-size: 16px;
+    }
+
+    .lojasInputSistema {
+        padding: 12px;
+    }
+}
+
+.lojasSenhaContainer {
+    position: relative;
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 6px;
+}
+
+.lojasSenhaLabel {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #6b7280;
+}
+
+.lojasSenhaHover {
+    background: #111827;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.lojasSenhaReal {
+    position: absolute;
+
+    left: 110%;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background: white;
+
+    color: #111827;
+
+    border-radius: 12px;
+
+    padding: 10px 14px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.2s;
+
+    z-index: 50;
+}
+
+.lojasSenhaContainer:hover .lojasSenhaReal {
+    opacity: 1;
+
+    visibility: visible;
+}

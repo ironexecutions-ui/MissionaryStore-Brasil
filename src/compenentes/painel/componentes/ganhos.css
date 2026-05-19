@@ -1,260 +1,369 @@
 .ganhosPaginaContainer {
-    width: 100%;
-    min-height: 100vh;
-    padding: 30px;
-    box-sizing: border-box;
+    width: 90%;
+    padding: 40px;
+    border-radius: 38px;
+
     background:
         linear-gradient(180deg,
-            #0c1017 0%,
-            #111827 100%);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+            #cdcdcd 0%,
+            #c1bdbd 45%,
+            #d1cfcf 94%);
+
+    border: 1px solid #ececec;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.ganhosPaginaContainer::before {
+    content: "";
+
+    position: absolute;
+
+    top: -150px;
+    right: -150px;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+
+
+    pointer-events: none;
 }
 
 .ganhosTopoContainer {
-    width: 100%;
-    display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 24px;
+
+    margin-bottom: 35px;
 }
 
 .ganhosAdicionarRetornoBox {
-    background:
-        rgba(20, 27, 39, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 28px;
+    flex: 1;
+
     padding: 28px;
-    backdrop-filter: blur(14px);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f7f7f7);
+
+    border: 1px solid #ececec;
+
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+        0 12px 28px rgba(0, 0, 0, 0.03);
 }
 
 .ganhosTituloRetorno {
-    color: white;
-    font-size: 25px;
-    font-weight: 700;
-    margin: 0 0 22px 0;
+    font-size: 28px;
+    font-weight: 900;
+
+    color: #111111;
+
+    margin-bottom: 24px;
+
+    letter-spacing: -0.5px;
 }
 
 .ganhosLinhaRetorno {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .ganhosInputRetorno {
     flex: 1;
-    min-width: 200px;
-    height: 55px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.04);
-    color: white;
-    padding: 0 18px;
-    font-size: 16px;
+
+    padding: 18px 22px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e8e8e8;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #f8f8f8);
+
+    color: #111111;
+
+    font-size: 15px;
+    font-weight: 700;
+
     outline: none;
-    transition: 0.2s;
+
+    transition: 0.25s ease;
 }
 
 .ganhosInputRetorno:focus {
-    border-color: #4f8cff;
-    box-shadow:
-        0 0 0 4px rgba(79, 140, 255, 0.15);
-}
+    border: 1px solid #d7d7d7;
 
-.ganhosInputRetorno::placeholder {
-    color: rgba(255, 255, 255, 0.45);
+    box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.04);
 }
 
 .ganhosBotaoRetorno {
-    height: 55px;
-    padding: 0 28px;
-    border: none;
-    border-radius: 18px;
+    padding: 18px 28px;
+
+    border-radius: 20px;
+
+    border: 1px solid #dddddd;
+
     background:
         linear-gradient(135deg,
-            #3478ff 0%,
-            #5b9dff 100%);
-    color: white;
+            #ffffff,
+            #ececec);
+
+    color: #111111;
+
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 900;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition: 0.25s ease;
+
     box-shadow:
-        0 10px 25px rgba(52, 120, 255, 0.25);
+        0 10px 22px rgba(0, 0, 0, 0.04);
 }
 
 .ganhosBotaoRetorno:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.05);
+    transform: translateY(-3px);
 }
 
 .ganhosFiltroDataContainer {
-    background:
-        rgba(20, 27, 39, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 28px;
+    width: 230px;
+
     padding: 28px;
-    backdrop-filter: blur(14px);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f6f6f6);
+
+    border: 1px solid #ececec;
+
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
+        0 12px 28px rgba(0, 0, 0, 0.03);
 }
 
 .ganhosLabelData {
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #111111;
+
+    font-size: 14px;
+    font-weight: 800;
 }
 
 .ganhosInputData {
-    width: fit-content;
-    min-width: 220px;
-    height: 55px;
-    padding: 0 18px;
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.04);
-    color: white;
-    font-size: 16px;
-    outline: none;
-    transition: 0.2s;
-}
+    width: 94%;
 
-.ganhosInputData:focus {
-    border-color: #4f8cff;
-    box-shadow:
-        0 0 0 4px rgba(79, 140, 255, 0.15);
+    padding: 16px 18px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e7e7e7;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #f8f8f8);
+
+    color: #111111;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    outline: none;
 }
 
 .ganhosGridCards {
-    width: 100%;
     display: grid;
+
     grid-template-columns:
         repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+
+    gap: 24px;
 }
 
 .ganhosCardResumo {
+    padding: 30px;
+
+    border-radius: 32px;
+
     background:
-        rgba(20, 27, 39, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 30px;
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(12px);
+        linear-gradient(180deg,
+            #ffffff,
+            #f7f7f7);
+
+    border: 1px solid #ececec;
+
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.3);
+        0 15px 35px rgba(0, 0, 0, 0.04);
+
+    transition: 0.25s ease;
 }
 
-.ganhosCardResumo::before {
-    content: "";
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 180px;
-    height: 180px;
-    background:
-        radial-gradient(circle,
-            rgba(79, 140, 255, 0.18),
-            transparent 70%);
+.ganhosCardResumo:hover {
+    transform: translateY(-5px);
 }
 
 .ganhosTituloPeriodo {
-    color: white;
     font-size: 30px;
-    font-weight: 800;
-    margin: 0;
-    z-index: 2;
-    position: relative;
+    font-weight: 900;
+
+    color: #111111;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -1px;
 }
 
 .ganhosItemValor {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 14px;
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.06);
-    position: relative;
-    z-index: 2;
+    justify-content: space-between;
+
+    padding: 18px 20px;
+
+    margin-bottom: 14px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #f5f5f5);
+
+    border: 1px solid #ebebeb;
 }
 
 .ganhosItemValor span {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 15px;
-    font-weight: 500;
-}
+    color: #555555;
 
-.ganhosItemValor strong {
-    font-size: 19px;
-    font-weight: 800;
-}
-
-.ganhosCreditoValor {
-    color: #56e38b;
-}
-
-.ganhosCompraValor {
-    color: #ff6f6f;
-}
-
-.ganhosRetornoValor {
-    color: #ffc857;
-}
-
-.ganhosLucroFinal {
-    border-bottom: none;
-    margin-top: 5px;
-    padding-top: 10px;
-}
-
-.ganhosLucroFinal strong {
-    color: #4f8cff;
-    font-size: 24px;
-}
-
-.ganhosLoadingContainer {
-    width: 100%;
-    min-height: 100vh;
-    background:
-        linear-gradient(180deg,
-            #0c1017 0%,
-            #111827 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 700;
 }
 
-@media (max-width: 700px) {
+.ganhosItemValor strong {
+    color: #111111;
+
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.ganhosCreditoValor {
+    color: #111111;
+}
+
+.ganhosCompraValor {
+    color: #111111;
+}
+
+.ganhosRetornoValor {
+    color: #111111;
+}
+
+.ganhosLucroFinal {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #ececec);
+
+    border: 1px solid #dddddd;
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.ganhosLucroFinal span {
+    color: #111111;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.ganhosLucroFinal strong {
+    color: #111111;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.ganhosLoadingContainer {
+    width: 95%;
+
+    padding: 80px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f5f5f5);
+
+    border: 1px solid #ececec;
+
+    color: #111111;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+/* =========================================
+RESPONSIVIDADE COMPLETA
+========================================= */
+
+@media (max-width: 1200px) {
 
     .ganhosPaginaContainer {
-        padding: 18px;
-    }
-
-    .ganhosCardResumo {
-        padding: 22px;
+        width: 94%;
+        padding: 34px;
     }
 
     .ganhosTituloPeriodo {
-        font-size: 24px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .ganhosPaginaContainer {
+        padding: 28px;
+        border-radius: 30px;
     }
 
-    .ganhosInputData {
-        width: 100%;
-        min-width: unset;
+    .ganhosTopoContainer {
+        flex-direction: column;
+    }
+
+    .ganhosFiltroDataContainer {
+        width: 94%;
     }
 
     .ganhosLinhaRetorno {
@@ -262,10 +371,183 @@
     }
 
     .ganhosBotaoRetorno {
-        width: 100%;
+        width: 94%;
     }
 
-    .ganhosInputRetorno {
-        width: 100%;
+    .ganhosGridCards {
+        grid-template-columns:
+            repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .ganhosPaginaContainer {
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .ganhosPaginaContainer::before {
+        width: 180px;
+        height: 180px;
+        top: -90px;
+        right: -90px;
+    }
+
+    .ganhosTopoContainer {
+        gap: 18px;
+        margin-bottom: 24px;
+    }
+
+    .ganhosAdicionarRetornoBox,
+    .ganhosFiltroDataContainer,
+    .ganhosCardResumo {
+        padding: 22px;
+        border-radius: 24px;
+    }
+
+    .ganhosTituloRetorno {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .ganhosTituloPeriodo {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .ganhosInputRetorno,
+    .ganhosInputData {
+        width: 94%;
+        padding: 15px 16px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    .ganhosBotaoRetorno {
+        padding: 15px;
+        font-size: 14px;
+        border-radius: 16px;
+    }
+
+    .ganhosItemValor {
+        padding: 16px;
+        border-radius: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ganhosItemValor strong {
+        font-size: 17px;
+    }
+
+    .ganhosLucroFinal {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .ganhosLucroFinal strong {
+        font-size: 20px;
+    }
+
+    .ganhosLoadingContainer {
+        width: 94%;
+        padding: 60px 20px;
+        font-size: 20px;
+        border-radius: 24px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .ganhosPaginaContainer {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .ganhosAdicionarRetornoBox,
+    .ganhosFiltroDataContainer,
+    .ganhosCardResumo {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .ganhosTituloRetorno {
+        font-size: 20px;
+    }
+
+    .ganhosTituloPeriodo {
+        font-size: 20px;
+    }
+
+    .ganhosInputRetorno,
+    .ganhosInputData {
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    .ganhosBotaoRetorno {
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    .ganhosItemValor span {
+        font-size: 13px;
+    }
+
+    .ganhosItemValor strong {
+        font-size: 16px;
+    }
+
+    .ganhosLucroFinal span {
+        font-size: 13px;
+    }
+
+    .ganhosLucroFinal strong {
+        font-size: 18px;
+    }
+
+    .ganhosGridCards {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .ganhosPaginaContainer {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .ganhosAdicionarRetornoBox,
+    .ganhosFiltroDataContainer,
+    .ganhosCardResumo {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .ganhosTituloRetorno,
+    .ganhosTituloPeriodo {
+        font-size: 18px;
+    }
+
+    .ganhosInputRetorno,
+    .ganhosInputData {
+        padding: 13px;
+        border-radius: 14px;
+    }
+
+    .ganhosBotaoRetorno {
+        border-radius: 14px;
+    }
+
+    .ganhosItemValor {
+        padding: 14px;
+    }
+
+    .ganhosLoadingContainer {
+        font-size: 18px;
     }
 }

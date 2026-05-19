@@ -2,7 +2,7 @@
     width: 100%;
 
     min-height: 100vh;
-
+    border-radius: 30px;
     background:
         linear-gradient(180deg,
             #f8fafc,
@@ -253,4 +253,222 @@
 
     box-shadow:
         0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* =========================================
+RESPONSIVIDADE COMPLETA
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .historicoPaginaContainer {
+        padding: 22px;
+    }
+
+    .historicoTituloPrincipal {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .historicoPaginaContainer {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .historicoCardItem {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .historicoDetalhesArea {
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(160px, 1fr));
+    }
+
+    .historicoFiltrosContainer {
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .historicoPaginaContainer {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .historicoTituloPrincipal {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .historicoSubtituloPrincipal {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .historicoListaContainer {
+        gap: 16px;
+    }
+
+    .historicoCardItem {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .historicoLinhaSuperior {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .historicoNomeMissionario {
+        font-size: 20px;
+    }
+
+    .historicoValorPositivo,
+    .historicoValorNegativo {
+        font-size: 16px;
+        padding: 10px 14px;
+        width: fit-content;
+    }
+
+    .historicoDetalhesArea {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .historicoDetalheBloco {
+        padding: 13px;
+        border-radius: 16px;
+    }
+
+    .historicoTexto {
+        font-size: 14px;
+    }
+
+    .historicoFiltrosContainer {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .historicoInputFiltro {
+        padding: 13px 14px;
+        font-size: 14px;
+        border-radius: 14px;
+    }
+
+    .historicoLoadingTexto {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .historicoPaginaContainer {
+        padding: 14px;
+    }
+
+    .historicoTituloPrincipal {
+        font-size: 24px;
+    }
+
+    .historicoSubtituloPrincipal {
+        font-size: 13px;
+    }
+
+    .historicoCardItem {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .historicoNomeMissionario {
+        font-size: 18px;
+    }
+
+    .historicoEmailMissionario {
+        font-size: 13px;
+    }
+
+    .historicoValorPositivo,
+    .historicoValorNegativo {
+        font-size: 15px;
+        padding: 9px 13px;
+    }
+
+    .historicoDetalheBloco {
+        padding: 12px;
+    }
+
+    .historicoLabel {
+        font-size: 11px;
+    }
+
+    .historicoTexto {
+        font-size: 13px;
+    }
+
+    .historicoInputFiltro {
+        font-size: 13px;
+        padding: 12px 13px;
+    }
+
+    .historicoLoadingTexto {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .historicoPaginaContainer {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .historicoTituloPrincipal {
+        font-size: 20px;
+    }
+
+    .historicoSubtituloPrincipal {
+        font-size: 12px;
+    }
+
+    .historicoCardItem {
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .historicoNomeMissionario {
+        font-size: 16px;
+    }
+
+    .historicoValorPositivo,
+    .historicoValorNegativo {
+        font-size: 14px;
+        padding: 8px 12px;
+        border-radius: 999px;
+    }
+
+    .historicoDetalheBloco {
+        border-radius: 14px;
+    }
+
+    .historicoTexto {
+        font-size: 12px;
+    }
+
+    .historicoInputFiltro {
+        padding: 11px 12px;
+        border-radius: 12px;
+    }
+
+    .historicoLoadingTexto {
+        font-size: 16px;
+    }
 }

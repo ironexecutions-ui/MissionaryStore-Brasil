@@ -7,6 +7,8 @@ import {
 
 import Cadastro from "./cadastro";
 
+import Lojas from "./lojas";
+
 import Lista from "./lista";
 
 import Piloto from "./piloto";
@@ -87,6 +89,14 @@ export default function Tudo() {
 
         }
 
+        else if (
+            location.pathname.includes("/painel/lojas")
+        ) {
+
+            setAbaAtiva("lojas");
+
+        }
+
     }, [location.pathname]);
 
     async function verificarLoginSistema() {
@@ -144,15 +154,15 @@ export default function Tudo() {
 
     return (
 
-        <div className="tudoContainerSistema">
+        <div className="tudoContainerSitema">
 
             <div className="tudoMenuSistema">
 
                 <button
                     className={
                         abaAtiva === "cadastro"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoCadastroSistema tudoBotaoCadastroAtivoSistema"
+                            : "tudoBotaoCadastroSistema"
                     }
                     onClick={() => {
 
@@ -168,8 +178,8 @@ export default function Tudo() {
                 <button
                     className={
                         abaAtiva === "lista"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoListaSistema tudoBotaoListaAtivoSistema"
+                            : "tudoBotaoListaSistema"
                     }
                     onClick={() => {
 
@@ -185,8 +195,8 @@ export default function Tudo() {
                 <button
                     className={
                         abaAtiva === "piloto"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoPilotoSistema tudoBotaoPilotoAtivoSistema"
+                            : "tudoBotaoPilotoSistema"
                     }
                     onClick={() => {
 
@@ -202,8 +212,8 @@ export default function Tudo() {
                 <button
                     className={
                         abaAtiva === "historico"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoHistoricoSistema tudoBotaoHistoricoAtivoSistema"
+                            : "tudoBotaoHistoricoSistema"
                     }
                     onClick={() => {
 
@@ -219,8 +229,8 @@ export default function Tudo() {
                 <button
                     className={
                         abaAtiva === "ganhos"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoGanhosSistema tudoBotaoGanhosAtivoSistema"
+                            : "tudoBotaoGanhosSistema"
                     }
                     onClick={() => {
 
@@ -236,8 +246,8 @@ export default function Tudo() {
                 <button
                     className={
                         abaAtiva === "valor"
-                            ? "tudoBotaoSistema tudoBotaoAtivoSistema"
-                            : "tudoBotaoSistema"
+                            ? "tudoBotaoValorSistema tudoBotaoValorAtivoSistema"
+                            : "tudoBotaoValorSistema"
                     }
                     onClick={() => {
 
@@ -250,6 +260,23 @@ export default function Tudo() {
                     Valor
                 </button>
 
+                <button
+                    className={
+                        abaAtiva === "lojas"
+                            ? "tudoBotaoCadastroSistema tudoBotaoCadastroAtivoSistema"
+                            : "tudoBotaoCadastroSistema"
+                    }
+                    onClick={() => {
+
+                        setAbaAtiva("lojas");
+
+                        navigate("/painel/lojas");
+
+                    }}
+                >
+                    Lojas
+                </button>
+
             </div>
 
             <div className="tudoConteudoSistema">
@@ -257,37 +284,57 @@ export default function Tudo() {
                 {
                     abaAtiva === "cadastro"
                     &&
-                    <Cadastro />
+                    <div className="tudoCadastroWrapperSistema">
+                        <Cadastro />
+                    </div>
                 }
 
                 {
                     abaAtiva === "lista"
                     &&
-                    <Lista />
+                    <div className="tudoListaWrapperSistema">
+                        <Lista />
+                    </div>
                 }
 
                 {
                     abaAtiva === "piloto"
                     &&
-                    <Piloto />
+                    <div className="tudoPilotoWrapperSistema">
+                        <Piloto />
+                    </div>
                 }
 
                 {
                     abaAtiva === "historico"
                     &&
-                    <Historico />
+                    <div className="tudoHistoricoWrapperSistema">
+                        <Historico />
+                    </div>
                 }
 
                 {
                     abaAtiva === "ganhos"
                     &&
-                    <Ganhos />
+                    <div className="tudoGanhosWrapperSistema">
+                        <Ganhos />
+                    </div>
                 }
 
                 {
                     abaAtiva === "valor"
                     &&
-                    <Valor />
+                    <div className="tudoValorWrapperSistema">
+                        <Valor />
+                    </div>
+                }
+
+                {
+                    abaAtiva === "lojas"
+                    &&
+                    <div className="tudoLojasWrapperSistema">
+                        <Lojas />
+                    </div>
                 }
 
             </div>

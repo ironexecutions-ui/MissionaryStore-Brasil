@@ -26,6 +26,29 @@ export default function Piloto() {
     const [abrirModalSenha, setAbrirModalSenha] = useState(false);
     const [erroSenha, setErroSenha] = useState("");
     const [processandoLeitura, setProcessandoLeitura] = useState(false);
+    const tokenSistema =
+        localStorage.getItem("token")
+        ||
+        localStorage.getItem("token_loja");
+    const dadosLoja = JSON.parse(
+        localStorage.getItem(
+            "dados_loja"
+        ) || "{}"
+    );
+    useEffect(() => {
+
+        if (
+            dadosLoja?.nome
+            &&
+            !localStorage.getItem("token")
+        ) {
+
+            setLocal(
+                dadosLoja.nome
+            );
+        }
+
+    }, []);
     async function buscarCupom(codigoDigitado) {
 
         setCodigo(codigoDigitado);
@@ -47,7 +70,7 @@ export default function Piloto() {
                 `${API_URL}/piloto/buscar/${codigoDigitado}`,
                 {
                     headers: {
-                        Authorization: `Bearer ${localStorage.getItem("token")}`
+                        Authorization: `Bearer ${tokenSistema}`
                     }
                 }
             );
@@ -235,7 +258,22 @@ export default function Piloto() {
 
         setAbrirModalSenha(true);
     }
+    useEffect(() => {
 
+        if (abrirModalSenha) {
+
+            setTimeout(() => {
+
+                document
+                    .getElementById(
+                        "pilotoSenhaInputReal"
+                    )
+                    ?.focus();
+
+            }, 100);
+        }
+
+    }, [abrirModalSenha]);
     async function retirarSaldo() {
 
         if (!senha) {
@@ -258,7 +296,7 @@ export default function Piloto() {
 
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem("token")}`
+                        Authorization: `Bearer ${tokenSistema}`
                     },
 
                     body: JSON.stringify({
@@ -309,7 +347,23 @@ export default function Piloto() {
             setLoading(false);
         }
     }
+    const saldoAtual = Number(
+        dados?.saldo || 0
+    );
 
+    const valorNumerico = Number(
+        valor || 0
+    );
+
+    const valorMaiorQueSaldo =
+        valorNumerico > saldoAtual;
+
+    const textoBotaoRetirada =
+        valorMaiorQueSaldo
+            ? "Saldo insuficiente"
+            : loading
+                ? "Processando..."
+                : "Confirmar retirada";
     return (
         <div className="pilotoContainerUnico">
             <div className="pilotoBotoesScannerUnico">
@@ -469,7 +523,15 @@ export default function Piloto() {
                         <div className="pilotoAreaRetiradaUnico">
 
                             <input
-                                className="pilotoInputValorUnico"
+                                className={
+                                    `
+            pilotoInputValorUnico
+            ${valorMaiorQueSaldo
+                                        ? "pilotoInputValorErroUnico"
+                                        : ""
+                                    }
+            `
+                                }
                                 placeholder="Valor"
                                 type="number"
                                 value={valor}
@@ -480,44 +542,73 @@ export default function Piloto() {
                                 }
                             />
 
-                            <input
-                                className="pilotoInputLocalUnico"
-                                placeholder="Local"
-                                list="locais"
-                                value={local}
-                                onChange={(e) =>
-                                    setLocal(
-                                        e.target.value
-                                    )
-                                }
-                            />
+                            {
+                                valorMaiorQueSaldo && (
+                                    <p className="pilotoAvisoSaldoUnico">
+                                        O valor informado excede o saldo disponível
+                                    </p>
+                                )
+                            }
 
-                            <datalist id="locais">
-                                {
-                                    dados.locais.map(
-                                        (
-                                            item,
-                                            index
-                                        ) => (
-                                            <option
-                                                key={index}
-                                                value={item}
+                            {
+                                localStorage.getItem("token")
+                                    ? (
+                                        <>
+                                            <input
+                                                className="pilotoInputLocalUnico"
+                                                placeholder="Local"
+                                                list="locais"
+                                                value={local}
+                                                onChange={(e) =>
+                                                    setLocal(
+                                                        e.target.value
+                                                    )
+                                                }
                                             />
-                                        )
+
+                                            <datalist id="locais">
+                                                {
+                                                    dados.locais.map(
+                                                        (
+                                                            item,
+                                                            index
+                                                        ) => (
+                                                            <option
+                                                                key={index}
+                                                                value={item}
+                                                            />
+                                                        )
+                                                    )
+                                                }
+                                            </datalist>
+                                        </>
                                     )
-                                }
-                            </datalist>
+                                    : (
+                                        <input
+                                            className="pilotoInputLocalUnico"
+                                            value={local}
+                                            readOnly
+                                        />
+                                    )
+                            }
 
                             <button
-                                className="pilotoBotaoUnico"
-                                onClick={abrirConfirmacao}
-                                disabled={loading}
-                            >
-                                {
-                                    loading
-                                        ? "Enviando..."
-                                        : "Enviar"
+                                className={
+                                    `
+            pilotoBotaoUnico
+            ${valorMaiorQueSaldo
+                                        ? "pilotoBotaoDesabilitadoUnico"
+                                        : ""
+                                    }
+            `
                                 }
+                                onClick={abrirConfirmacao}
+                                disabled={
+                                    loading ||
+                                    valorMaiorQueSaldo
+                                }
+                            >
+                                {textoBotaoRetirada}
                             </button>
 
                             {

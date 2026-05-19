@@ -328,7 +328,7 @@ export default function Cadastro() {
 
                         localStorage.removeItem("token");
 
-                        navigate("/");
+                        navigate("/painel");
 
                     }}
                 >

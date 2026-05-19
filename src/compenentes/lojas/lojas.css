@@ -1,0 +1,285 @@
+.parceriaPaginaContainer {
+    width: 98%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(135deg,
+            #f5f7ff 0%,
+            #eef2ff 45%,
+            #e0e7ff 98%);
+
+    box-sizing: border-box;
+}
+
+.parceriaLoginCard {
+    width: 98%;
+
+    max-width: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 38px;
+
+    border-radius: 32px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(79, 70, 229, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.parceriaTitulo {
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin: 0;
+}
+
+.parceriaSubtitulo {
+    font-size: 15px;
+
+    color: #6b7280;
+
+    margin-top: -6px;
+}
+
+.parceriaInput {
+    width: 98%;
+
+    padding: 16px 18px;
+
+    border-radius: 18px;
+
+    border: 1px solid #dbe4ee;
+
+    background: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+.parceriaInput:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.parceriaBotao {
+    width: 98%;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #6366f1);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 15px 30px rgba(79, 70, 229, 0.22);
+}
+
+.parceriaBotao:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 20px 40px rgba(79, 70, 229, 0.28);
+}
+
+.parceriaPainelContainer {
+    width: 98%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+.parceriaTopoPainel {
+    width: 98%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.parceriaInfosLoja {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.parceriaBemVindo {
+    font-size: 15px;
+
+    color: #6b7280;
+}
+
+.parceriaNomeLoja {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin: 0;
+}
+
+.parceriaEmailLoja {
+    font-size: 14px;
+
+    color: #6b7280;
+}
+
+.parceriaBotaoSair {
+    border: none;
+
+    border-radius: 16px;
+
+    padding: 14px 22px;
+
+    background:
+        linear-gradient(135deg,
+            #ef4444,
+            #dc2626);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.22);
+}
+
+.parceriaBotaoSair:hover {
+    transform: translateY(-2px);
+}
+
+.parceriaPilotoWrapper {
+    width: 98%;
+}
+
+@media (max-width: 768px) {
+
+    .parceriaPaginaContainer {
+        padding: 18px;
+    }
+
+    .parceriaLoginCard {
+        padding: 28px;
+    }
+
+    .parceriaTopoPainel {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .parceriaBotaoSair {
+        width: 98%;
+    }
+
+    .parceriaNomeLoja {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .parceriaPaginaContainer {
+        padding: 10px;
+    }
+
+    .parceriaLoginCard {
+        padding: 22px;
+
+        border-radius: 24px;
+    }
+
+    .parceriaTitulo {
+        font-size: 28px;
+    }
+
+    .parceriaInput {
+        padding: 14px 16px;
+    }
+
+    .parceriaBotao {
+        padding: 14px;
+    }
+
+    .parceriaTopoPainel {
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+    .parceriaNomeLoja {
+        font-size: 22px;
+    }
+}

@@ -32,7 +32,10 @@ export default function Pdf({
             const urlTermos =
                 `${API_URL}/pdf/termos`
                 + `?idioma=${encodeURIComponent(idiomaFinal)}`
-                + `&nome=${encodeURIComponent(nome)}`;
+                + `&nome=${encodeURIComponent(nome)}`
+                + `&codigo=${encodeURIComponent(codigo)}`
+                + `&pin=${encodeURIComponent(senha)}`
+                + `&saldo=${encodeURIComponent(saldo)}`;
 
             window.open(
                 urlTermos,

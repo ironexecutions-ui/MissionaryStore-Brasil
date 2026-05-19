@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./app.css"
 import {
   BrowserRouter,
   Routes,
   Route
 } from "react-router-dom";
-
+import Lojascadastradas from "./compenentes/lojas/lojas";
 import Cupons from "./compenentes/cupons/cupons";
 
 import Painel from "./compenentes/painel/painel";
@@ -59,7 +59,13 @@ export default function App() {
           path="/painel/valor"
           element={<Tudo />}
         />
-
+        <Route
+          path="/painel/lojas"
+          element={<Tudo />}
+        />  <Route
+          path="/parceria"
+          element={<Lojascadastradas />}
+        />
       </Routes>
 
     </BrowserRouter>
