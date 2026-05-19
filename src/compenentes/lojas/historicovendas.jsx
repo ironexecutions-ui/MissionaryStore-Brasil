@@ -4,7 +4,7 @@ import React, {
     useState
 } from "react";
 
-import "./historicoVendas.css";
+import "./historicovendas.css";
 
 import { API_URL } from "../../config";
 
@@ -64,14 +64,13 @@ export default function HistoricoVendas() {
 
     }, []);
 
-    async function fecharVenda(
-        transacaoId,
-        arquivo
+    async function fecharDia(
+        data
     ) {
 
         try {
 
-            setUploading(transacaoId);
+            setUploading(data);
 
             const token = localStorage.getItem(
                 "token_loja"
@@ -80,17 +79,12 @@ export default function HistoricoVendas() {
             const formData = new FormData();
 
             formData.append(
-                "transacao_id",
-                transacaoId
-            );
-
-            formData.append(
-                "file",
-                arquivo
+                "data",
+                data
             );
 
             const resposta = await fetch(
-                `${API_URL}/lojas/fechar-venda`,
+                `${API_URL}/lojas/fechar-dia`,
                 {
                     method: "POST",
 
@@ -107,18 +101,18 @@ export default function HistoricoVendas() {
             if (!resposta.ok) {
 
                 alert(
-                    dados.detail || "Erro ao fechar venda"
+                    dados.detail || "Erro"
                 );
 
                 return;
             }
 
-            await carregarHistorico();
+            carregarHistorico();
 
         } catch {
 
             alert(
-                "Erro ao enviar comprovante"
+                "Erro ao gerar relatório"
             );
 
         } finally {
@@ -133,7 +127,9 @@ export default function HistoricoVendas() {
 
         historico.forEach((dia) => {
 
-            total += Number(dia.total || 0);
+            total += Number(
+                dia.total || 0
+            );
 
         });
 
@@ -232,179 +228,130 @@ export default function HistoricoVendas() {
 
                         </div>
 
-                        <div className="historicoListaVendas">
+                        <div className="historicoDiaAcoes">
 
                             {
-                                dia.vendas.map((venda) => (
+                                dia.fechado ? (
 
-                                    <div
-                                        key={venda.id}
-                                        className="historicoVendaItem"
+                                    <a
+                                        className="historicoComprovanteLink"
+                                        href={dia.comprovante}
+                                        target="_blank"
+                                        rel="noreferrer"
                                     >
+                                        Ver comprovante do dia
+                                    </a>
 
-                                        <div className="historicoVendaInfos">
+                                ) : (
 
-                                            <div>
+                                    <button
+                                        className="historicoBotaoFecharVenda"
+                                        onClick={() => {
 
-                                                <h3 className="historicoVendaNome">
+                                            fecharDia(
+                                                dia.data
+                                            );
 
-                                                    {venda.nome}
-
-                                                </h3>
-
-                                                <p className="historicoVendaEmail">
-
-                                                    {venda.email}
-
-                                                </p>
-
-                                            </div>
-
-                                            <div className="historicoVendaValor">
-
-                                                R$ {venda.valor}
-
-                                            </div>
-
-                                        </div>
-
-                                        <div className="historicoVendaLinhaDetalhes">
-
-                                            <span>
-                                                {venda.tipo_pagamento}
-                                            </span>
-
-                                            <span>
-                                                {venda.data_hora}
-                                            </span>
-
-                                        </div>
-
-                                        <button
-                                            className="historicoBotaoDetalhes"
-                                            onClick={() => {
-
-                                                setDetalhesAberto(
-
-                                                    detalhesAberto === venda.id
-                                                        ? null
-                                                        : venda.id
-                                                );
-
-                                            }}
-                                        >
-                                            {
-                                                detalhesAberto === venda.id
-                                                    ? "Fechar detalhes"
-                                                    : "Ver detalhes"
-                                            }
-                                        </button>
-
+                                        }}
+                                    >
                                         {
-                                            detalhesAberto === venda.id && (
+                                            uploading === dia.data
+                                                ? "Gerando relatório..."
+                                                : "Fechar vendas do dia"
+                                        }
+                                    </button>
 
-                                                <div className="historicoPainelDetalhes">
+                                )
+                            }
 
-                                                    <div className="historicoDetalhesGrid">
+                            <button
+                                className="historicoBotaoDetalhes"
+                                onClick={() => {
 
-                                                        <div className="historicoDetalhesBloco">
+                                    setDetalhesAberto(
 
-                                                            <span className="historicoDetalhesLabel">
-                                                                ID missionário
-                                                            </span>
+                                        detalhesAberto === dia.data
+                                            ? null
+                                            : dia.data
+                                    );
 
-                                                            <strong>
-                                                                {venda.id_missionario}
-                                                            </strong>
+                                }}
+                            >
+                                {
+                                    detalhesAberto === dia.data
+                                        ? "Fechar detalhes"
+                                        : "Ver detalhes"
+                                }
+                            </button>
 
-                                                        </div>
+                        </div>
 
-                                                        <div className="historicoDetalhesBloco">
+                        {
+                            detalhesAberto === dia.data && (
 
-                                                            <span className="historicoDetalhesLabel">
-                                                                Forma de pagamento
-                                                            </span>
+                                <div className="historicoListaVendas">
 
-                                                            <strong>
-                                                                {venda.tipo_pagamento}
-                                                            </strong>
+                                    {
+                                        dia.vendas.map((venda) => (
 
-                                                        </div>
+                                            <div
+                                                key={venda.id}
+                                                className="historicoVendaItem"
+                                            >
+
+                                                <div className="historicoVendaInfos">
+
+                                                    <div>
+
+                                                        <h3 className="historicoVendaNome">
+
+                                                            {venda.nome}
+
+                                                        </h3>
+
+                                                        <p className="historicoVendaEmail">
+
+                                                            {venda.email}
+
+                                                        </p>
 
                                                     </div>
 
-                                                    {
-                                                        venda.fechado ? (
+                                                    <div className="historicoVendaValor">
 
-                                                            <div className="historicoVendaFechada">
+                                                        R$ {venda.valor}
 
-                                                                <span className="historicoVendaFechadaTexto">
-                                                                    Venda fechada
-                                                                </span>
-
-                                                                <a
-                                                                    className="historicoComprovanteLink"
-                                                                    href={venda.comprovante}
-                                                                    target="_blank"
-                                                                    rel="noreferrer"
-                                                                >
-                                                                    Ver comprovante
-                                                                </a>
-
-                                                            </div>
-
-                                                        ) : (
-
-                                                            <div className="historicoAreaUpload">
-
-                                                                <label className="historicoBotaoFecharVenda">
-
-                                                                    {
-                                                                        uploading === venda.id
-                                                                            ? "Enviando..."
-                                                                            : "Fechar venda"
-                                                                    }
-
-                                                                    <input
-                                                                        type="file"
-                                                                        hidden
-                                                                        accept="image/*,.pdf"
-                                                                        disabled={
-                                                                            uploading === venda.id
-                                                                        }
-                                                                        onChange={(e) => {
-
-                                                                            const arquivo =
-                                                                                e.target.files[0];
-
-                                                                            if (!arquivo) return;
-
-                                                                            fecharVenda(
-                                                                                venda.id,
-                                                                                arquivo
-                                                                            );
-
-                                                                        }}
-                                                                    />
-
-                                                                </label>
-
-                                                            </div>
-
-                                                        )
-                                                    }
+                                                    </div>
 
                                                 </div>
 
-                                            )
-                                        }
+                                                <div className="historicoVendaLinhaDetalhes">
 
-                                    </div>
+                                                    <span>
+                                                        {venda.tipo_pagamento}
+                                                    </span>
 
-                                ))
-                            }
+                                                    <span>
+                                                        {venda.data_hora}
+                                                    </span>
 
-                        </div>
+                                                    <span>
+                                                        ID:
+                                                        {" "}
+                                                        {venda.id_missionario}
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+
+                                        ))
+                                    }
+
+                                </div>
+
+                            )
+                        }
 
                     </div>
 
