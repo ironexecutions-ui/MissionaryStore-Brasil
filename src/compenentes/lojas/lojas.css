@@ -283,3 +283,155 @@
         font-size: 22px;
     }
 }
+
+.parceriaLoginFormulario {
+    width: 100%;
+
+    max-width: 430px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 40px;
+
+    border-radius: 34px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(18px);
+    margin: auto auto;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 25px 60px rgba(79, 70, 229, 0.18);
+}
+
+.parceriaLoginTitulo {
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin: 0;
+}
+
+.parceriaLoginSubtitulo {
+    font-size: 15px;
+
+    color: #6b7280;
+
+    margin-top: -6px;
+
+    margin-bottom: 6px;
+}
+
+.parceriaLoginInput {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border-radius: 18px;
+
+    border: 1px solid #dbe4ee;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+.parceriaLoginInput::placeholder {
+    color: #9ca3af;
+}
+
+.parceriaLoginInput:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+.parceriaLoginBotao {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #6366f1);
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-shadow:
+        0 15px 35px rgba(79, 70, 229, 0.24);
+}
+
+.parceriaLoginBotao:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 20px 40px rgba(79, 70, 229, 0.32);
+}
+
+.parceriaLoginBotao:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+
+    .parceriaLoginFormulario {
+        padding: 30px;
+
+        border-radius: 26px;
+    }
+
+    .parceriaLoginTitulo {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .parceriaLoginFormulario {
+        padding: 24px;
+
+        border-radius: 22px;
+    }
+
+    .parceriaLoginTitulo {
+        font-size: 24px;
+    }
+
+    .parceriaLoginInput {
+        padding: 14px 16px;
+    }
+
+    .parceriaLoginBotao {
+        padding: 14px;
+    }
+}

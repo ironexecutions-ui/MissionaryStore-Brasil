@@ -90,14 +90,21 @@ export default function Lojascadastradas() {
     if (!loja) {
 
         return (
+            <form
+                className="parceriaLoginFormulario"
+                onSubmit={fazerLogin}
+            >
 
-            <form onSubmit={fazerLogin}>
-
-                <h1>
+                <h1 className="parceriaLoginTitulo">
                     Login Loja
                 </h1>
 
+                <p className="parceriaLoginSubtitulo">
+                    Entre com o email da loja parceira
+                </p>
+
                 <input
+                    className="parceriaLoginInput"
                     type="text"
                     placeholder="Email"
                     value={email}
@@ -107,6 +114,7 @@ export default function Lojascadastradas() {
                 />
 
                 <input
+                    className="parceriaLoginInput"
                     type="text"
                     placeholder="Senha"
                     value={senha}
@@ -115,7 +123,10 @@ export default function Lojascadastradas() {
                     }}
                 />
 
-                <button type="submit">
+                <button
+                    className="parceriaLoginBotao"
+                    type="submit"
+                >
                     Entrar
                 </button>
 
