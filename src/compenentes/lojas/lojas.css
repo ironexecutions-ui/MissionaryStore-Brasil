@@ -1,5 +1,5 @@
 .parceriaPaginaContainer {
-    width: 98%;
+    width: 92%;
 
     min-height: 100vh;
 
@@ -9,7 +9,7 @@
 
     justify-content: center;
 
-    padding: 30px;
+    padding: 20px;
 
     background:
         linear-gradient(135deg,
@@ -21,7 +21,7 @@
 }
 
 .parceriaLoginCard {
-    width: 98%;
+    width: 92%;
 
     max-width: 430px;
 
@@ -29,7 +29,7 @@
 
     flex-direction: column;
 
-    gap: 18px;
+    gap: 10px;
 
     padding: 38px;
 
@@ -322,7 +322,7 @@
 }
 
 .parceriaLoginFormulario {
-    width: 100%;
+    width: 90%;
 
     max-width: 430px;
 
@@ -368,7 +368,7 @@
 }
 
 .parceriaLoginInput {
-    width: 100%;
+    width: 98%;
 
     padding: 16px 18px;
 
@@ -401,7 +401,7 @@
 }
 
 .parceriaLoginBotao {
-    width: 100%;
+    width: 98%;
 
     border: none;
 
