@@ -275,6 +275,7 @@ export default function Piloto() {
 
     }, [abrirModalSenha]);
     async function retirarSaldo() {
+        if (loading) return;
 
         if (!senha) {
 
@@ -713,8 +714,13 @@ export default function Piloto() {
                                 <button
                                     className="pilotoConfirmarUnico"
                                     onClick={retirarSaldo}
+                                    disabled={loading}
                                 >
-                                    Confirmar
+                                    {
+                                        loading
+                                            ? "Carregando..."
+                                            : "Confirmar"
+                                    }
                                 </button>
 
                             </div>

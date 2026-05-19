@@ -4,7 +4,7 @@ import React, {
 } from "react";
 import "./lojas.css"
 import Piloto from "../painel/componentes/piloto";
-
+import logoMissionary from "../../../m.png";
 import { API_URL } from "../../config";
 
 export default function Lojascadastradas() {
@@ -94,10 +94,17 @@ export default function Lojascadastradas() {
                 className="parceriaLoginFormulario"
                 onSubmit={fazerLogin}
             >
+                <div>
+                    <img
+                        className="parceriaLoginLogo"
+                        src={logoMissionary}
+                        alt="Missionary Store Brasil"
+                    />
+                    <h1 className="parceriaLoginTitulo">
+                        Login Loja parceira com Missionary Store Brasil
+                    </h1>
+                </div>
 
-                <h1 className="parceriaLoginTitulo">
-                    Login Loja
-                </h1>
 
                 <p className="parceriaLoginSubtitulo">
                     Entre com o email da loja parceira
@@ -142,9 +149,7 @@ export default function Lojascadastradas() {
 
                 <div className="parceriaInfosLoja">
 
-                    <span className="parceriaBemVindo">
-                        Bem-vindo
-                    </span>
+
 
                     <h2 className="parceriaNomeLoja">
                         {loja.nome}
