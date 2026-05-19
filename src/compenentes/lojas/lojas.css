@@ -45,6 +45,47 @@
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.parceriaLoginBotao {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.parceriaLoginBotao:disabled {
+    opacity: 0.85;
+
+    cursor: not-allowed;
+}
+
+.parceriaLoginBotao:disabled::before {
+    content: "";
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-top: 2px solid #ffffff;
+
+    animation: parceriaLoginLoadingGirando 0.7s linear infinite;
+}
+
+@keyframes parceriaLoginLoadingGirando {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .parceriaTitulo {
     font-size: 34px;
 

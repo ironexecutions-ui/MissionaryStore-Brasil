@@ -10,7 +10,7 @@ import { API_URL } from "../../config";
 export default function Lojascadastradas() {
 
     const [email, setEmail] = useState("");
-
+    const [loadingLogin, setLoadingLogin] = useState(false);
     const [senha, setSenha] = useState("");
 
     const [loja, setLoja] = useState(null);
@@ -34,44 +34,61 @@ export default function Lojascadastradas() {
 
         e.preventDefault();
 
-        const resposta = await fetch(
-            `${API_URL}/lojas/login`,
-            {
-                method: "POST",
+        if (loadingLogin) return;
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+        setLoadingLogin(true);
 
-                body: JSON.stringify({
-                    email,
-                    senha
-                })
-            }
-        );
+        try {
 
-        const dados = await resposta.json();
+            const resposta = await fetch(
+                `${API_URL}/lojas/login`,
+                {
+                    method: "POST",
 
-        if (!resposta.ok) {
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-            alert(
-                dados.detail || "Erro"
+                    body: JSON.stringify({
+                        email,
+                        senha
+                    })
+                }
             );
 
-            return;
+            const dados = await resposta.json();
+
+            if (!resposta.ok) {
+
+                alert(
+                    dados.detail || "Erro"
+                );
+
+                return;
+            }
+
+            localStorage.setItem(
+                "token_loja",
+                dados.token
+            );
+
+            localStorage.setItem(
+                "dados_loja",
+                JSON.stringify(dados.loja)
+            );
+
+            setLoja(dados.loja);
+
+        } catch {
+
+            alert(
+                "Erro ao entrar"
+            );
+
+        } finally {
+
+            setLoadingLogin(false);
         }
-
-        localStorage.setItem(
-            "token_loja",
-            dados.token
-        );
-
-        localStorage.setItem(
-            "dados_loja",
-            JSON.stringify(dados.loja)
-        );
-
-        setLoja(dados.loja);
     }
 
     function sair() {
@@ -133,8 +150,13 @@ export default function Lojascadastradas() {
                 <button
                     className="parceriaLoginBotao"
                     type="submit"
+                    disabled={loadingLogin}
                 >
-                    Entrar
+                    {
+                        loadingLogin
+                            ? "Entrando..."
+                            : "Entrar"
+                    }
                 </button>
 
             </form>
