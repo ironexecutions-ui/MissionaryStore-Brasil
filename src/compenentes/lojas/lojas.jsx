@@ -7,7 +7,7 @@ import "./lojas.css";
 import { useLocation } from "react-router-dom";
 import Piloto from "../painel/componentes/piloto";
 
-import HistoricoVendas from "./historicoVendas";
+import HistoricoVendas from "./historicovendas";
 
 import logoMissionary from "../../../m.png";
 
