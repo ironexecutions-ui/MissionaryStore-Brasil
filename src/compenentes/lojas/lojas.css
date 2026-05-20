@@ -123,6 +123,157 @@
         0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+.parceriaBotaoAbaDesabilitada {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.2);
+}
+
+.parceriaModalOverlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.72);
+
+    backdrop-filter: blur(5px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.parceriaModalBloqueio {
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 34px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(243, 246, 255, 0.95));
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.28);
+
+    animation: parceriaModalAnimacao 0.22s ease;
+}
+
+.parceriaModalTitulo {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.parceriaModalTexto {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #4b5563;
+}
+
+.parceriaModalBotao {
+    border: none;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #4f46e5,
+            #6366f1);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 14px 32px rgba(79, 70, 229, 0.24);
+}
+
+.parceriaModalBotao:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes parceriaModalAnimacao {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .parceriaModalBloqueio {
+        padding: 26px;
+
+        border-radius: 22px;
+    }
+
+    .parceriaModalTitulo {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .parceriaModalBloqueio {
+        padding: 22px;
+    }
+
+    .parceriaModalTitulo {
+        font-size: 21px;
+    }
+
+    .parceriaModalTexto {
+        font-size: 14px;
+    }
+}
+
 .parceriaBotaoAba:hover {
     transform: translateY(-2px);
 

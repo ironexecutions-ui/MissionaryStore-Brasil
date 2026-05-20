@@ -2,11 +2,28 @@
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 28px;
+    gap: 24px;
 
-    padding-bottom: 60px;
+    padding: 20px;
+
+    border-radius: 34px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 247, 255, 0.92));
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, 0.08);
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    backdrop-filter: blur(18px);
 }
 
 .historicoTopoResumo {
@@ -14,222 +31,347 @@
 
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-    gap: 20px;
+    gap: 18px;
 }
 
 .historicoCardResumo {
-    position: relative;
-
-    overflow: hidden;
+    padding: 24px;
 
     border-radius: 28px;
 
-    padding: 28px;
-
     background:
         linear-gradient(145deg,
-            rgba(255, 255, 255, 0.12),
-            rgba(255, 255, 255, 0.04));
+            rgba(255, 255, 255, 0.96),
+            rgba(240, 244, 255, 0.88));
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(226, 232, 240, 0.8);
 
-    backdrop-filter: blur(16px);
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.18);
-}
-
-.historicoCardResumo::before {
-    content: "";
-
-    position: absolute;
-
-    top: -80px;
-    right: -80px;
-
-    width: 180px;
-    height: 180px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(circle,
-            rgba(255, 132, 0, 0.35),
-            transparent 70%);
+        0 15px 35px rgba(79, 70, 229, 0.08);
 }
 
 .historicoResumoTitulo {
-    display: block;
+    font-size: 14px;
 
-    color: rgba(255, 255, 255, 0.72);
+    font-weight: 600;
 
-    font-size: 15px;
+    color: #6b7280;
 
-    margin-bottom: 14px;
+    text-transform: uppercase;
 
-    position: relative;
-
-    z-index: 2;
+    letter-spacing: 0.08em;
 }
 
 .historicoResumoValor {
-    position: relative;
-
-    z-index: 2;
-
-    color: white;
-
     font-size: 34px;
 
     font-weight: 800;
+
+    color: #111827;
+}
+
+.historicoSemResultados {
+    width: 100%;
+
+    padding: 60px 20px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(243, 244, 246, 0.92));
+
+    text-align: center;
+
+    color: #6b7280;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .historicoDiaCard {
     width: 100%;
 
-    border-radius: 32px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
 
     padding: 28px;
 
+    border-radius: 30px;
+
     background:
         linear-gradient(145deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.03));
+            rgba(255, 255, 255, 0.96),
+            rgba(248, 250, 255, 0.92));
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    backdrop-filter: blur(18px);
+    border: 1px solid rgba(226, 232, 240, 0.7);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.18);
+        0 18px 45px rgba(15, 23, 42, 0.06);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.historicoDiaCard:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 22px 50px rgba(79, 70, 229, 0.12);
 }
 
 .historicoDiaTopo {
     width: 100%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
 
     flex-wrap: wrap;
-
-    margin-bottom: 25px;
 }
 
 .historicoDiaTitulo {
-    color: white;
+    margin: 0;
 
     font-size: 28px;
 
     font-weight: 800;
 
-    margin-bottom: 8px;
+    color: #111827;
 }
 
 .historicoDiaQuantidade {
-    color: rgba(255, 255, 255, 0.7);
+    margin-top: 8px;
 
     font-size: 15px;
+
+    color: #6b7280;
 }
 
 .historicoDiaTotal {
-    padding: 16px 22px;
+    padding: 14px 22px;
 
     border-radius: 18px;
 
     background:
         linear-gradient(135deg,
-            #00b46f,
-            #00d98b);
+            #4f46e5,
+            #6366f1);
 
     color: white;
 
-    font-size: 24px;
+    font-size: 22px;
 
     font-weight: 800;
 
     box-shadow:
-        0 15px 30px rgba(0, 217, 139, 0.3);
+        0 14px 30px rgba(79, 70, 229, 0.24);
+}
+
+.historicoDiaAcoes {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.historicoBotaoFecharVenda,
+.historicoBotaoDetalhes,
+.historicoComprovanteLink {
+    border: none;
+
+    padding: 15px 22px;
+
+    border-radius: 18px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.historicoBotaoFecharVenda {
+    background:
+        linear-gradient(135deg,
+            #16a34a,
+            #22c55e);
+
+    color: white;
+
+    box-shadow:
+        0 14px 28px rgba(34, 197, 94, 0.22);
+}
+
+.historicoBotaoFecharVenda:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 35px rgba(34, 197, 94, 0.28);
+}
+
+.historicoBotaoDetalhes {
+    background:
+        linear-gradient(135deg,
+            #f59e0b,
+            #f97316);
+
+    color: white;
+
+    box-shadow:
+        0 14px 28px rgba(249, 115, 22, 0.2);
+}
+
+.historicoBotaoDetalhes:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 35px rgba(249, 115, 22, 0.28);
+}
+
+.historicoComprovanteLink {
+    background:
+        linear-gradient(135deg,
+            #0f172a,
+            #1e293b);
+
+    color: white;
+
+    box-shadow:
+        0 14px 28px rgba(15, 23, 42, 0.22);
+}
+
+.historicoComprovanteLink:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 35px rgba(15, 23, 42, 0.3);
 }
 
 .historicoListaVendas {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 20px;
+    gap: 18px;
 }
 
 .historicoVendaItem {
     width: 100%;
 
-    border-radius: 24px;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
 
     padding: 22px;
 
+    border-radius: 24px;
+
     background:
         linear-gradient(145deg,
-            rgba(255, 255, 255, 0.06),
-            rgba(255, 255, 255, 0.03));
+            rgba(248, 250, 252, 0.96),
+            rgba(241, 245, 249, 0.92));
 
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(226, 232, 240, 0.85);
 
-    transition: 0.25s;
-}
-
-.historicoVendaItem:hover {
-    transform: translateY(-2px);
-
-    border-color: rgba(255, 132, 0, 0.28);
+    box-sizing: border-box;
 }
 
 .historicoVendaInfos {
     width: 100%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 18px;
 
     flex-wrap: wrap;
 }
 
 .historicoVendaNome {
-    color: white;
+    margin: 0;
 
-    font-size: 22px;
+    font-size: 20px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    margin-bottom: 6px;
+    color: #111827;
 }
 
 .historicoVendaEmail {
-    color: rgba(255, 255, 255, 0.7);
+    margin-top: 6px;
 
     font-size: 14px;
 
-    word-break: break-word;
+    color: #6b7280;
 }
 
 .historicoVendaValor {
-    color: #00e98d;
+    padding: 12px 18px;
 
-    font-size: 28px;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #10b981,
+            #059669);
+
+    color: white;
+
+    font-size: 20px;
 
     font-weight: 800;
+
+    box-shadow:
+        0 12px 25px rgba(16, 185, 129, 0.2);
 }
 
 .historicoVendaLinhaDetalhes {
-    margin-top: 16px;
+    width: 100%;
 
     display: flex;
+
     align-items: center;
 
     gap: 14px;
@@ -240,200 +382,15 @@
 .historicoVendaLinhaDetalhes span {
     padding: 10px 14px;
 
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    color: rgba(255, 255, 255, 0.82);
-
-    font-size: 13px;
-}
-
-.historicoBotaoDetalhes {
-    margin-top: 18px;
-
-    border: none;
-
-    padding: 14px 22px;
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(135deg,
-            #ff8a00,
-            #ff5a00);
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-
-    box-shadow:
-        0 14px 28px rgba(255, 90, 0, 0.3);
-}
-
-.historicoBotaoDetalhes:hover {
-    transform: translateY(-2px);
-}
-
-.historicoPainelDetalhes {
-    margin-top: 22px;
-
-    border-radius: 22px;
-
-    padding: 22px;
-
-    background:
-        linear-gradient(145deg,
-            rgba(0, 0, 0, 0.18),
-            rgba(255, 255, 255, 0.03));
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 22px;
-}
-
-.historicoDetalhesGrid {
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 18px;
-}
-
-.historicoDetalhesBloco {
-    border-radius: 18px;
-
-    padding: 18px;
-
-    background: rgba(255, 255, 255, 0.04);
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.historicoDetalhesLabel {
-    color: rgba(255, 255, 255, 0.62);
-
-    font-size: 13px;
-}
-
-.historicoDetalhesBloco strong {
-    color: white;
-
-    font-size: 16px;
-
-    word-break: break-word;
-}
-
-.historicoVendaFechada {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 18px;
-
-    flex-wrap: wrap;
-}
-
-.historicoVendaFechadaTexto {
-    color: #00df84;
-
-    font-size: 15px;
-
-    font-weight: 700;
-}
-
-.historicoComprovanteLink {
-    text-decoration: none;
-
-    padding: 12px 18px;
-
     border-radius: 14px;
 
-    background:
-        linear-gradient(135deg,
-            #00b46f,
-            #00dd8c);
+    background: rgba(99, 102, 241, 0.08);
 
-    color: white;
+    color: #4338ca;
 
-    font-weight: 700;
-
-    transition: 0.25s;
-}
-
-.historicoComprovanteLink:hover {
-    transform: translateY(-2px);
-}
-
-.historicoAreaUpload {
-    width: 100%;
-}
-
-.historicoBotaoFecharVenda {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 14px 22px;
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(135deg,
-            #0077ff,
-            #00a6ff);
-
-    color: white;
-
-    font-size: 15px;
+    font-size: 13px;
 
     font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-
-    box-shadow:
-        0 14px 30px rgba(0, 119, 255, 0.3);
-}
-
-.historicoBotaoFecharVenda:hover {
-    transform: translateY(-2px);
-}
-
-.historicoSemResultados {
-    width: 100%;
-
-    padding: 60px 20px;
-
-    border-radius: 28px;
-
-    text-align: center;
-
-    background:
-        linear-gradient(145deg,
-            rgba(255, 255, 255, 0.05),
-            rgba(255, 255, 255, 0.02));
-
-    border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.historicoSemResultados h2 {
-    color: rgba(255, 255, 255, 0.8);
-
-    font-size: 24px;
 }
 
 .historicoLoadingContainer {
@@ -442,38 +399,34 @@
     min-height: 300px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .historicoLoadingTexto {
-    color: white;
+    font-size: 28px;
 
-    font-size: 24px;
+    font-weight: 800;
 
-    font-weight: 700;
+    color: #4f46e5;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1024px) {
 
     .historicoContainerPrincipal {
-        gap: 22px;
+        padding: 18px;
+
+        border-radius: 28px;
+    }
+
+    .historicoTopoResumo {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .historicoDiaCard {
-        padding: 20px;
-    }
-
-    .historicoVendaItem {
-        padding: 18px;
-    }
-
-    .historicoVendaInfos {
-        align-items: flex-start;
-    }
-
-    .historicoVendaValor {
-        font-size: 24px;
+        padding: 24px;
     }
 
     .historicoResumoValor {
@@ -483,9 +436,448 @@
     .historicoDiaTitulo {
         font-size: 24px;
     }
+}
 
-    .historicoVendaFechada {
+@media (max-width: 768px) {
+
+    .historicoContainerPrincipal {
+        padding: 16px;
+
+        gap: 18px;
+
+        border-radius: 24px;
+    }
+
+    .historicoTopoResumo {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .historicoCardResumo {
+        padding: 20px;
+
+        border-radius: 22px;
+    }
+
+    .historicoResumoValor {
+        font-size: 24px;
+    }
+
+    .historicoDiaCard {
+        padding: 20px;
+
+        border-radius: 24px;
+
+        gap: 18px;
+    }
+
+    .historicoDiaTopo {
         flex-direction: column;
+
         align-items: flex-start;
+
+        gap: 14px;
+    }
+
+    .historicoDiaTitulo {
+        font-size: 22px;
+    }
+
+    .historicoDiaQuantidade {
+        font-size: 14px;
+    }
+
+    .historicoDiaTotal {
+        width: 100%;
+
+        text-align: center;
+
+        font-size: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .historicoDiaAcoes {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .historicoBotaoFecharVenda,
+    .historicoBotaoDetalhes,
+    .historicoComprovanteLink {
+        width: 100%;
+
+        min-height: 52px;
+
+        font-size: 14px;
+
+        box-sizing: border-box;
+    }
+
+    .historicoVendaItem {
+        padding: 18px;
+
+        border-radius: 20px;
+    }
+
+    .historicoVendaInfos {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 14px;
+    }
+
+    .historicoVendaValor {
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+    .historicoVendaLinhaDetalhes {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .historicoVendaLinhaDetalhes span {
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .historicoContainerPrincipal {
+        padding: 12px;
+
+        border-radius: 18px;
+    }
+
+    .historicoCardResumo {
+        padding: 16px;
+
+        border-radius: 18px;
+    }
+
+    .historicoResumoTitulo {
+        font-size: 12px;
+    }
+
+    .historicoResumoValor {
+        font-size: 22px;
+    }
+
+    .historicoDiaCard {
+        padding: 16px;
+
+        border-radius: 20px;
+    }
+
+    .historicoDiaTitulo {
+        font-size: 20px;
+
+        line-height: 1.3;
+    }
+
+    .historicoDiaQuantidade {
+        font-size: 13px;
+    }
+
+    .historicoDiaTotal {
+        padding: 12px 16px;
+
+        font-size: 18px;
+
+        border-radius: 14px;
+    }
+
+    .historicoBotaoFecharVenda,
+    .historicoBotaoDetalhes,
+    .historicoComprovanteLink {
+        padding: 14px;
+
+        border-radius: 14px;
+
+        font-size: 13px;
+    }
+
+    .historicoVendaItem {
+        padding: 14px;
+
+        border-radius: 18px;
+    }
+
+    .historicoVendaNome {
+        font-size: 17px;
+
+        line-height: 1.3;
+    }
+
+    .historicoVendaEmail {
+        font-size: 13px;
+
+        word-break: break-word;
+    }
+
+    .historicoVendaValor {
+        font-size: 18px;
+
+        padding: 10px 14px;
+
+        border-radius: 14px;
+    }
+
+    .historicoVendaLinhaDetalhes span {
+        font-size: 12px;
+
+        padding: 10px 12px;
+
+        border-radius: 12px;
+
+        word-break: break-word;
+    }
+
+    .historicoLoadingTexto {
+        font-size: 22px;
+
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .historicoContainerPrincipal {
+        padding: 10px;
+    }
+
+    .historicoCardResumo,
+    .historicoDiaCard,
+    .historicoVendaItem {
+        padding: 12px;
+    }
+
+    .historicoResumoValor {
+        font-size: 20px;
+    }
+
+    .historicoDiaTitulo {
+        font-size: 18px;
+    }
+
+    .historicoVendaNome {
+        font-size: 16px;
+    }
+
+    .historicoBotaoFecharVenda,
+    .historicoBotaoDetalhes,
+    .historicoComprovanteLink {
+        min-height: 48px;
+
+        font-size: 12px;
+    }
+}
+
+.historicoModalOverlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.68);
+
+    backdrop-filter: blur(6px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.historicoModalConfirmacao {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 34px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(243, 246, 255, 0.96));
+
+    box-shadow:
+        0 30px 70px rgba(15, 23, 42, 0.3);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    animation: historicoModalEntrada 0.25s ease;
+}
+
+.historicoModalTitulo {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.historicoModalTexto {
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #374151;
+}
+
+.historicoModalTextoSecundario {
+    margin: 0;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #dc2626;
+}
+
+.historicoModalBotoes {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 14px;
+
+    margin-top: 10px;
+
+    flex-wrap: wrap;
+}
+
+.historicoModalCancelar,
+.historicoModalConfirmar {
+    border: none;
+
+    padding: 15px 22px;
+
+    border-radius: 16px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.historicoModalCancelar {
+    background: #e5e7eb;
+
+    color: #111827;
+}
+
+.historicoModalCancelar:hover {
+    background: #d1d5db;
+}
+
+.historicoModalConfirmar {
+    background:
+        linear-gradient(135deg,
+            #dc2626,
+            #ef4444);
+
+    color: white;
+
+    box-shadow:
+        0 14px 30px rgba(239, 68, 68, 0.25);
+}
+
+.historicoModalConfirmar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 38px rgba(239, 68, 68, 0.32);
+}
+
+@keyframes historicoModalEntrada {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .historicoModalConfirmacao {
+        padding: 26px;
+
+        border-radius: 24px;
+    }
+
+    .historicoModalTitulo {
+        font-size: 24px;
+    }
+
+    .historicoModalBotoes {
+        flex-direction: column;
+    }
+
+    .historicoModalCancelar,
+    .historicoModalConfirmar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .historicoModalConfirmacao {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .historicoModalTitulo {
+        font-size: 21px;
+    }
+
+    .historicoModalTexto,
+    .historicoModalTextoSecundario {
+        font-size: 14px;
     }
 }

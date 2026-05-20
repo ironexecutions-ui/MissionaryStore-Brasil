@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import Cadastro from "./cadastro";
-
+import Fechados from "./fechados";
 import Lojas from "./lojas";
 
 import Lista from "./lista";
@@ -32,10 +32,43 @@ export default function Tudo() {
     const [abaAtiva, setAbaAtiva] = useState("cadastro");
 
     const [carregandoTudoSistema, setCarregandoTudoSistema] = useState(true);
+    const [pendentesFechados, setPendentesFechados] = useState(0);
+    async function buscarPendentesFechados() {
 
+        try {
+
+            const token = localStorage.getItem("token");
+
+            const resposta = await fetch(
+                `${API_URL}/fechamentos`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                }
+            );
+
+            const dados = await resposta.json();
+
+            const totalPendentes = dados.filter(
+                (item) => item.entregue === 0
+            ).length;
+
+            setPendentesFechados(
+                totalPendentes
+            );
+
+        } catch (erro) {
+
+            console.log(erro);
+
+        }
+    }
     useEffect(() => {
 
         verificarLoginSistema();
+
+        buscarPendentesFechados();
 
     }, []);
 
@@ -94,6 +127,14 @@ export default function Tudo() {
         ) {
 
             setAbaAtiva("lojas");
+
+        }
+
+        else if (
+            location.pathname.includes("/painel/fechados")
+        ) {
+
+            setAbaAtiva("fechados");
 
         }
 
@@ -275,6 +316,41 @@ export default function Tudo() {
                     }}
                 >
                     Lojas
+                </button>   <button
+                    className={
+                        abaAtiva === "fechados"
+                            ? "tudoBotaoCadastroSistema tudoBotaoCadastroAtivoSistema"
+                            : "tudoBotaoCadastroSistema"
+                    }
+                    onClick={() => {
+
+                        setAbaAtiva("fechados");
+
+                        navigate("/painel/fechados");
+
+                    }}
+                >
+
+                    <div className="tudoBotaoFechadosInterno">
+
+                        <span>
+                            Fechados
+                        </span>
+
+                        {
+                            pendentesFechados > 0 && (
+
+                                <div className="tudoNotificacaoFechados">
+
+                                    {pendentesFechados}
+
+                                </div>
+
+                            )
+                        }
+
+                    </div>
+
                 </button>
 
             </div>
@@ -334,6 +410,12 @@ export default function Tudo() {
                     &&
                     <div className="tudoLojasWrapperSistema">
                         <Lojas />
+                    </div>
+                }  {
+                    abaAtiva === "fechados"
+                    &&
+                    <div className="tudoLojasWrapperSistema">
+                        <Fechados />
                     </div>
                 }
 

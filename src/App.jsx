@@ -63,6 +63,10 @@ export default function App() {
           path="/painel/lojas"
           element={<Tudo />}
         />  <Route
+          path="/painel/fechados"
+          element={<Tudo />}
+        />
+        <Route
           path="/parceria"
           element={<Lojascadastradas />}
         />

@@ -29,6 +29,9 @@ export default function Cadastro() {
     const [vendedorCadastroDados, setVendedorCadastroDados] = useState(null);
 
     const [missionarioExistente, setMissionarioExistente] = useState(false);
+    const [dadosMissionarioExistente, setDadosMissionarioExistente] = useState(null);
+
+    const [gerandoVoucherExistente, setGerandoVoucherExistente] = useState(false);
     const pdf = Pdf({});
     useEffect(() => {
 
@@ -128,7 +131,7 @@ export default function Cadastro() {
             const dados = await resposta.json();
 
             setMissionarioExistente(true);
-
+            setDadosMissionarioExistente(dados);
             if (dados.nome?.startsWith("Elder ")) {
 
                 setCadastroTituloMissionario(
@@ -169,6 +172,8 @@ export default function Cadastro() {
         } catch {
 
             setMissionarioExistente(false);
+
+            setDadosMissionarioExistente(null);
 
         }
     }
@@ -295,7 +300,51 @@ export default function Cadastro() {
 
         }
     }
+    async function gerarVoucherExistente() {
 
+        try {
+
+            setGerandoVoucherExistente(true);
+
+            if (!dadosMissionarioExistente) {
+                return;
+            }
+
+            const pdfSistema = Pdf({
+
+                nome: dadosMissionarioExistente.nome,
+
+                email: dadosMissionarioExistente.email,
+
+                codigo: dadosMissionarioExistente.codigo,
+
+                senha: dadosMissionarioExistente.senha,
+
+                idioma:
+                    dadosMissionarioExistente.idioma
+                    ||
+                    cadastroIdiomaMissionario,
+
+                saldo:
+                    dadosMissionarioExistente.saldo
+                    ||
+                    0
+            });
+
+            pdfSistema.baixarVoucher();
+
+        } catch {
+
+            setCadastroMensagemMissionario(
+                "Erro ao gerar voucher"
+            );
+
+        } finally {
+
+            setGerandoVoucherExistente(false);
+
+        }
+    }
     if (cadastroCarregandoMissionario) {
 
         return (
@@ -406,8 +455,27 @@ export default function Cadastro() {
                     missionarioExistente
                     &&
                     (
-                        <div className="cadastroExistenteSistema">
-                            Missionário encontrado, saldo será adicionado ao cupom existente
+                        <div className="cadastroExistenteWrapperSistema">
+
+                            <div className="cadastroExistenteSistema">
+                                Missionário encontrado, saldo será adicionado ao cupom existente
+                            </div>
+
+                            <button
+                                type="button"
+                                className="cadastroBotaoVoucherExistenteSistema"
+                                onClick={gerarVoucherExistente}
+                                disabled={gerandoVoucherExistente}
+                            >
+                                {
+                                    gerandoVoucherExistente
+                                        ?
+                                        "Gerando voucher..."
+                                        :
+                                        "Gerar voucher atualizado"
+                                }
+                            </button>
+
                         </div>
                     )
                 }

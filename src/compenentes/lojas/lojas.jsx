@@ -4,7 +4,7 @@ import React, {
 } from "react";
 
 import "./lojas.css";
-
+import { useLocation } from "react-router-dom";
 import Piloto from "../painel/componentes/piloto";
 
 import HistoricoVendas from "./historicoVendas";
@@ -14,7 +14,9 @@ import logoMissionary from "../../../m.png";
 import { API_URL } from "../../config";
 
 export default function Lojascadastradas() {
-
+    const [diaAtualFechado, setDiaAtualFechado] = useState(false);
+    const location = useLocation();
+    const [alertaFechado, setAlertaFechado] = useState(false);
     const [email, setEmail] = useState("");
 
     const [loadingLogin, setLoadingLogin] = useState(false);
@@ -23,8 +25,7 @@ export default function Lojascadastradas() {
 
     const [loja, setLoja] = useState(null);
 
-    const [abaAtiva, setAbaAtiva] = useState("piloto");
-
+    const [abaAtiva, setAbaAtiva] = useState("historico");
     useEffect(() => {
 
         const dados = localStorage.getItem(
@@ -113,7 +114,76 @@ export default function Lojascadastradas() {
 
         setLoja(null);
     }
+    useEffect(() => {
 
+        async function verificarDiaFechado() {
+
+            try {
+
+                const token = localStorage.getItem(
+                    "token_loja"
+                );
+
+                const resposta = await fetch(
+                    `${API_URL}/lojas/historico`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`
+                        }
+                    }
+                );
+
+                const dados = await resposta.json();
+
+                if (!Array.isArray(dados)) {
+                    return;
+                }
+
+                const hoje = new Date();
+
+                const dia = String(
+                    hoje.getDate()
+                ).padStart(2, "0");
+
+                const mes = String(
+                    hoje.getMonth() + 1
+                ).padStart(2, "0");
+
+                const ano = hoje.getFullYear();
+
+                const dataHoje = `${dia}/${mes}/${ano}`;
+
+                const hojeFechado = dados.find((item) => {
+
+                    return (
+                        item.data === dataHoje
+                        &&
+                        item.fechado
+                    );
+
+                });
+
+                if (hojeFechado) {
+
+                    setDiaAtualFechado(true);
+
+                } else {
+
+                    setDiaAtualFechado(false);
+                }
+
+            } catch {
+
+                setDiaAtualFechado(false);
+            }
+        }
+
+        if (loja) {
+
+            verificarDiaFechado();
+        }
+
+    }, [loja]);
     if (!loja) {
 
         return (
@@ -206,10 +276,21 @@ export default function Lojascadastradas() {
 
                 <button
                     className={`parceriaBotaoAba ${abaAtiva === "piloto"
-                            ? "parceriaBotaoAbaAtiva"
+                        ? "parceriaBotaoAbaAtiva"
+                        : ""
+                        } ${diaAtualFechado
+                            ? "parceriaBotaoAbaDesabilitada"
                             : ""
                         }`}
                     onClick={() => {
+
+                        if (diaAtualFechado) {
+
+                            setAlertaFechado(true);
+
+                            return;
+                        }
+
                         setAbaAtiva("piloto");
                     }}
                 >
@@ -218,8 +299,8 @@ export default function Lojascadastradas() {
 
                 <button
                     className={`parceriaBotaoAba ${abaAtiva === "historico"
-                            ? "parceriaBotaoAbaAtiva"
-                            : ""
+                        ? "parceriaBotaoAbaAtiva"
+                        : ""
                         }`}
                     onClick={() => {
                         setAbaAtiva("historico");
@@ -245,7 +326,42 @@ export default function Lojascadastradas() {
                 }
 
             </div>
+            {
+                alertaFechado && (
 
+                    <div className="parceriaModalOverlay">
+
+                        <div className="parceriaModalBloqueio">
+
+                            <h2 className="parceriaModalTitulo">
+                                Vendas encerradas
+                            </h2>
+
+                            <p className="parceriaModalTexto">
+                                As vendas do dia atual já foram fechadas.
+                            </p>
+
+                            <p className="parceriaModalTexto">
+                                Não é mais possível realizar novas vendas hoje.
+                            </p>
+
+                            <button
+                                className="parceriaModalBotao"
+                                onClick={() => {
+
+                                    setAlertaFechado(false);
+
+                                }}
+                            >
+                                Entendi
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                )
+            }
         </div>
     );
 }
