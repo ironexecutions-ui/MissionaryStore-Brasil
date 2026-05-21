@@ -16,14 +16,14 @@ export default function Valor() {
             return null;
         }
 
-        let cotacao = 3.9;
+        let cotacao = 3.8;
 
         if (valorDolar >= 50) {
-            cotacao = 4.1;
+            cotacao = 4.0;
         }
 
         else if (valorDolar >= 30) {
-            cotacao = 4.0;
+            cotacao = 3.9;
         }
 
         return (valorDolar * cotacao).toFixed(2);
