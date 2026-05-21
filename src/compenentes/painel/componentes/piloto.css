@@ -302,6 +302,12 @@
     margin-top: 28px;
 }
 
+.pilotoInputValorUnico {
+    font-size: 15px !important;
+    max-width: 80px;
+    text-align: center;
+}
+
 .pilotoInputValorUnico,
 .pilotoInputLocalUnico {
     width: fit-content;
@@ -320,7 +326,7 @@
 
     color: #111111;
 
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 700;
 
     outline: none;
@@ -421,9 +427,90 @@
     z-index: 999;
 }
 
+.pilotoModalUnico::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pilotoModalUnico::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pilotoModalUnico::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.25);
+
+    border-radius: 20px;
+}
+
+@media (max-width: 420px) {
+
+    .pilotoModalOverlayUnico {
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+    .pilotoModalUnico {
+        width: 100%;
+
+        max-height: 95vh;
+
+        padding: 16px;
+
+        border-radius: 22px 22px 0 0;
+    }
+
+    .pilotoModalTituloUnico {
+        font-size: 18px;
+
+        line-height: 1.3;
+
+        margin-bottom: 18px;
+    }
+
+    .pilotoValorDestaqueUnico {
+        font-size: 28px;
+
+        margin-bottom: 22px;
+    }
+
+    .pilotoPagamentoTituloUnico {
+        font-size: 24px;
+    }
+
+    .pilotoNovoSaldoValorUnico {
+        font-size: 28px;
+    }
+
+    .pilotoPagamentoCheckUnico {
+        width: 74px;
+        height: 74px;
+
+        font-size: 34px;
+    }
+
+    .pilotoSenhaQuadradosUnico {
+        gap: 8px;
+    }
+
+    .pilotoSenhaQuadradoUnico {
+        width: 42px;
+        height: 42px;
+
+        font-size: 16px;
+    }
+
+    .pilotoCancelarUnico,
+    .pilotoConfirmarUnico {
+        width: 100%;
+    }
+}
+
 .pilotoModalUnico {
-    width: 94%;
-    max-width: 420px;
+    width: min(92vw, 430px);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 
     padding: 35px;
 
@@ -438,6 +525,8 @@
 
     box-shadow:
         0 20px 45px rgba(0, 0, 0, 0.06);
+
+    scrollbar-width: thin;
 }
 
 .pilotoModalTituloUnico {
@@ -802,4 +891,196 @@ RESPONSIVIDADE COMPLETA
         font-size: 16px;
         border-radius: 12px;
     }
+}
+
+.pilotoValorPagamentoUnico {
+    text-align: center;
+    padding: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #3f3f3f;
+
+    margin-bottom: 8px;
+}
+
+.pilotoValorDestaqueUnico {
+    text-align: center;
+
+    font-size: 34px;
+    font-weight: 900;
+
+    color: #111111;
+
+    margin-bottom: 28px;
+}
+
+.pilotoPagamentoAprovadoAreaUnico {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation:
+        pilotoEntradaPagamentoUnico 0.6s ease,
+        pilotoBrilhoPagamentoUnico 3s ease-in-out infinite;
+    gap: 16px;
+}
+
+.pilotoPagamentoCheckUnico {
+    width: 96px;
+    height: 96px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg,
+            #19a63d,
+            #5de27f);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 46px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 0 0 rgba(38, 206, 93, 0.5),
+        0 20px 40px rgba(22, 151, 63, 0.35);
+
+    animation:
+        pilotoCheckEntradaUnico 0.45s ease,
+        pilotoPulseCheckUnico 1.8s infinite;
+}
+
+@keyframes pilotoEntradaPagamentoUnico {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+@keyframes pilotoCheckEntradaUnico {
+
+    0% {
+        transform:
+            scale(0.2) rotate(-25deg);
+
+        opacity: 0;
+    }
+
+    60% {
+        transform:
+            scale(1.18) rotate(8deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            scale(1) rotate(0deg);
+    }
+}
+
+@keyframes pilotoPulseCheckUnico {
+
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(38, 206, 93, 0.55),
+            0 20px 40px rgba(22, 151, 63, 0.35);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 22px rgba(38, 206, 93, 0),
+            0 20px 40px rgba(22, 151, 63, 0.2);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(38, 206, 93, 0),
+            0 20px 40px rgba(22, 151, 63, 0.35);
+    }
+}
+
+@keyframes pilotoBrilhoPagamentoUnico {
+
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.04);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.pilotoPagamentoTituloUnico {
+    font-size: 30px;
+    font-weight: 900;
+
+    color: #111111;
+
+    text-align: center;
+}
+
+.pilotoPagamentoDescricaoUnico {
+    text-align: center;
+
+    color: #4d4d4d;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pilotoNovoSaldoBoxUnico {
+    width: 100%;
+
+    padding: 22px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #efefef);
+
+    border: 1px solid #dddddd;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.pilotoNovoSaldoLabelUnico {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #4a4a4a;
+}
+
+.pilotoNovoSaldoValorUnico {
+    font-size: 34px;
+    font-weight: 900;
+
+    color: #111111;
 }

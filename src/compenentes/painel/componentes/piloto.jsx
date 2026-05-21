@@ -26,6 +26,9 @@ export default function Piloto() {
     const [abrirModalSenha, setAbrirModalSenha] = useState(false);
     const [erroSenha, setErroSenha] = useState("");
     const [processandoLeitura, setProcessandoLeitura] = useState(false);
+    const [pagamentoAprovado, setPagamentoAprovado] = useState(false);
+    const [valorPagamento, setValorPagamento] = useState("");
+    const [novoSaldo, setNovoSaldo] = useState(null);
     const tokenSistema =
         localStorage.getItem("token")
         ||
@@ -274,7 +277,9 @@ export default function Piloto() {
         }
 
     }, [abrirModalSenha]);
-    async function retirarSaldo() {
+    async function retirarSaldo(
+        senhaManual = senha
+    ) {
         if (loading) return;
 
         if (!senha) {
@@ -304,7 +309,7 @@ export default function Piloto() {
                         codigo,
                         valor,
                         local,
-                        senha
+                        senha: senhaManual
                     })
                 }
             );
@@ -327,15 +332,15 @@ export default function Piloto() {
                 saldo: data.saldo
             }));
 
-            setValor("");
+            setNovoSaldo(data.saldo);
+
+            setValorPagamento(valor);
+
+            setPagamentoAprovado(true);
 
             setSenha("");
 
-            setAbrirModalSenha(false);
-
-            setMensagem(
-                "Retirada realizada com sucesso"
-            );
+            setValor("");
 
         } catch {
 
@@ -497,9 +502,7 @@ export default function Piloto() {
                             {dados.nome}
                         </h2>
 
-                        <p className="pilotoTextoUnico">
-                            Email: {dados.email}
-                        </p>
+
 
                         <p className="pilotoTextoUnico">
                             Data fim: {dados.data_fim}
@@ -526,21 +529,27 @@ export default function Piloto() {
                             <input
                                 className={
                                     `
-            pilotoInputValorUnico
-            ${valorMaiorQueSaldo
+        pilotoInputValorUnico
+        ${valorMaiorQueSaldo
                                         ? "pilotoInputValorErroUnico"
                                         : ""
                                     }
-            `
+        `
                                 }
-                                placeholder="Valor"
-                                type="number"
+                                placeholder="0.00"
+                                inputMode="numeric"
                                 value={valor}
-                                onChange={(e) =>
-                                    setValor(
-                                        e.target.value
-                                    )
-                                }
+                                onChange={(e) => {
+
+                                    const apenasNumeros =
+                                        e.target.value.replace(/\D/g, "");
+
+                                    const valorFormatado = (
+                                        Number(apenasNumeros || 0) / 100
+                                    ).toFixed(2);
+
+                                    setValor(valorFormatado);
+                                }}
                             />
 
                             {
@@ -635,95 +644,164 @@ export default function Piloto() {
                             <h2 className="pilotoModalTituloUnico">
                                 Senha do Missionário
                             </h2>
+                            <p className="pilotoValorPagamentoUnico">
+                                Valor da retirada
+                            </p>
 
-                            <div
-                                className="pilotoSenhaQuadradosUnico"
-                                onClick={() => {
-                                    document
-                                        .getElementById(
-                                            "pilotoSenhaInputReal"
-                                        )
-                                        ?.focus();
-                                }}
-                            >
-
-                                {[0, 1, 2, 3].map((index) => (
-
-                                    <div
-                                        key={index}
-                                        className={
-                                            `
-                pilotoSenhaQuadradoUnico
-                ${senha.length === index
-                                                ? "pilotoSenhaQuadradoAtivoUnico"
-                                                : ""
-                                            }
-                `
-                                        }
-                                    >
-                                        {
-                                            senha[index]
-                                                ? "*"
-                                                : ""
-                                        }
-                                    </div>
-
-                                ))}
-
-                            </div>
-
-                            <input
-                                id="pilotoSenhaInputReal"
-                                className="pilotoSenhaInputEscondidoUnico"
-                                type="password"
-                                inputMode="numeric"
-                                maxLength={4}
-                                value={senha}
-                                onChange={(e) => {
-
-                                    const valor =
-                                        e.target.value
-                                            .replace(/\D/g, "")
-                                            .slice(0, 4);
-
-                                    setSenha(valor);
-
-                                    setErroSenha("");
-                                }}
-                            />
-
+                            <h3 className="pilotoValorDestaqueUnico">
+                                R$ {
+                                    Number(
+                                        pagamentoAprovado
+                                            ? valorPagamento
+                                            : valor
+                                    ).toFixed(2)
+                                }                            </h3>
                             {
-                                erroSenha && (
-                                    <p className="pilotoErroSenhaModalUnico">
-                                        {erroSenha}
-                                    </p>
+                                pagamentoAprovado ? (
+                                    <div className="pilotoPagamentoAprovadoAreaUnico">
+
+                                        <div className="pilotoPagamentoCheckUnico">
+                                            ✓
+                                        </div>
+
+                                        <h3 className="pilotoPagamentoTituloUnico">
+                                            Pagamento aprovado
+                                        </h3>
+
+
+                                        <div className="pilotoNovoSaldoBoxUnico">
+
+                                            <span className="pilotoNovoSaldoLabelUnico">
+                                                Novo saldo
+                                            </span>
+
+                                            <strong className="pilotoNovoSaldoValorUnico">
+                                                R$ {Number(novoSaldo || 0).toFixed(2)}
+                                            </strong>
+
+                                        </div>
+
+                                        <button
+                                            className="pilotoConfirmarUnico"
+                                            onClick={() => {
+
+                                                setAbrirModalSenha(false);
+
+                                                setPagamentoAprovado(false);
+
+                                                setNovoSaldo(null);
+
+                                                setCodigo("");
+
+                                                setDados(null);
+
+                                                setValor("");
+
+                                                setValorPagamento("");
+
+                                                setErro("");
+
+                                                setMensagem("");
+                                            }}
+                                        >
+                                            Finalizar
+                                        </button>
+
+                                    </div>
+                                ) : (
+                                    <>
+                                        <div
+                                            className="pilotoSenhaQuadradosUnico"
+                                            onClick={() => {
+                                                document
+                                                    .getElementById(
+                                                        "pilotoSenhaInputReal"
+                                                    )
+                                                    ?.focus();
+                                            }}
+                                        >
+
+                                            {[0, 1, 2, 3].map((index) => (
+
+                                                <div
+                                                    key={index}
+                                                    className={
+                                                        `
+                            pilotoSenhaQuadradoUnico
+                            ${senha.length === index
+                                                            ? "pilotoSenhaQuadradoAtivoUnico"
+                                                            : ""
+                                                        }
+                            `
+                                                    }
+                                                >
+                                                    {
+                                                        senha[index]
+                                                            ? "*"
+                                                            : ""
+                                                    }
+                                                </div>
+
+                                            ))}
+
+                                        </div>
+
+                                        <input
+                                            id="pilotoSenhaInputReal"
+                                            className="pilotoSenhaInputEscondidoUnico"
+                                            type="password"
+                                            inputMode="numeric"
+                                            maxLength={4}
+                                            value={senha}
+                                            onChange={(e) => {
+
+                                                const valorDigitado =
+                                                    e.target.value
+                                                        .replace(/\D/g, "")
+                                                        .slice(0, 4);
+
+                                                setSenha(valorDigitado);
+
+                                                setErroSenha("");
+
+                                                if (valorDigitado.length === 4) {
+
+                                                    setTimeout(() => {
+
+                                                        retirarSaldo(valorDigitado);
+                                                    }, 150);
+                                                }
+                                            }}
+                                        />
+
+                                        {
+                                            erroSenha && (
+                                                <p className="pilotoErroSenhaModalUnico">
+                                                    {erroSenha}
+                                                </p>
+                                            )
+                                        }
+
+                                        <div className="pilotoModalBotoesUnico">
+
+                                            <button
+                                                className="pilotoCancelarUnico"
+                                                onClick={() => {
+                                                    setAbrirModalSenha(false);
+                                                    setSenha("");
+                                                }}
+                                            >
+                                                Cancelar
+                                            </button>
+
+
+
+                                        </div>
+                                    </>
                                 )
                             }
-                            <div className="pilotoModalBotoesUnico">
 
-                                <button
-                                    className="pilotoCancelarUnico"
-                                    onClick={() => {
-                                        setAbrirModalSenha(false);
-                                        setSenha("");
-                                    }}
-                                >
-                                    Cancelar
-                                </button>
 
-                                <button
-                                    className="pilotoConfirmarUnico"
-                                    onClick={retirarSaldo}
-                                    disabled={loading}
-                                >
-                                    {
-                                        loading
-                                            ? "Carregando..."
-                                            : "Confirmar"
-                                    }
-                                </button>
-
-                            </div>
 
                         </div>
 
