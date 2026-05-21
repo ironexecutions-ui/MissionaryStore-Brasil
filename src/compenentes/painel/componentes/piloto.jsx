@@ -40,7 +40,16 @@ export default function Piloto() {
     );
     useEffect(() => {
 
-        if (dadosLoja?.nome) {
+        const estaEmParceria =
+            window.location.pathname.includes(
+                "/parceria"
+            );
+
+        if (
+            estaEmParceria
+            &&
+            dadosLoja?.nome
+        ) {
 
             setLocal(
                 dadosLoja.nome
