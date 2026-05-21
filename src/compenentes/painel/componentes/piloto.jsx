@@ -40,11 +40,7 @@ export default function Piloto() {
     );
     useEffect(() => {
 
-        if (
-            dadosLoja?.nome
-            &&
-            !localStorage.getItem("token")
-        ) {
+        if (dadosLoja?.nome) {
 
             setLocal(
                 dadosLoja.nome
