@@ -9,7 +9,7 @@ import Lojascadastradas from "./compenentes/lojas/lojas";
 import Cupons from "./compenentes/cupons/cupons";
 
 import Painel from "./compenentes/painel/painel";
-
+import Link from "./compenentes/link/link";
 import Tudo from "./compenentes/painel/componentes/tudo";
 
 export default function App() {
@@ -69,6 +69,10 @@ export default function App() {
         <Route
           path="/parceria"
           element={<Lojascadastradas />}
+        />
+        <Route
+          path="/path"
+          element={<Link />}
         />
       </Routes>
 

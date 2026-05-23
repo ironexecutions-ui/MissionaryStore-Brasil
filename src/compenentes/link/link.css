@@ -1,0 +1,2025 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* LINHAS FLUTUANDO LIVREMENTE */
+
+.missionaryLinkCardLinhas {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    mix-blend-mode: screen;
+}
+
+/* LINHAS */
+
+.missionaryLinkCardLinhas span {
+
+    position: absolute;
+
+    display: block;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    opacity: 0.42;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 0, 170, 0.95),
+            rgba(0, 174, 255, 0.95),
+            transparent);
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 170, 0.35),
+        0 0 35px rgba(0, 174, 255, 0.22);
+
+    filter:
+        blur(0.2px);
+
+    transform-origin: center;
+
+    animation-timing-function: ease-in-out;
+
+    animation-iteration-count: infinite;
+}
+
+/* LINHAS INDIVIDUAIS */
+
+.missionaryLinkCardLinhas span:nth-child(1) {
+
+    width: 180px;
+
+    top: 12%;
+
+    left: -20%;
+
+    animation:
+        missionaryLinhaLivre1 16s infinite;
+}
+
+.missionaryLinkCardLinhas span:nth-child(2) {
+
+    width: 240px;
+
+    top: 28%;
+
+    left: 65%;
+
+    animation:
+        missionaryLinhaLivre2 18s infinite;
+}
+
+.missionaryLinkCardLinhas span:nth-child(3) {
+
+    width: 210px;
+
+    top: 48%;
+
+    left: -15%;
+
+    animation:
+        missionaryLinhaLivre3 14s infinite;
+}
+
+.missionaryLinkCardLinhas span:nth-child(4) {
+
+    width: 300px;
+
+    top: 66%;
+
+    left: 55%;
+
+    animation:
+        missionaryLinhaLivre4 20s infinite;
+}
+
+.missionaryLinkCardLinhas span:nth-child(5) {
+
+    width: 170px;
+
+    top: 82%;
+
+    left: 10%;
+
+    animation:
+        missionaryLinhaLivre5 15s infinite;
+}
+
+.missionaryLinkCardLinhas span:nth-child(6) {
+
+    width: 260px;
+
+    top: 8%;
+
+    left: 35%;
+
+    animation:
+        missionaryLinhaLivre6 17s infinite;
+}
+
+/* MOVIMENTOS */
+
+@keyframes missionaryLinhaLivre1 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(-12deg) scaleX(1);
+
+        opacity: 0;
+    }
+
+    20% {
+
+        opacity: 0.55;
+    }
+
+    50% {
+
+        transform:
+            translate(180px, 90px) rotate(18deg) scaleX(1.2);
+    }
+
+    100% {
+
+        transform:
+            translate(420px, 260px) rotate(-25deg) scaleX(0.8);
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryLinhaLivre2 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(20deg);
+
+        opacity: 0;
+    }
+
+    25% {
+
+        opacity: 0.45;
+    }
+
+    50% {
+
+        transform:
+            translate(-260px, 160px) rotate(-12deg) scaleX(1.1);
+    }
+
+    100% {
+
+        transform:
+            translate(-500px, 320px) rotate(30deg) scaleX(0.7);
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryLinhaLivre3 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(-18deg);
+
+        opacity: 0;
+    }
+
+    30% {
+
+        opacity: 0.6;
+    }
+
+    50% {
+
+        transform:
+            translate(240px, -120px) rotate(14deg) scaleX(1.3);
+    }
+
+    100% {
+
+        transform:
+            translate(520px, -220px) rotate(-28deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryLinhaLivre4 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(12deg);
+
+        opacity: 0;
+    }
+
+    20% {
+
+        opacity: 0.5;
+    }
+
+    50% {
+
+        transform:
+            translate(-200px, -160px) rotate(-20deg) scaleX(1.2);
+    }
+
+    100% {
+
+        transform:
+            translate(-480px, -300px) rotate(22deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryLinhaLivre5 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(-5deg);
+
+        opacity: 0;
+    }
+
+    25% {
+
+        opacity: 0.45;
+    }
+
+    50% {
+
+        transform:
+            translate(220px, -180px) rotate(26deg) scaleX(1.15);
+    }
+
+    100% {
+
+        transform:
+            translate(420px, -340px) rotate(-16deg);
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryLinhaLivre6 {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) rotate(25deg);
+
+        opacity: 0;
+    }
+
+    20% {
+
+        opacity: 0.55;
+    }
+
+    50% {
+
+        transform:
+            translate(-180px, 200px) rotate(-18deg) scaleX(1.25);
+    }
+
+    100% {
+
+        transform:
+            translate(-420px, 380px) rotate(12deg);
+
+        opacity: 0;
+    }
+}
+
+.missionaryLinkCard {
+
+    width: 100%;
+    margin: auto auto !important;
+    max-width: 520px;
+    right: 7px;
+    position: relative;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    border-radius: 36px;
+
+    padding: 40px 30px;
+
+    backdrop-filter: blur(35px);
+
+    background:
+        linear-gradient(160deg,
+            rgba(3, 15, 35, 0.97) 0%,
+            rgba(6, 31, 68, 0.96) 35%,
+            rgba(8, 48, 102, 0.93) 65%,
+            rgba(2, 10, 24, 0.98) 100%);
+
+    border:
+        1px solid rgba(140, 200, 255, 0.12);
+
+    box-shadow:
+        0 45px 120px rgba(0, 0, 0, 0.70),
+        0 0 80px rgba(0, 102, 255, 0.18),
+        0 0 140px rgba(0, 140, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+
+    animation:
+        missionaryCardEntrada 1.2s ease;
+}
+
+/* GLOW AZUL SUPERIOR */
+
+.missionaryLinkCard::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -180px;
+
+    left: -120px;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 174, 255, 0.35) 0%,
+            rgba(0, 132, 255, 0.18) 35%,
+            rgba(0, 81, 255, 0.08) 55%,
+            transparent 80%);
+
+    filter: blur(35px);
+
+    animation:
+        missionaryGlowMove 8s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* GLOW INFERIOR */
+
+.missionaryLinkCard .missionaryGlowInferior {
+
+    position: absolute;
+
+    bottom: -220px;
+
+    right: -160px;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 119, 255, 0.25) 0%,
+            rgba(0, 81, 255, 0.10) 45%,
+            transparent 80%);
+
+    filter: blur(45px);
+
+    animation:
+        missionaryGlowMoveDois 10s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* BORDA PREMIUM */
+
+.missionaryLinkCard::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 36px;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.02),
+            rgba(0, 174, 255, 0.35),
+            rgba(255, 255, 255, 0.08));
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+/* LINHAS ANIMADAS */
+
+.missionaryLinkLinhas {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+.missionaryLinkLinhas span {
+
+    position: absolute;
+
+    display: block;
+
+    width: 2px;
+
+    height: 180px;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            rgba(0, 174, 255, 0.8),
+            transparent);
+
+    filter: blur(1px);
+
+    opacity: 0.45;
+
+    animation:
+        missionaryLinhaAnimada 7s linear infinite;
+}
+
+.missionaryLinkLinhas span:nth-child(1) {
+
+    left: 15%;
+
+    animation-delay: 0s;
+}
+
+.missionaryLinkLinhas span:nth-child(2) {
+
+    left: 50%;
+
+    animation-delay: 2s;
+}
+
+.missionaryLinkLinhas span:nth-child(3) {
+
+    left: 80%;
+
+    animation-delay: 4s;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes missionaryCardEntrada {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px) scale(0.94) rotateX(8deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) scale(1) rotateX(0deg);
+    }
+}
+
+@keyframes missionaryGlowMove {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+
+    50% {
+
+        transform:
+            translate(40px, 25px) scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+}
+
+@keyframes missionaryGlowMoveDois {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+
+    50% {
+
+        transform:
+            translate(-35px, -20px) scale(1.12);
+    }
+
+    100% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+}
+
+@keyframes missionaryLinhaAnimada {
+
+    0% {
+
+        top: -220px;
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 0.5;
+    }
+
+    85% {
+
+        opacity: 0.5;
+    }
+
+    100% {
+
+        top: 120%;
+
+        opacity: 0;
+    }
+}
+
+.missionaryLinkPagina {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+
+}
+
+.missionaryLinkBlur {
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 132, 255, 0.35),
+            rgba(0, 102, 255, 0.08),
+            transparent 75%);
+
+    filter: blur(100px);
+
+    animation:
+        missionaryFundoAnimado 10s ease-in-out infinite;
+}
+
+.missionaryLinkTopo {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 34px;
+}
+
+.missionaryLinkFotoArea {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border:
+        4px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 45px rgba(0, 102, 255, 0.35),
+        0 0 30px rgba(0, 174, 255, 0.25);
+
+    animation:
+        missionaryLogoFloat 6s ease-in-out infinite;
+}
+
+.missionaryLinkFotoArea img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.missionaryLinkTitulo {
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.35);
+}
+
+.missionaryLinkDescricao {
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.missionaryLinkLista {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.missionaryLinkBotao {
+
+    width: 90% !important;
+    margin: auto auto !important;
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    border-radius: 24px;
+
+    text-decoration: none;
+
+    backdrop-filter: blur(18px);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.03));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        border 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.missionaryLinkBotao::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
+
+    transition:
+        left 0.8s ease;
+}
+
+.missionaryLinkBotao:hover::before {
+
+    left: 120%;
+}
+
+.missionaryLinkBotao:hover {
+
+    transform:
+        translateY(-5px) scale(1.01);
+
+    border:
+        1px solid rgba(0, 174, 255, 0.28);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(0, 174, 255, 0.15);
+}
+
+.missionaryLinkEsquerda {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.missionaryLinkIcone {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.missionaryLinkIcone img {
+
+    width: 60px;
+    border-radius: 20px;
+    height: 60px;
+
+    object-fit: contain;
+}
+
+.missionaryLinkTextos h3 {
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.missionaryLinkCompartilhar {
+
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 58px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    isolation: isolate;
+
+    border-radius: 22px;
+
+    transform-style: preserve-3d;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.04) 35%,
+            rgba(255, 255, 255, 0.02) 100%);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
+
+    transition:
+        transform 0.45s cubic-bezier(.19, 1, .22, 1),
+        box-shadow 0.45s ease,
+        border 0.45s ease,
+        background 0.45s ease;
+}
+
+/* CAMADA GLOW */
+
+.missionaryLinkCompartilhar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: inherit;
+
+    z-index: -2;
+
+    opacity: 0.9;
+
+    background:
+        conic-gradient(from 180deg at 50% 50%,
+            rgba(0, 174, 255, 0.0),
+            rgba(0, 174, 255, 0.35),
+            rgba(255, 255, 255, 0.12),
+            rgba(0, 174, 255, 0.45),
+            rgba(0, 174, 255, 0.0));
+
+    animation:
+        missionaryCompartilharBorda 6s linear infinite;
+}
+
+/* VIDRO INTERNO */
+
+.missionaryLinkCompartilhar::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.02));
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+
+    z-index: -1;
+}
+
+/* HOVER */
+
+.missionaryLinkCompartilhar:hover {
+
+    transform:
+        translateY(-5px) rotateX(10deg) rotateY(-10deg) scale(1.08);
+
+    border:
+        1px solid rgba(0, 174, 255, 0.30);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.40),
+        0 0 45px rgba(0, 174, 255, 0.28),
+        0 0 90px rgba(0, 174, 255, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* CLICK */
+
+.missionaryLinkCompartilhar:active {
+
+    transform:
+        scale(0.93);
+}
+
+/* ICONE */
+
+.missionaryLinkCompartilharIcone {
+
+    width: 26px;
+
+    height: 26px;
+
+    position: relative;
+
+    transition:
+        transform 0.45s cubic-bezier(.19, 1, .22, 1);
+}
+
+.missionaryLinkCompartilhar:hover .missionaryLinkCompartilharIcone {
+
+    transform:
+        rotate(12deg) scale(1.08);
+}
+
+/* BOLINHAS */
+
+.missionaryLinkCompartilharIcone span {
+
+    position: absolute;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 30%,
+            #ffffff,
+            #dff5ff);
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.55),
+        0 0 20px rgba(0, 174, 255, 0.30),
+        0 0 35px rgba(0, 174, 255, 0.15);
+
+    animation:
+        missionaryPulseNodes 2.5s ease-in-out infinite;
+}
+
+.missionaryLinkCompartilharIcone span:nth-child(1) {
+
+    top: 0;
+
+    right: 0;
+
+    animation-delay: 0s;
+}
+
+.missionaryLinkCompartilharIcone span:nth-child(2) {
+
+    left: 0;
+
+    top: 10px;
+
+    animation-delay: 0.4s;
+}
+
+.missionaryLinkCompartilharIcone span:nth-child(3) {
+
+    bottom: 0;
+
+    right: 0;
+
+    animation-delay: 0.8s;
+}
+
+/* LINHAS */
+
+.missionaryLinkCompartilharLinha {
+
+    position: absolute;
+
+    height: 2.5px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 1),
+            rgba(0, 174, 255, 0.8));
+
+    transform-origin: left center;
+
+    box-shadow:
+        0 0 12px rgba(0, 174, 255, 0.30);
+}
+
+.missionaryLinkCompartilharLinhaUm {
+
+    width: 12px;
+
+    top: 6px;
+
+    left: 5px;
+
+    transform:
+        rotate(-28deg);
+}
+
+.missionaryLinkCompartilharLinhaDois {
+
+    width: 12px;
+
+    bottom: 6px;
+
+    left: 5px;
+
+    transform:
+        rotate(28deg);
+}
+
+/* REFLEXO PREMIUM */
+
+.missionaryLinkCompartilharReflexo {
+
+    position: absolute;
+
+    top: -40%;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 220%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.25),
+            transparent);
+
+    transform:
+        rotate(25deg);
+
+    pointer-events: none;
+
+    transition:
+        left 1s ease;
+}
+
+.missionaryLinkCompartilhar:hover .missionaryLinkCompartilharReflexo {
+
+    left: 180%;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes missionaryCompartilharBorda {
+
+    0% {
+
+        transform:
+            rotate(0deg);
+    }
+
+    100% {
+
+        transform:
+            rotate(360deg);
+    }
+}
+
+@keyframes missionaryPulseNodes {
+
+    0% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+    }
+}
+
+/* ========================= */
+/* RESPONSIVIDADE COMPLETA */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .missionaryLinkCard {
+
+        max-width: 92%;
+
+        padding: 34px 24px;
+
+        border-radius: 30px;
+    }
+
+    .missionaryLinkTitulo {
+
+        font-size: 30px;
+    }
+
+    .missionaryLinkDescricao {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .missionaryLinkBotao {
+
+        width: 100%;
+
+        padding: 16px 18px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .missionaryLinkPagina {
+
+        padding: 18px;
+    }
+
+    .missionaryLinkCard {
+
+        max-width: 100%;
+
+        padding: 28px 18px;
+
+        border-radius: 26px;
+    }
+
+    .missionaryLinkFotoArea {
+
+        width: 95px;
+
+        height: 95px;
+
+        margin-bottom: 16px;
+    }
+
+    .missionaryLinkTitulo {
+
+        font-size: 25px;
+
+        line-height: 1.1;
+    }
+
+    .missionaryLinkDescricao {
+
+        width: 95%;
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .missionaryLinkLista {
+
+        gap: 14px;
+    }
+
+    .missionaryLinkBotao {
+
+        padding: 14px 14px;
+
+        border-radius: 20px;
+    }
+
+    .missionaryLinkEsquerda {
+
+        gap: 12px;
+
+        min-width: 0;
+    }
+
+    .missionaryLinkIcone {
+
+        width: 50px;
+
+        height: 50px;
+
+        min-width: 50px;
+
+        border-radius: 16px;
+    }
+
+    .missionaryLinkIcone img {
+
+        width: 48px;
+
+        height: 48px;
+
+        border-radius: 14px;
+    }
+
+    .missionaryLinkTextos {
+
+        min-width: 0;
+    }
+
+    .missionaryLinkTextos h3 {
+
+        font-size: 15px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .missionaryLinkCompartilhar {
+
+        width: 44px;
+
+        height: 44px;
+
+        min-width: 44px;
+
+        border-radius: 16px;
+    }
+
+    .missionaryLinkCompartilharIcone {
+
+        width: 20px;
+
+        height: 20px;
+    }
+
+    .missionaryLinkCompartilharIcone span {
+
+        width: 6px;
+
+        height: 6px;
+    }
+
+    .missionaryLinkCompartilharLinhaUm {
+
+        width: 10px;
+
+        top: 5px;
+
+        left: 4px;
+    }
+
+    .missionaryLinkCompartilharLinhaDois {
+
+        width: 10px;
+
+        bottom: 5px;
+
+        left: 4px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .missionaryLinkPagina {
+
+        padding: 10px;
+    }
+
+    .missionaryLinkCard {
+
+        padding: 22px 14px;
+
+        border-radius: 22px;
+    }
+
+    .missionaryLinkTopo {
+
+        margin-bottom: 24px;
+    }
+
+    .missionaryLinkFotoArea {
+
+        width: 82px;
+
+        height: 82px;
+    }
+
+    .missionaryLinkTitulo {
+
+        font-size: 21px;
+    }
+
+    .missionaryLinkDescricao {
+
+        font-size: 12px;
+
+        line-height: 1.5;
+    }
+
+    .missionaryLinkBotao {
+
+        padding: 12px;
+
+        border-radius: 18px;
+    }
+
+    .missionaryLinkEsquerda {
+
+        gap: 10px;
+    }
+
+    .missionaryLinkIcone {
+
+        width: 44px;
+
+        height: 44px;
+
+        min-width: 44px;
+
+        border-radius: 14px;
+    }
+
+    .missionaryLinkIcone img {
+
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .missionaryLinkTextos h3 {
+
+        font-size: 14px;
+    }
+
+    .missionaryLinkCompartilhar {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        border-radius: 14px;
+    }
+
+    .missionaryLinkCompartilharIcone {
+
+        transform:
+            scale(0.88);
+    }
+
+    .missionaryLinkBlur {
+
+        width: 420px;
+
+        height: 420px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .missionaryLinkCard {
+
+        padding: 18px 10px;
+    }
+
+    .missionaryLinkTitulo {
+
+        font-size: 18px;
+    }
+
+    .missionaryLinkDescricao {
+
+        font-size: 11px;
+    }
+
+    .missionaryLinkBotao {
+
+        padding: 10px;
+    }
+
+    .missionaryLinkTextos h3 {
+
+        font-size: 13px;
+    }
+
+    .missionaryLinkIcone {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+    }
+
+    .missionaryLinkIcone img {
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+    .missionaryLinkCompartilhar {
+
+        width: 36px;
+
+        height: 36px;
+
+        min-width: 36px;
+    }
+
+    .missionaryLinkCompartilharIcone {
+
+        transform:
+            scale(0.76);
+    }
+}
+
+.missionaryLinkShowcaseArea {
+
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    margin-top: 18px;
+
+    padding: 10px 0;
+
+    isolation: isolate;
+}
+
+/* TEXTO */
+
+.missionaryLinkTextoAnimado {
+
+    width: 100%;
+
+    min-height: 38px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.missionaryLinkTextoAtivo {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 18px rgba(0, 174, 255, 0.20),
+        0 4px 12px rgba(0, 0, 0, 0.35);
+
+    animation:
+        missionaryTextoCinematico 8s cubic-bezier(.19, 1, .22, 1) infinite;
+}
+
+/* GLOW TEXTO */
+
+.missionaryLinkTextoAnimado::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 174, 255, 0.22),
+            transparent 75%);
+
+    filter: blur(28px);
+
+    animation:
+        missionaryTextoGlow 3s ease infinite;
+}
+
+/* AREA FOTOS */
+
+.missionaryLinkFotosArea {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    perspective: 1200px;
+
+    min-height: 110px;
+}
+
+/* FOTO */
+
+.missionaryLinkFotoMini {
+
+    width: 88px;
+
+    height: 88px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    transform-style: preserve-3d;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.03));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(0, 174, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    animation:
+        missionaryFotoCinematica 8s cubic-bezier(.19, 1, .22, 1) infinite;
+}
+
+/* FOTO 1 */
+
+.missionaryLinkFotoMini:nth-child(1) {
+
+    animation-delay: 0s;
+}
+
+/* FOTO 2 */
+
+.missionaryLinkFotoMini:nth-child(2) {
+
+    animation-delay: 0.15s;
+}
+
+/* FOTO 3 */
+
+.missionaryLinkFotoMini:nth-child(3) {
+
+    animation-delay: 0.3s;
+}
+
+/* IMG */
+
+.missionaryLinkFotoMini img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.missionaryLinkFotoMini:hover img {
+
+    transform:
+        scale(1.08);
+}
+
+/* REFLEXO */
+
+.missionaryLinkFotoMini::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -120%;
+
+    left: -40%;
+
+    width: 60%;
+
+    height: 320%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.28),
+            transparent);
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        missionaryReflexoFoto 3s linear infinite;
+}
+
+/* GLOW EXTERNO */
+
+.missionaryLinkFotoMini::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    z-index: -1;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(135deg,
+            rgba(0, 174, 255, 0.28),
+            transparent,
+            rgba(255, 255, 255, 0.08));
+
+    filter: blur(14px);
+
+    opacity: 0.8;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes missionaryTextoCinematico {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px) scale(0.92);
+
+        filter:
+            blur(10px);
+    }
+
+    12% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) scale(1);
+
+        filter:
+            blur(0px);
+    }
+
+    82% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) scale(1);
+
+        filter:
+            blur(0px);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-30px) scale(1.05);
+
+        filter:
+            blur(8px);
+    }
+}
+
+@keyframes missionaryFotoCinematica {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px) rotateX(30deg) scale(0.75);
+
+        filter:
+            blur(10px);
+    }
+
+    15% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) rotateX(0deg) scale(1);
+
+        filter:
+            blur(0px);
+    }
+
+    75% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) rotateX(0deg) scale(1);
+
+        filter:
+            blur(0px);
+    }
+
+    82% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0px) rotateX(0deg) scale(1);
+
+        filter:
+            blur(0px);
+    }
+
+    90% {
+
+        opacity: 0.55;
+
+        transform:
+            translateY(-12px) rotateX(-8deg) scale(0.95);
+
+        filter:
+            blur(4px);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-35px) rotateX(-15deg) scale(0.82);
+
+        filter:
+            blur(10px);
+    }
+}
+
+@keyframes missionaryTextoGlow {
+
+    0% {
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: 1;
+    }
+
+    80% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0;
+    }
+}
+
+@keyframes missionaryReflexoFoto {
+
+    0% {
+
+        left: -80%;
+    }
+
+    100% {
+
+        left: 180%;
+    }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 700px) {
+
+    .missionaryLinkFotosArea {
+
+        gap: 12px;
+    }
+
+    .missionaryLinkFotoMini {
+
+        width: 72px;
+
+        height: 72px;
+
+        border-radius: 20px;
+    }
+
+    .missionaryLinkTextoAtivo {
+
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .missionaryLinkFotosArea {
+
+        gap: 8px;
+    }
+
+    .missionaryLinkFotoMini {
+
+        width: 60px;
+
+        height: 60px;
+
+        border-radius: 16px;
+    }
+
+    .missionaryLinkTextoAtivo {
+
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+}
+
+.missionaryLinkRodape {
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-align: center;
+}
+
+.missionaryLinkRodapeLinha {
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.16),
+            transparent);
+}
+
+.missionaryLinkRodape p {
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+}
+
+.missionaryLinkRodape span {
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+
+    .missionaryLinkRodape p {
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    .missionaryLinkRodape span {
+
+        font-size: 10px;
+    }
+}
