@@ -297,7 +297,7 @@ export default function Link() {
                     {/* REDE SOCIAL */}
 
                     <a
-                        href="https://missionetwork.com"
+                        href="https://missionarystorebrasil.com/produtos/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="missionaryLinkBotao missionaryLinkRede"
@@ -372,7 +372,7 @@ export default function Link() {
                     {/* COMPRAS */}
 
                     <a
-                        href="https://missionarystorebrasil.com/produtos/"
+                        href="https://missionetwork.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="missionaryLinkBotao missionaryLinkCompras"
