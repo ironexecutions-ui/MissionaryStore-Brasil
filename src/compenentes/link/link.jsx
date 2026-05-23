@@ -317,8 +317,7 @@ export default function Link() {
                             <div className="missionaryLinkTextos">
 
                                 <h3>
-                                    Nossa Rede Social
-                                </h3>
+                                    Compras Online                                </h3>
 
                             </div>
 
@@ -393,7 +392,7 @@ export default function Link() {
                             <div className="missionaryLinkTextos">
 
                                 <h3>
-                                    Compras Online
+                                    Nossa Rede social
                                 </h3>
 
                             </div>

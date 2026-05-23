@@ -882,18 +882,18 @@
 
     isolation: isolate;
 
-    border-radius: 22px;
+    border-radius: 26px !important;
 
     transform-style: preserve-3d;
 
     background:
         linear-gradient(145deg,
-            rgba(255, 255, 255, 0.18) 0%,
+            rgba(178, 17, 17, 0.18) 0%,
             rgba(255, 255, 255, 0.04) 35%,
             rgba(255, 255, 255, 0.02) 100%);
 
     border:
-        1px solid rgba(255, 255, 255, 0.10);
+        1px solid rgba(0, 0, 0, 0.626);
 
     backdrop-filter: blur(18px);
 
