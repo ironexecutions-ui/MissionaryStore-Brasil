@@ -1,0 +1,708 @@
+/* fase3.css */
+
+.fase3RecargaContainer {
+
+    width: 100%;
+    min-height: 100vh;
+
+
+    box-sizing: border-box;
+
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.fase3RecargaContainer::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(88, 132, 255, 0.15),
+            transparent 70%);
+
+    top: -180px;
+    right: -140px;
+
+    filter: blur(40px);
+
+    pointer-events: none;
+}
+
+.fase3RecargaCard {
+
+    width: 90%;
+    max-width: 620px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+
+    border-radius: 34px;
+
+    padding:
+        38px;
+
+    backdrop-filter:
+        blur(28px);
+    margin: auto auto;
+    background:
+        linear-gradient(145deg,
+            rgba(13, 21, 40, 0.96),
+            rgba(6, 12, 25, 0.94));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.fase3RecargaTitulo {
+
+    margin: 0 0 28px;
+
+    color: #ffffff;
+
+    font-size: 2.2rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.04em;
+
+    text-align: center;
+}
+
+.fase3RecargaInput {
+
+    width: 90%;
+
+    border: none;
+    outline: none;
+
+    border-radius: 22px;
+
+    padding:
+        22px 24px;
+
+    box-sizing: border-box;
+
+    color: #ffffff;
+
+    font-size: 1.3rem;
+
+    font-weight: 700;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        0.25s ease;
+}
+
+.fase3RecargaInput:focus {
+
+    border-color:
+        rgba(88, 132, 255, 0.45);
+
+    background:
+        rgba(88, 132, 255, 0.08);
+
+    box-shadow:
+        0 0 0 5px rgba(88, 132, 255, 0.12);
+}
+
+.fase3RecargaInput::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+.fase3ResumoContainer {
+
+    margin-top: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.fase3ResumoLinha {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        18px 22px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.025));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fase3ResumoLinha span {
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 0.96rem;
+
+    font-weight: 500;
+}
+
+.fase3ResumoLinha strong {
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+}
+
+.fase3StripeArea {
+
+    margin-top: 34px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.fase3StripeBox {
+
+    border-radius: 24px;
+
+    padding:
+        22px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        0.25s ease;
+}
+
+.fase3StripeBox:focus-within {
+
+    border-color:
+        rgba(88, 132, 255, 0.45);
+
+    box-shadow:
+        0 0 0 4px rgba(88, 132, 255, 0.12);
+}
+
+.fase3PagarBotao {
+
+    width: 90%;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    border-radius: 22px;
+
+    padding:
+        20px;
+
+    color: #ffffff;
+
+    font-size: 1.08rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    background:
+        linear-gradient(135deg,
+            #5a8cff,
+            #6b5cff);
+
+    box-shadow:
+        0 18px 40px rgba(90, 140, 255, 0.35);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        opacity 0.22s ease;
+}
+
+.fase3PagarBotao:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 24px 50px rgba(90, 140, 255, 0.45);
+}
+
+.fase3PagarBotao:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.fase3BotaoTeste {
+
+    width: 90%;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+
+    padding:
+        16px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 0.96rem;
+
+    font-weight: 700;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        0.22s ease;
+}
+
+.fase3BotaoTeste:hover {
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    transform:
+        translateY(-2px);
+}
+
+.fase3ModalOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.72);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.fase3ModalSucesso {
+
+    width: 90%;
+    max-width: 420px;
+
+    text-align: center;
+
+    border-radius: 34px;
+
+    padding:
+        42px 30px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(14, 24, 45, 0.98),
+            rgba(7, 12, 24, 0.96));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.55);
+}
+
+.fase3ModalCheck {
+
+    width: 100px;
+    height: 100px;
+
+    margin:
+        0 auto 24px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(135deg,
+            #2ecc71,
+            #18b566);
+
+    box-shadow:
+        0 20px 50px rgba(46, 204, 113, 0.35);
+}
+
+.fase3ModalSucesso h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+}
+
+.fase3ModalSucesso p {
+
+    margin-top: 14px;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    line-height: 1.7;
+
+    font-size: 1rem;
+}
+
+.fase3ModalLoading {
+
+    margin-top: 24px;
+
+    color: #8fb4ff;
+
+    font-size: 0.96rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+/* ======================================== */
+/* RESPONSIVO */
+/* ======================================== */
+
+@media (max-width: 768px) {
+
+    .fase3RecargaContainer {
+
+        padding:
+            12px 12px 110px;
+    }
+
+    .fase3RecargaCard {
+
+        margin-top: 14px;
+
+        padding:
+            24px 18px;
+
+        border-radius: 26px;
+    }
+
+    .fase3RecargaTitulo {
+
+        font-size: 1.6rem;
+
+        line-height: 1.15;
+
+        margin-bottom: 22px;
+    }
+
+    .fase3RecargaInput {
+
+        padding:
+            18px 16px;
+
+        border-radius: 18px;
+
+        font-size: 1rem;
+    }
+
+    .fase3ResumoContainer {
+
+        margin-top: 22px;
+
+        gap: 12px;
+    }
+
+    .fase3ResumoLinha {
+
+        padding:
+            14px 14px;
+
+        border-radius: 18px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 6px;
+    }
+
+    .fase3ResumoLinha span {
+
+        font-size: 0.86rem;
+
+        line-height: 1.5;
+    }
+
+    .fase3ResumoLinha strong {
+
+        font-size: 0.92rem;
+    }
+
+    .fase3StripeArea {
+
+        margin-top: 24px;
+
+        gap: 16px;
+    }
+
+    .fase3StripeBox {
+
+        padding:
+            18px;
+
+        border-radius: 18px;
+    }
+
+    .fase3PagarBotao {
+
+        padding:
+            17px;
+
+        border-radius: 18px;
+
+        font-size: 0.94rem;
+    }
+
+    .fase3BotaoTeste {
+
+        padding:
+            15px;
+
+        border-radius: 16px;
+
+        font-size: 0.86rem;
+    }
+
+    .fase3ModalSucesso {
+
+        padding:
+            32px 20px;
+
+        border-radius: 26px;
+    }
+
+    .fase3ModalCheck {
+
+        width: 82px;
+        height: 82px;
+
+        font-size: 2.4rem;
+
+        margin:
+            0 auto 18px;
+    }
+
+    .fase3ModalSucesso h2 {
+
+        font-size: 1.5rem;
+    }
+
+    .fase3ModalSucesso p {
+
+        font-size: 0.9rem;
+
+        line-height: 1.6;
+    }
+
+    .fase3ModalLoading {
+
+        margin-top: 18px;
+
+        font-size: 0.82rem;
+    }
+
+    .fase3RecargaContainer::before {
+
+        width: 260px;
+        height: 260px;
+
+        top: -120px;
+        right: -100px;
+
+        filter:
+            blur(30px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fase3RecargaContainer {
+
+        padding:
+            8px 10px 105px;
+    }
+
+    .fase3RecargaCard {
+
+        padding:
+            20px 14px;
+
+        border-radius: 22px;
+    }
+
+    .fase3RecargaTitulo {
+
+        font-size: 1.35rem;
+
+        margin-bottom: 18px;
+    }
+
+    .fase3RecargaInput {
+
+        padding:
+            16px 14px;
+
+        border-radius: 16px;
+
+        font-size: 0.92rem;
+    }
+
+    .fase3ResumoLinha {
+
+        padding:
+            12px;
+
+        border-radius: 16px;
+    }
+
+    .fase3ResumoLinha span {
+
+        font-size: 0.8rem;
+    }
+
+    .fase3ResumoLinha strong {
+
+        font-size: 0.86rem;
+    }
+
+    .fase3StripeBox {
+
+        padding:
+            15px;
+
+        border-radius: 16px;
+    }
+
+    .fase3PagarBotao {
+
+        padding:
+            15px;
+
+        border-radius: 16px;
+
+        font-size: 0.86rem;
+    }
+
+    .fase3BotaoTeste {
+
+        padding:
+            13px;
+
+        border-radius: 14px;
+
+        font-size: 0.8rem;
+    }
+
+    .fase3ModalSucesso {
+
+        padding:
+            26px 16px;
+
+        border-radius: 22px;
+    }
+
+    .fase3ModalCheck {
+
+        width: 72px;
+        height: 72px;
+
+        font-size: 2rem;
+    }
+
+    .fase3ModalSucesso h2 {
+
+        font-size: 1.25rem;
+    }
+
+    .fase3ModalSucesso p {
+
+        font-size: 0.82rem;
+    }
+
+    .fase3ModalLoading {
+
+        font-size: 0.75rem;
+    }
+
+    .fase3RecargaContainer::before {
+
+        width: 180px;
+        height: 180px;
+
+        top: -90px;
+        right: -70px;
+
+        filter:
+            blur(24px);
+    }
+}

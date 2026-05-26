@@ -1,0 +1,855 @@
+/* ========================================= */
+/* CONTAINER */
+/* ========================================= */
+
+.fase5Container {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+
+}
+
+/* ========================================= */
+/* FUNDO */
+/* ========================================= */
+
+.fase5Container::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(89, 128, 255, 0.15),
+            transparent 70%);
+
+    top: -280px;
+    right: -180px;
+
+    filter:
+        blur(70px);
+
+    pointer-events: none;
+}
+
+.fase5Container::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(56, 189, 248, 0.12),
+            transparent 75%);
+
+    bottom: -220px;
+    left: -140px;
+
+    filter:
+        blur(60px);
+
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* AREA ABAIXO HEADER */
+/* ========================================= */
+
+.fase5Conteudo {
+
+    width: 100%;
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        38px 20px 70px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* ========================================= */
+/* CARD */
+/* ========================================= */
+
+.fase5Card {
+
+    width: 100%;
+    max-width: 680px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border-radius: 38px;
+
+    padding:
+        54px 38px;
+
+    backdrop-filter:
+        blur(30px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(11, 20, 38, 0.97),
+            rgba(6, 12, 24, 0.96));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 35px 120px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.fase5Card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+}
+
+/* ========================================= */
+/* GLOW */
+/* ========================================= */
+
+.fase5Glow {
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 197, 94, 0.2),
+            transparent 75%);
+
+    top: -120px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    filter:
+        blur(50px);
+
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* CHECK */
+/* ========================================= */
+
+.fase5CheckArea {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.fase5Check {
+
+    width: 125px;
+    height: 125px;
+
+    margin:
+        0 auto 26px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    font-size: 3.8rem;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(135deg,
+            #22c55e,
+            #16a34a);
+
+    box-shadow:
+        0 24px 60px rgba(34, 197, 94, 0.4);
+
+    position: relative;
+}
+
+.fase5Check::before {
+
+    content: "";
+
+
+    inset: -12px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(34, 197, 94, 0.24);
+
+    animation:
+        fase5Pulse 2.5s infinite;
+}
+
+@keyframes fase5Pulse {
+
+    0% {
+
+        transform: scale(0.9);
+
+        opacity: 0.7;
+    }
+
+    70% {
+
+        transform: scale(1.16);
+
+        opacity: 0;
+    }
+
+    100% {
+
+        opacity: 0;
+    }
+}
+
+/* ========================================= */
+/* STATUS */
+/* ========================================= */
+
+.fase5Status {
+
+    display: inline-flex;
+
+    margin-bottom: 18px;
+
+    padding:
+        10px 18px;
+
+    border-radius: 999px;
+
+    color: #9effc0;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid rgba(34, 197, 94, 0.18);
+}
+
+/* ========================================= */
+/* TITULO */
+/* ========================================= */
+
+.fase5Titulo {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2.7rem;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.05em;
+}
+
+.fase5Descricao {
+
+    max-width: 520px;
+
+    margin:
+        22px auto 0;
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    font-weight: 500;
+}
+
+/* ========================================= */
+/* BOX INFO */
+/* ========================================= */
+
+.fase5MensagemBox {
+
+    margin-top: 38px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    border-radius: 28px;
+
+    padding:
+        26px;
+
+    text-align: left;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.025));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fase5MensagemIcone {
+
+    min-width: 54px;
+    min-height: 54px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #8db5ff;
+
+    font-size: 1.3rem;
+
+    background:
+        rgba(90, 140, 255, 0.12);
+
+    border:
+        1px solid rgba(90, 140, 255, 0.15);
+}
+
+.fase5MensagemConteudo h3 {
+
+    margin: 0 0 10px;
+
+    color: #ffffff;
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+}
+
+.fase5MensagemConteudo p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    line-height: 1.8;
+
+    font-size: 0.96rem;
+}
+
+/* ========================================= */
+/* INFO GRID */
+/* ========================================= */
+
+.fase5InfoGrid {
+
+    margin-top: 28px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(220px, 1fr));
+
+    gap: 16px;
+}
+
+.fase5InfoCard {
+
+    border-radius: 24px;
+
+    padding:
+        22px;
+
+    text-align: left;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.025));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fase5InfoLabel {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+.fase5InfoValor {
+
+    color: #ffffff;
+
+    font-size: 1.25rem;
+
+    font-weight: 800;
+
+    word-break: break-word;
+}
+
+/* ========================================= */
+/* BOTAO */
+/* ========================================= */
+
+.fase5BotaoVoucher {
+
+    width: 100%;
+
+    margin-top: 34px;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    border-radius: 24px;
+
+    padding:
+        22px;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    background:
+        linear-gradient(135deg,
+            #5a8cff,
+            #6c5cff);
+
+    box-shadow:
+        0 22px 55px rgba(90, 140, 255, 0.35);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        opacity 0.22s ease;
+}
+
+.fase5BotaoVoucher:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 30px 70px rgba(90, 140, 255, 0.45);
+}
+
+.fase5BotaoVoucher:active {
+
+    transform:
+        scale(0.985);
+}
+
+.fase5BotaoVoucher:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* ========================================= */
+/* RESPONSIVO */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+    .fase5Conteudo {
+
+        padding:
+            16px 12px 110px;
+    }
+
+    .fase5Card {
+
+        border-radius: 28px;
+
+        padding:
+            34px 20px;
+    }
+
+    .fase5Glow {
+
+        width: 220px;
+        height: 220px;
+
+        top: -80px;
+
+        filter:
+            blur(35px);
+    }
+
+    .fase5Check {
+
+        width: 95px;
+        height: 95px;
+
+        font-size: 2.8rem;
+
+        margin:
+            0 auto 20px;
+    }
+
+    .fase5Status {
+
+        font-size: 0.68rem;
+
+        padding:
+            8px 14px;
+
+        margin-bottom: 14px;
+
+        letter-spacing: 0.14em;
+    }
+
+    .fase5Titulo {
+
+        font-size: 1.8rem;
+
+        line-height: 1.15;
+    }
+
+    .fase5Descricao {
+
+        font-size: 0.92rem;
+
+        line-height: 1.7;
+
+        margin:
+            18px auto 0;
+    }
+
+    .fase5MensagemBox {
+
+        margin-top: 28px;
+
+        padding:
+            20px;
+
+        border-radius: 22px;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .fase5MensagemIcone {
+
+        min-width: 48px;
+        min-height: 48px;
+
+        border-radius: 14px;
+
+        font-size: 1.1rem;
+    }
+
+    .fase5MensagemConteudo h3 {
+
+        font-size: 1rem;
+
+        margin-bottom: 8px;
+    }
+
+    .fase5MensagemConteudo p {
+
+        font-size: 0.88rem;
+
+        line-height: 1.7;
+    }
+
+    .fase5InfoGrid {
+
+        margin-top: 22px;
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .fase5InfoCard {
+
+        padding:
+            18px;
+
+        border-radius: 20px;
+    }
+
+    .fase5InfoLabel {
+
+        font-size: 0.68rem;
+
+        margin-bottom: 8px;
+    }
+
+    .fase5InfoValor {
+
+        font-size: 1.08rem;
+    }
+
+    .fase5BotaoVoucher {
+
+        margin-top: 26px;
+
+        padding:
+            18px;
+
+        border-radius: 18px;
+
+        font-size: 0.92rem;
+    }
+
+    .fase5Container::before {
+
+        width: 280px;
+        height: 280px;
+
+        top: -140px;
+        right: -100px;
+
+        filter:
+            blur(40px);
+    }
+
+    .fase5Container::after {
+
+        width: 220px;
+        height: 220px;
+
+        bottom: -120px;
+        left: -80px;
+
+        filter:
+            blur(35px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fase5Conteudo {
+
+        padding:
+            10px 10px 105px;
+    }
+
+    .fase5Card {
+
+        border-radius: 22px;
+
+        padding:
+            28px 14px;
+    }
+
+    .fase5Glow {
+
+        width: 160px;
+        height: 160px;
+
+        top: -60px;
+
+        filter:
+            blur(24px);
+    }
+
+    .fase5Check {
+
+        width: 78px;
+        height: 78px;
+
+        font-size: 2.2rem;
+
+        margin:
+            0 auto 18px;
+    }
+
+    .fase5Status {
+
+        font-size: 0.6rem;
+
+        padding:
+            7px 12px;
+
+        margin-bottom: 12px;
+    }
+
+    .fase5Titulo {
+
+        font-size: 1.42rem;
+    }
+
+    .fase5Descricao {
+
+        font-size: 0.82rem;
+
+        line-height: 1.65;
+    }
+
+    .fase5MensagemBox {
+
+        margin-top: 22px;
+
+        padding:
+            16px;
+
+        border-radius: 18px;
+    }
+
+    .fase5MensagemIcone {
+
+        min-width: 42px;
+        min-height: 42px;
+
+        border-radius: 12px;
+
+        font-size: 1rem;
+    }
+
+    .fase5MensagemConteudo h3 {
+
+        font-size: 0.92rem;
+    }
+
+    .fase5MensagemConteudo p {
+
+        font-size: 0.8rem;
+
+        line-height: 1.6;
+    }
+
+    .fase5InfoCard {
+
+        padding:
+            15px;
+
+        border-radius: 16px;
+    }
+
+    .fase5InfoLabel {
+
+        font-size: 0.62rem;
+    }
+
+    .fase5InfoValor {
+
+        font-size: 0.96rem;
+    }
+
+    .fase5BotaoVoucher {
+
+        margin-top: 22px;
+
+        padding:
+            16px;
+
+        border-radius: 16px;
+
+        font-size: 0.84rem;
+    }
+
+    .fase5Container::before {
+
+        width: 180px;
+        height: 180px;
+
+        top: -80px;
+        right: -70px;
+
+        filter:
+            blur(28px);
+    }
+
+    .fase5Container::after {
+
+        width: 160px;
+        height: 160px;
+
+        bottom: -80px;
+        left: -60px;
+
+        filter:
+            blur(26px);
+    }
+}

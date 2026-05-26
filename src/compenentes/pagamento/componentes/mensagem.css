@@ -1,0 +1,588 @@
+/* mensagem.css */
+
+.missionaryMensajeContainer {
+
+    width: 100%;
+    max-width: 1900px;
+
+    margin: 0px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        75px 65px;
+
+    box-sizing: border-box;
+
+    border-radius: 42px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(7, 18, 35, 0.98) 0%,
+            rgba(8, 24, 48, 0.97) 25%,
+            rgba(10, 34, 72, 0.95) 60%,
+            rgba(3, 10, 20, 0.99) 100%);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+        blur(28px);
+
+    box-shadow:
+        0 50px 140px rgba(0, 0, 0, 0.52),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    z-index: 2;
+}
+
+/* ======================================== */
+/* GLOW */
+/* ======================================== */
+
+.missionaryMensajeGlow {
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    top: -240px;
+    right: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(37, 99, 235, 0.32),
+            transparent 72%);
+
+    filter:
+        blur(70px);
+
+    animation:
+        missionaryGlowAnim 12s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes missionaryGlowAnim {
+
+    0% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+
+    50% {
+
+        transform:
+            translate(-30px, 30px) scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            translate(0px, 0px) scale(1);
+    }
+}
+
+/* ======================================== */
+/* LINHA BRILHO */
+/* ======================================== */
+
+.missionaryMensajeContainer::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.04),
+            transparent);
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        missionaryShine 8s linear infinite;
+}
+
+@keyframes missionaryShine {
+
+    0% {
+
+        left: -120%;
+    }
+
+    100% {
+
+        left: 160%;
+    }
+}
+
+/* ======================================== */
+/* LOGO */
+/* ======================================== */
+
+.missionaryMensajeContainer img {
+
+    width: 160px;
+    border-radius: 60px;
+    display: block;
+
+    margin:
+        0 auto 30px;
+
+    filter:
+        drop-shadow(0 20px 40px rgba(37, 99, 235, 0.35));
+
+    animation:
+        missionaryLogoFloat 5s ease-in-out infinite;
+}
+
+@keyframes missionaryLogoFloat {
+
+    0% {
+
+        transform:
+            translateY(0px);
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+    }
+
+    100% {
+
+        transform:
+            translateY(0px);
+    }
+}
+
+/* ======================================== */
+/* TÍTULO */
+/* ======================================== */
+
+.missionaryMensajeTitulo {
+
+    position: relative;
+
+    margin-bottom: 42px;
+
+    text-align: center;
+
+    font-size: 68px;
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff 0%,
+            #bfdbfe 25%,
+            #60a5fa 55%,
+            #2563eb 100%);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 15px 35px rgba(59, 130, 246, 0.22);
+}
+
+/* ======================================== */
+/* TEXTO */
+/* ======================================== */
+
+.missionaryMensajeTexto {
+
+    position: relative;
+
+    color:
+        rgba(255, 255, 255, 0.80);
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    margin-bottom: 30px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.2px;
+}
+
+/* ======================================== */
+/* DESTAQUE */
+/* ======================================== */
+
+.missionaryMensajeDestaque {
+
+    font-weight: 700;
+
+    color: #60a5fa;
+
+    text-shadow:
+        0 0 18px rgba(96, 165, 250, 0.35);
+}
+
+/* ======================================== */
+/* INFORMAÇÃO EXTRA */
+/* ======================================== */
+
+.missionaryMensajeInformacionExtra {
+
+    margin-top: 55px;
+
+    padding: 42px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.025));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+/* ======================================== */
+/* SUBTÍTULO */
+/* ======================================== */
+
+.missionaryMensajeSubTitulo {
+
+    color: white;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    margin-bottom: 26px;
+
+    line-height: 1.2;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #93c5fd);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+/* ======================================== */
+/* VANTAGENS */
+/* ======================================== */
+
+.missionaryMensajeVantagens {
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 18px;
+}
+
+.missionaryMensajeVantagemItem {
+
+    padding:
+        18px 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color:
+        rgba(255, 255, 255, 0.9);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.missionaryMensajeVantagemItem:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(59, 130, 246, 0.12);
+
+    border-color:
+        rgba(96, 165, 250, 0.24);
+}
+
+/* ======================================== */
+/* HOVER GERAL */
+/* ======================================== */
+
+.missionaryMensajeContainer:hover {
+
+    transform:
+        translateY(-2px);
+
+    transition:
+        0.35s ease;
+}
+
+/* ======================================== */
+/* RESPONSIVO GERAL */
+/* ======================================== */
+
+@media (max-width: 1000px) {
+
+    .missionaryMensajeContainer {
+
+        padding:
+            55px 38px;
+
+        border-radius: 32px;
+    }
+
+    .missionaryMensajeTitulo {
+
+        font-size: 52px;
+    }
+
+    .missionaryMensajeTexto {
+
+        font-size: 16px;
+
+        line-height: 1.9;
+    }
+
+    .missionaryMensajeContainer img {
+
+        width: 130px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .missionaryMensajeContainer {
+
+        padding:
+            42px 24px 120px 24px;
+
+        border-radius: 24px;
+    }
+
+    .missionaryMensajeTitulo {
+
+        font-size: 38px;
+
+        line-height: 1.1;
+
+        margin-bottom: 28px;
+    }
+
+    .missionaryMensajeTexto {
+
+        font-size: 15px;
+
+        line-height: 1.85;
+
+        margin-bottom: 24px;
+    }
+
+    .missionaryMensajeGlow {
+
+        width: 320px;
+        height: 320px;
+
+        top: -100px;
+        right: -120px;
+    }
+
+    .missionaryMensajeInformacionExtra {
+
+        padding: 28px 22px;
+    }
+
+    .missionaryMensajeSubTitulo {
+
+        font-size: 28px;
+    }
+
+    .missionaryMensajeVantagens {
+
+        grid-template-columns: 1fr;
+    }
+
+    .missionaryMensajeContainer img {
+
+        width: 110px;
+    }
+
+    /* ======================================== */
+    /* BOTÃO FLUTUANTE */
+    /* ======================================== */
+
+    .pagamentosBotaoArea {
+
+        position: fixed;
+
+        right: 16px;
+        bottom: 16px;
+
+        width: auto;
+
+        margin-top: 0;
+
+        z-index: 99999;
+    }
+
+    .pagamentosBotaoRecarga {
+
+        min-height: unset;
+
+        height: 60px;
+
+        width: auto;
+
+        min-width: 185px;
+
+        padding:
+            0 24px;
+
+        border-radius: 999px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation:
+            pagamentosBotaoFloat 3s ease-in-out infinite;
+
+        box-shadow:
+            0 20px 55px rgba(37, 99, 235, 0.45),
+
+            0 0 25px rgba(96, 165, 250, 0.35);
+    }
+
+    .pagamentosBotaoMiniTexto,
+    .pagamentosBotaoSubTexto,
+    .pagamentosBotaoMobileIcon {
+
+        display: none;
+    }
+
+    .pagamentosBotaoTexto {
+
+        font-size: 15px;
+
+        font-weight: 800;
+
+        line-height: 1;
+
+        letter-spacing: 0.5px;
+
+        text-transform: uppercase;
+    }
+
+    @keyframes pagamentosBotaoFloat {
+
+        0% {
+
+            transform:
+                translateY(0px);
+        }
+
+        50% {
+
+            transform:
+                translateY(-8px);
+        }
+
+        100% {
+
+            transform:
+                translateY(0px);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+
+    .missionaryMensajeContainer {
+
+        padding:
+            34px 18px 110px 18px;
+    }
+
+    .missionaryMensajeTitulo {
+
+        font-size: 30px;
+    }
+
+    .missionaryMensajeTexto {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .missionaryMensajeContainer img {
+
+        width: 95px;
+    }
+
+    .missionaryMensajeSubTitulo {
+
+        font-size: 24px;
+    }
+
+    .pagamentosBotaoRecarga {
+
+        min-width: 165px;
+
+        height: 56px;
+
+        padding:
+            0 20px;
+    }
+
+    .pagamentosBotaoTexto {
+
+        font-size: 14px;
+    }
+}

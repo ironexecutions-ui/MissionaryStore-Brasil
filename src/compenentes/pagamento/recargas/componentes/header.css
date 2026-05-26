@@ -1,0 +1,469 @@
+/* header.css */
+
+.voucherHeaderContainer {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    padding:
+        24px 16px;
+
+
+    top: 0;
+
+    z-index: 999;
+
+    backdrop-filter:
+        blur(20px);
+
+
+}
+
+.voucherHeaderAvatar img {
+    width: 90px;
+    border-radius: 20px;
+}
+
+.voucherHeaderGlow {
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(91, 140, 255, 0.22) 0%,
+            rgba(91, 140, 255, 0.08) 35%,
+            transparent 75%);
+
+    filter:
+        blur(70px);
+
+    top: -250px;
+
+    pointer-events: none;
+}
+
+.voucherHeaderCard {
+
+    width: 100%;
+    max-width: 980px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    padding:
+        28px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    background:
+        linear-gradient(145deg,
+            rgba(12, 20, 40, 0.97),
+            rgba(7, 15, 30, 0.94));
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.voucherHeaderCard::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.45),
+            transparent);
+}
+
+.voucherHeaderTop {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 26px;
+}
+
+.voucherHeaderAvatar {
+
+    min-width: 68px;
+    min-height: 68px;
+
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #4d8cff,
+            #7a5cff);
+
+    box-shadow:
+        0 12px 35px rgba(77, 140, 255, 0.35);
+}
+
+.voucherHeaderTituloArea {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.voucherHeaderTitulo {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+}
+
+.voucherHeaderSubtitulo {
+
+    margin-top: 6px;
+
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+}
+
+.voucherHeaderInfoGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(240px, 1fr));
+
+    gap: 18px;
+}
+
+.voucherHeaderInfoCard {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    border-radius: 24px;
+
+    padding:
+        18px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.025));
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.voucherHeaderInfoCard:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(116, 160, 255, 0.28);
+
+    background:
+        linear-gradient(145deg,
+            rgba(77, 140, 255, 0.12),
+            rgba(255, 255, 255, 0.04));
+}
+
+.voucherHeaderIconeArea {
+
+    min-width: 42px;
+    min-height: 42px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #9dc2ff;
+
+    background:
+        rgba(77, 140, 255, 0.12);
+
+    border:
+        1px solid rgba(77, 140, 255, 0.15);
+}
+
+.voucherHeaderTextoArea {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-width: 0;
+}
+
+.voucherHeaderLabel {
+
+    color:
+        rgba(255, 255, 255, 0.52);
+
+    font-size: 0.78rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    font-weight: 700;
+}
+
+.voucherHeaderValor {
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+/* ======================================== */
+/* RESPONSIVO */
+/* ======================================== */
+
+@media (max-width: 768px) {
+
+    .voucherHeaderContainer {
+
+        padding:
+            16px 10px;
+
+        position: sticky;
+
+        top: 0;
+
+        z-index: 99999;
+    }
+
+    .voucherHeaderCard {
+
+        padding:
+            18px 16px;
+
+        border-radius: 24px;
+    }
+
+    .voucherHeaderTop {
+
+        align-items: center;
+
+        gap: 14px;
+
+        margin-bottom: 18px;
+    }
+
+    .voucherHeaderAvatar {
+
+        min-width: 58px;
+        min-height: 58px;
+
+        border-radius: 18px;
+    }
+
+    .voucherHeaderAvatar img {
+
+        width: 58px;
+
+        border-radius: 16px;
+    }
+
+    .voucherHeaderTituloArea {
+
+        min-width: 0;
+    }
+
+    .voucherHeaderTitulo {
+
+        font-size: 1.35rem;
+
+        line-height: 1.1;
+    }
+
+    .voucherHeaderSubtitulo {
+
+        font-size: 0.82rem;
+
+        margin-top: 4px;
+    }
+
+    .voucherHeaderInfoGrid {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .voucherHeaderInfoCard {
+
+        padding:
+            14px;
+
+        border-radius: 18px;
+
+        gap: 12px;
+    }
+
+    .voucherHeaderIconeArea {
+
+        min-width: 38px;
+        min-height: 38px;
+
+        border-radius: 12px;
+    }
+
+    .voucherHeaderLabel {
+
+        font-size: 0.68rem;
+
+        letter-spacing: 0.09em;
+    }
+
+    .voucherHeaderValor {
+
+        font-size: 0.92rem;
+
+        line-height: 1.4;
+    }
+
+    .voucherHeaderGlow {
+
+        width: 260px;
+        height: 260px;
+
+        top: -170px;
+
+        filter:
+            blur(45px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .voucherHeaderContainer {
+
+        padding:
+            10px 8px;
+    }
+
+    .voucherHeaderCard {
+
+        padding:
+            15px 13px;
+
+        border-radius: 20px;
+    }
+
+    .voucherHeaderTop {
+
+        gap: 10px;
+
+        margin-bottom: 14px;
+    }
+
+    .voucherHeaderAvatar {
+
+        min-width: 50px;
+        min-height: 50px;
+
+        border-radius: 14px;
+    }
+
+    .voucherHeaderAvatar img {
+
+        width: 50px;
+
+        border-radius: 14px;
+    }
+
+    .voucherHeaderTitulo {
+
+        font-size: 1.12rem;
+    }
+
+    .voucherHeaderSubtitulo {
+
+        font-size: 0.74rem;
+    }
+
+    .voucherHeaderInfoCard {
+
+        padding:
+            12px;
+
+        border-radius: 16px;
+    }
+
+    .voucherHeaderIconeArea {
+
+        min-width: 34px;
+        min-height: 34px;
+    }
+
+    .voucherHeaderLabel {
+
+        font-size: 0.62rem;
+    }
+
+    .voucherHeaderValor {
+
+        font-size: 0.84rem;
+    }
+
+    .voucherHeaderGlow {
+
+        width: 180px;
+        height: 180px;
+
+        top: -120px;
+    }
+}

@@ -1,0 +1,732 @@
+.fase1Container {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    box-sizing: border-box;
+
+
+}
+
+.fase1Card {
+
+    width: 100%;
+    max-width: 560px;
+
+    padding: 45px 38px;
+
+    border-radius: 34px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(25px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(10, 20, 40, 0.95) 0%,
+            rgba(7, 15, 30, 0.92) 100%);
+
+    border:
+        1px solid rgba(120, 180, 255, 0.12);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.fase1Card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -120px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 170, 255, 0.28),
+            transparent 75%);
+
+    pointer-events: none;
+}
+
+.fase1Titulo {
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+
+    text-align: center;
+
+    letter-spacing: -0.03em;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 4px 18px rgba(0, 170, 255, 0.28);
+}
+
+.fase1CampoGrupo {
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+.fase1Label {
+
+    font-size: 0.92rem;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    color: rgba(220, 235, 255, 0.92);
+
+    letter-spacing: 0.02em;
+}
+
+.fase1InputEmailWrapper {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.fase1InputEmail,
+.fase1InputNome,
+.fase1InputData {
+
+    width: 100%;
+
+    height: 64px;
+
+    border: 1px solid rgba(140, 190, 255, 0.14);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(15, 25, 45, 0.98) 0%,
+            rgba(9, 16, 32, 0.98) 100%);
+
+    padding: 0 22px;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    color: #ffffff;
+
+    outline: none;
+
+    transition:
+        border 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    box-sizing: border-box;
+}
+
+.fase1InputEmail {
+
+    padding-right: 180px;
+}
+
+.fase1InputEmail::placeholder,
+.fase1InputNome::placeholder {
+
+    color: rgba(180, 200, 225, 0.4);
+}
+
+.fase1InputEmail:focus,
+.fase1InputNome:focus,
+.fase1InputData:focus {
+
+    transform: translateY(-2px);
+
+    border:
+        1px solid rgba(0, 174, 255, 0.55);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 174, 255, 0.12),
+        0 18px 40px rgba(0, 110, 255, 0.16);
+
+    background:
+        linear-gradient(180deg,
+            rgba(18, 31, 58, 1) 0%,
+            rgba(10, 18, 34, 1) 100%);
+}
+
+.fase1InputEmail:disabled,
+.fase1InputNome:disabled,
+.fase1InputData:disabled {
+
+    opacity: 0.72;
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.08);
+}
+
+.fase1DominioFixo {
+
+    position: absolute;
+
+    right: 20px;
+
+    font-size: 0.92rem;
+
+    font-weight: 700;
+
+    color: rgba(130, 190, 255, 0.82);
+
+    pointer-events: none;
+}
+
+.fase1StatusBusca,
+.fase1StatusEncontrado {
+
+    margin-top: 12px;
+
+    padding: 12px 16px;
+
+    border-radius: 14px;
+
+    font-size: 0.92rem;
+
+    font-weight: 600;
+
+    animation:
+        fase1FadeEntrada 0.3s ease;
+}
+
+.fase1StatusBusca {
+
+    color: #89d7ff;
+
+    background:
+        rgba(0, 153, 255, 0.1);
+
+    border:
+        1px solid rgba(0, 153, 255, 0.2);
+}
+
+.fase1StatusEncontrado {
+
+    color: #75ffbe;
+
+    background:
+        rgba(0, 255, 136, 0.1);
+
+    border:
+        1px solid rgba(0, 255, 136, 0.18);
+}
+
+.fase1BotaoCadastrar {
+
+    width: 100%;
+    height: 66px;
+
+    margin-top: 12px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.03em;
+
+    color: #ffffff;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+
+    background:
+        linear-gradient(135deg,
+            #0091ff 0%,
+            #005eff 45%,
+            #7b2dff 100%);
+
+    box-shadow:
+        0 22px 45px rgba(0, 98, 255, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.fase1BotaoCadastrar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 100%);
+
+    transform: translateX(-120%);
+
+    transition:
+        transform 0.7s ease;
+}
+
+.fase1BotaoCadastrar:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 30px 55px rgba(0, 98, 255, 0.5);
+}
+
+.fase1BotaoCadastrar:hover::before {
+
+    transform: translateX(120%);
+}
+
+.fase1BotaoCadastrar:active {
+
+    transform: scale(0.985);
+}
+
+.fase1BotaoCadastrar:disabled {
+
+    opacity: 0.7;
+
+    cursor: wait;
+}
+
+.fase1ResultadoContainer {
+
+    margin-top: 34px;
+
+    padding: 24px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(12, 24, 44, 0.98) 0%,
+            rgba(8, 15, 30, 0.98) 100%);
+
+    border:
+        1px solid rgba(120, 190, 255, 0.14);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.fase1ResultadoTitulo {
+
+    font-size: 1.25rem;
+
+    margin-bottom: 20px;
+
+    color: #8ddcff;
+
+    font-weight: 800;
+}
+
+.fase1ResultadoLinha {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color: rgba(235, 242, 255, 0.9);
+
+    font-size: 0.96rem;
+}
+
+.fase1ResultadoLinha:last-child {
+
+    border-bottom: none;
+}
+
+.fase1ResultadoLinha strong {
+
+    color: #ffffff;
+}
+
+@keyframes fase1FadeEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-6px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+
+    .fase1Container {
+
+        padding: 20px 14px;
+    }
+
+    .fase1Card {
+
+        padding: 30px 22px;
+
+        border-radius: 28px;
+    }
+
+    .fase1Titulo {
+
+        font-size: 1.6rem;
+    }
+
+    .fase1InputEmail,
+    .fase1InputNome,
+    .fase1InputData {
+
+        height: 58px;
+
+        font-size: 0.95rem;
+    }
+
+    .fase1InputEmail {
+
+        padding-right: 140px;
+    }
+
+    .fase1DominioFixo {
+
+        font-size: 0.78rem;
+    }
+
+    .fase1BotaoCadastrar {
+
+        height: 60px;
+    }
+}
+
+.fase1NomeWrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.fase1SelectTitulo {
+
+    width: 140px;
+
+    height: 64px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgb(0, 4, 8);
+
+    background:
+        linear-gradient(180deg,
+            rgba(2, 82, 243, 0.98) 0%,
+            rgba(0, 69, 230, 0.98) 100%);
+
+    color: #000000;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    padding: 0 16px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.fase1SelectTitulo:focus {
+
+    transform: translateY(-2px);
+
+    border:
+        1px solid rgba(0, 174, 255, 0.55);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 174, 255, 0.12),
+        0 18px 40px rgba(0, 110, 255, 0.16);
+}
+
+.fase1SelectTitulo:disabled {
+
+    opacity: 0.72;
+
+    cursor: not-allowed;
+}
+
+/* ======================================== */
+/* RESPONSIVO */
+/* ======================================== */
+
+@media (max-width: 700px) {
+
+    .fase1Container {
+
+        padding: 18px 12px;
+
+        align-items: flex-start;
+    }
+
+    .fase1Card {
+
+        padding: 28px 18px;
+
+        border-radius: 26px;
+    }
+
+    .fase1Titulo {
+
+        font-size: 1.5rem;
+
+        margin-bottom: 28px;
+
+        line-height: 1.15;
+    }
+
+    .fase1CampoGrupo {
+
+        margin-bottom: 20px;
+    }
+
+    .fase1Label {
+
+        font-size: 0.85rem;
+
+        margin-bottom: 8px;
+    }
+
+    .fase1NomeWrapper {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .fase1SelectTitulo {
+
+        width: 100%;
+
+        height: 56px;
+
+        border-radius: 18px;
+
+        font-size: 0.92rem;
+    }
+
+    .fase1InputEmail,
+    .fase1InputNome,
+    .fase1InputData {
+
+        height: 56px;
+
+        border-radius: 18px;
+
+        font-size: 0.92rem;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .fase1InputEmail {
+
+        padding-right: 125px;
+    }
+
+    .fase1DominioFixo {
+
+        right: 16px;
+
+        font-size: 0.72rem;
+    }
+
+    .fase1BotaoCadastrar {
+
+        height: 58px;
+
+        border-radius: 18px;
+
+        font-size: 0.92rem;
+
+        margin-top: 6px;
+    }
+
+    .fase1ResultadoContainer {
+
+        margin-top: 26px;
+
+        padding: 18px;
+
+        border-radius: 20px;
+    }
+
+    .fase1ResultadoTitulo {
+
+        font-size: 1.05rem;
+
+        margin-bottom: 14px;
+    }
+
+    .fase1ResultadoLinha {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+
+        padding: 12px 0;
+
+        font-size: 0.88rem;
+    }
+
+    .fase1StatusBusca,
+    .fase1StatusEncontrado {
+
+        font-size: 0.82rem;
+
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .fase1Container {
+
+        padding: 12px 10px;
+    }
+
+    .fase1Card {
+
+        padding: 24px 15px;
+
+        border-radius: 22px;
+    }
+
+    .fase1Titulo {
+
+        font-size: 1.32rem;
+
+        margin-bottom: 24px;
+    }
+
+    .fase1InputEmail,
+    .fase1InputNome,
+    .fase1InputData,
+    .fase1SelectTitulo {
+
+        height: 54px;
+
+        font-size: 0.88rem;
+
+        border-radius: 16px;
+    }
+
+    .fase1InputEmail {
+
+        padding-right: 112px;
+    }
+
+    .fase1DominioFixo {
+
+        right: 14px;
+
+        font-size: 0.66rem;
+    }
+
+    .fase1BotaoCadastrar {
+
+        height: 54px;
+
+        font-size: 0.88rem;
+
+        border-radius: 16px;
+    }
+
+    .fase1ResultadoContainer {
+
+        padding: 16px;
+    }
+
+    .fase1ResultadoTitulo {
+
+        font-size: 1rem;
+    }
+
+    .fase1ResultadoLinha {
+
+        font-size: 0.82rem;
+    }
+
+    .fase1Card::before {
+
+        width: 170px;
+        height: 170px;
+
+        top: -80px;
+        right: -60px;
+    }
+}

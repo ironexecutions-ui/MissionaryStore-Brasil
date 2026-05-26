@@ -7,11 +7,11 @@ import {
 } from "react-router-dom";
 import Lojascadastradas from "./compenentes/lojas/lojas";
 import Cupons from "./compenentes/cupons/cupons";
-
+import Pagamentos from "./compenentes/pagamento/pagamento";
 import Painel from "./compenentes/painel/painel";
 import Link from "./compenentes/link/link";
 import Tudo from "./compenentes/painel/componentes/tudo";
-
+import Recargas from "./compenentes/pagamento/recargas/recargas";
 export default function App() {
 
   return (
@@ -73,6 +73,14 @@ export default function App() {
         <Route
           path="/path"
           element={<Link />}
+        />
+        <Route
+          path="/creditos-missionary-store"
+          element={<Pagamentos />}
+        />
+        <Route
+          path="/creditos-missionary-store/recarga"
+          element={<Recargas />}
         />
       </Routes>
 

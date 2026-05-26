@@ -402,28 +402,37 @@ export default function Link() {
                         <button
                             type="button"
                             className="missionaryLinkCompartilhar"
-                            onClick={(e) => {
+                            onClick={async (e) => {
 
                                 e.preventDefault();
 
-                                if (navigator.share) {
+                                const url =
+                                    "https://www.instagram.com/missionarystore.brasil";
 
-                                    navigator.share({
+                                try {
 
-                                        title: "Missionary Store Brasil",
+                                    if (navigator.share) {
 
-                                        text: "Acesse nossa loja oficial",
+                                        await navigator.share({
 
-                                        url: "https://missionarystorebrasil.com/produtos/"
-                                    });
+                                            title: "Missionary Store Brasil",
 
-                                } else {
+                                            text: "Acesse nosso Instagram",
 
-                                    navigator.clipboard.writeText(
-                                        "https://missionarystorebrasil.com/produtos/"
-                                    );
+                                            url
+                                        });
 
-                                    alert("Link copiado!");
+                                    } else {
+
+                                        window.open(
+                                            `https://wa.me/?text=${encodeURIComponent(url)}`,
+                                            "_blank"
+                                        );
+                                    }
+
+                                } catch (erro) {
+
+                                    console.log(erro);
                                 }
                             }}
                         >
