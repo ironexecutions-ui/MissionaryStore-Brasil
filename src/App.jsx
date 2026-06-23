@@ -12,6 +12,10 @@ import Painel from "./compenentes/painel/painel";
 import Link from "./compenentes/link/link";
 import Tudo from "./compenentes/painel/componentes/tudo";
 import Recargas from "./compenentes/pagamento/recargas/recargas";
+import Inicio from "../site/inicio";
+import Perfil from "../site/perfil/perfil";
+import Aprovacao from "../site/perfil/aprovacao";
+import AprovacaoAdmin from "../site/perfil/aprovacao_admin";
 export default function App() {
 
   return (
@@ -81,6 +85,25 @@ export default function App() {
         <Route
           path="/creditos-missionary-store/recarga"
           element={<Recargas />}
+        />
+        <Route
+          path="/instrutores"
+          element={<Inicio />}
+        />
+        <Route
+          path="/perfil/instrutores"
+          element={<Perfil />}
+        />
+
+        <Route
+          path="/perfil/instrutores/aprovacao"
+          element={<Aprovacao />}
+        />
+        <Route
+          path="/aprovacao/:id"
+          element={
+            <AprovacaoAdmin />
+          }
         />
       </Routes>
 
