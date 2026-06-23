@@ -16,6 +16,16 @@ import Inicio from "../site/inicio";
 import Perfil from "../site/perfil/perfil";
 import Aprovacao from "../site/perfil/aprovacao";
 import AprovacaoAdmin from "../site/perfil/aprovacao_admin";
+import Compra from "../site/perfil/pagamento/compra";
+
+
+
+
+
+
+
+
+
 export default function App() {
 
   return (
@@ -105,6 +115,14 @@ export default function App() {
             <AprovacaoAdmin />
           }
         />
+        <Route
+          path="/compra/:id"
+          element={
+            <Compra />
+          }
+        />
+
+
       </Routes>
 
     </BrowserRouter>

@@ -10,7 +10,7 @@ import {
 } from "../../src/config";
 
 import "./perfil.css";
-
+import Pagamento from "./pagamento/pagamento";
 export default function Perfil() {
     const navigate =
         useNavigate();
@@ -123,7 +123,8 @@ export default function Perfil() {
                             >
                                 R$ {usuario.creditos}
                             </h2>
-
+                            <br />
+                            <Pagamento />
                         </div>
 
                     ) : (
