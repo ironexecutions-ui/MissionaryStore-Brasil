@@ -28,7 +28,10 @@ export default function Compra() {
         compra,
         setCompra
     ] = useState(null);
-
+    const [
+        qrLido,
+        setQrLido
+    ] = useState(false);
     const [
         carregando,
         setCarregando
@@ -87,6 +90,36 @@ export default function Compra() {
                 textoLido
             ) => {
 
+                if (
+                    qrLido ||
+                    processando
+                ) {
+
+                    return;
+
+                }
+
+                setQrLido(
+                    true
+                );
+                setAbrirCamera(
+                    false
+                );
+
+                if (
+                    scannerRef.current
+                ) {
+
+                    await scannerRef.current
+                        .clear()
+                        .catch(
+                            () => { }
+                        );
+
+                    scannerRef.current =
+                        null;
+
+                }
                 await aprovarCompra(
                     textoLido
                 );
@@ -168,6 +201,14 @@ export default function Compra() {
         chave
     ) {
 
+        if (
+            processando
+        ) {
+
+            return;
+
+        }
+
         try {
 
             setProcessando(
@@ -207,6 +248,16 @@ export default function Compra() {
                     dados.mensagem
                 );
 
+                setTimeout(
+                    () => {
+
+                        window.location.href =
+                            "/";
+
+                    },
+                    2000
+                );
+
                 return;
 
             }
@@ -215,12 +266,32 @@ export default function Compra() {
                 "Compra aprovada com sucesso"
             );
 
-            window.location.reload();
+            setTimeout(
+                () => {
+
+                    window.location.href =
+                        "/";
+
+                },
+                2000
+            );
+
+            return;
 
         } catch {
 
             alert(
                 "Erro ao aprovar compra"
+            );
+
+            setTimeout(
+                () => {
+
+                    window.location.href =
+                        "/";
+
+                },
+                2000
             );
 
         } finally {

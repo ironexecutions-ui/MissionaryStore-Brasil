@@ -23,7 +23,10 @@ export default function Pagamento() {
         valor,
         setValor
     ] = useState("");
-
+    const [
+        historico,
+        setHistorico
+    ] = useState([]);
     const [
         carregando,
         setCarregando
@@ -39,7 +42,49 @@ export default function Pagamento() {
         carregarUsuario();
 
     }, []);
+    useEffect(() => {
 
+        carregarUsuario();
+
+        carregarHistorico();
+
+    }, []);
+    async function carregarHistorico() {
+
+        try {
+
+            const token =
+                localStorage.getItem(
+                    "token"
+                );
+
+            const resposta =
+                await fetch(
+                    `${API_URL}/ctm/historico`,
+                    {
+                        headers: {
+                            Authorization:
+                                `Bearer ${token}`
+                        }
+                    }
+                );
+
+            const dados =
+                await resposta.json();
+
+            setHistorico(
+                dados
+            );
+
+        } catch {
+
+            console.log(
+                "Erro ao carregar histórico"
+            );
+
+        }
+
+    }
     async function carregarUsuario() {
 
         try {
@@ -144,13 +189,9 @@ export default function Pagamento() {
                         )
                     }
                 );
+
             const dados =
                 await resposta.json();
-
-            console.log(
-                "RETORNO:",
-                dados
-            );
 
             if (
                 !dados.sucesso
@@ -163,14 +204,11 @@ export default function Pagamento() {
                 return;
 
             }
-            console.log(
-                "RETORNO:",
-                dados
-            );
-            setQrLink(
-                `https://missionarystorebrasil.com.br/compra/${dados.compra_id}`
-            );
 
+            setQrLink(
+                `http://missionarystorebrasil.com.br/compra/${usuario.id}`
+            );
+            carregarHistorico();
         } catch {
 
             alert(
@@ -275,7 +313,70 @@ export default function Pagamento() {
                 }
 
             </div>
+            <div
+                className="pagamentoHistoricoArea"
+            >
 
+                <h2>
+                    Histórico
+                </h2>
+
+                {
+                    historico.length === 0
+                        ? (
+                            <p>
+                                Nenhuma compra encontrada.
+                            </p>
+                        )
+                        : (
+                            historico.map(
+                                item => (
+
+                                    <div
+                                        key={item.id}
+                                        className="pagamentoHistoricoCard"
+                                    >
+
+                                        <div
+                                            className="pagamentoHistoricoLinha"
+                                        >
+
+                                            <span
+                                                className="pagamentoHistoricoValor"
+                                            >
+                                                R$ {
+                                                    Math.abs(
+                                                        item.creditos
+                                                    ).toFixed(2)
+                                                }
+                                            </span>
+
+                                            <span
+                                                className="pagamentoHistoricoTipo"
+                                            >
+                                                {
+                                                    item.tipo
+                                                }
+                                            </span>
+
+                                        </div>
+
+                                        <div
+                                            className="pagamentoHistoricoData"
+                                        >
+                                            {
+                                                item.criado_em
+                                            }
+                                        </div>
+
+                                    </div>
+
+                                )
+                            )
+                        )
+                }
+
+            </div>
         </div>
 
     );
