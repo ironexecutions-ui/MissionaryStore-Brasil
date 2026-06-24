@@ -163,9 +163,12 @@ export default function Pagamento() {
                 return;
 
             }
-
+            console.log(
+                "RETORNO:",
+                dados
+            );
             setQrLink(
-                `http://missionarystorebrasil.com.br/compra/${usuario.id}`
+                `https://missionarystorebrasil.com.br/compra/${dados.compra_id}`
             );
 
         } catch {

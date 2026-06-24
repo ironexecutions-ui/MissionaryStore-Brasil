@@ -121,6 +121,11 @@ export default function Compra() {
 
         try {
 
+            console.log(
+                "URL CHAMADA:",
+                `${API_URL}/ctm/compra/${id}`
+            );
+
             const resposta =
                 await fetch(
                     `${API_URL}/ctm/compra/${id}`
@@ -129,11 +134,21 @@ export default function Compra() {
             const dados =
                 await resposta.json();
 
+            console.log(
+                "COMPRA RECEBIDA:",
+                dados
+            );
+
             setCompra(
                 dados
             );
 
-        } catch {
+        } catch (erro) {
+
+            console.log(
+                "ERRO:",
+                erro
+            );
 
             alert(
                 "Erro ao carregar compra"
@@ -158,7 +173,10 @@ export default function Compra() {
             setProcessando(
                 true
             );
-
+            console.log(
+                "URL CHAMADA:",
+                `${API_URL}/ctm/compra/${id}`
+            );
             const resposta =
                 await fetch(
                     `${API_URL}/ctm/compra/aprovar/${compra.compra_id}`,
