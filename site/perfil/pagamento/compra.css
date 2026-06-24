@@ -1,0 +1,231 @@
+.compraContainer {
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.compraCard {
+    width: 100%;
+    max-width: 750px;
+    background: white;
+    border-radius: 40px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    box-shadow:
+        0 40px 100px rgba(0,
+            0,
+            0,
+            0.22);
+}
+
+.compraCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    border-radius: 40px 40px 0 0;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff8d2b);
+}
+
+.compraTitulo {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.compraFoto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid white;
+    position: relative;
+    z-index: 2;
+    box-shadow:
+        0 20px 40px rgba(0,
+            0,
+            0,
+            0.2);
+}
+
+.compraNome {
+    margin-top: 25px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #202938;
+}
+
+.compraValor {
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    padding: 18px 35px;
+    border-radius: 999px;
+    background:
+        linear-gradient(135deg,
+            #1ea54b,
+            #2ecc71);
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    border: none;
+}
+
+.compraBotao {
+    width: 100%;
+    max-width: 400px;
+    height: 70px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff8a00);
+    transition: .25s;
+}
+
+.compraBotao:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 40px rgba(255,
+            94,
+            0,
+            0.35);
+}
+
+.compraCamera {
+    margin-top: 40px;
+    padding: 35px;
+    background: #f8fafc;
+    border-radius: 25px;
+    border: 2px solid #edf0f4;
+}
+
+.compraCamera h3 {
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    color: #202938;
+}
+
+@media (max-width: 768px) {
+
+    .compraContainer {
+        padding: 25px;
+    }
+
+    .compraCard {
+        padding: 40px 25px;
+        border-radius: 30px;
+    }
+
+    .compraCard::before {
+        height: 140px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .compraTitulo {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .compraFoto {
+        width: 140px;
+        height: 140px;
+        border-width: 6px;
+    }
+
+    .compraNome {
+        font-size: 1.6rem;
+    }
+
+    .compraValor {
+        font-size: 1.1rem;
+        padding: 15px 25px;
+    }
+
+    .compraBotao {
+        max-width: 100%;
+        height: 60px;
+        font-size: 1rem;
+    }
+
+    .compraCamera {
+        padding: 25px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .compraContainer {
+        padding: 15px;
+    }
+
+    .compraCard {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .compraCard::before {
+        height: 110px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .compraTitulo {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .compraFoto {
+        width: 110px;
+        height: 110px;
+        border-width: 4px;
+    }
+
+    .compraNome {
+        font-size: 1.25rem;
+        margin-top: 15px;
+    }
+
+    .compraValor {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    .compraBotao {
+        width: 100%;
+        height: 55px;
+        border-radius: 16px;
+        font-size: 0.95rem;
+    }
+
+    .compraCamera {
+        margin-top: 25px;
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .compraCamera h3 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+}

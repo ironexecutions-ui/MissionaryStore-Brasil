@@ -1,0 +1,248 @@
+.inicioContainer {
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff7b00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.inicioCardLogin {
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 55px;
+    box-shadow:
+        0 25px 80px rgba(0,
+            0,
+            0,
+            0.18);
+    position: relative;
+    overflow: hidden;
+}
+
+.inicioCardLogin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background:
+        linear-gradient(90deg,
+            #ff5e00,
+            #ff9a3d);
+}
+
+.inicioCabecalhoSistema {
+    text-align: center;
+}
+
+.inicioLogoCirculo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff8c1a);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 15px 30px rgba(255,
+            94,
+            0,
+            0.3);
+}
+
+.inicioTituloPrincipal {
+    margin: 0;
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #202938;
+}
+
+.inicioDescricaoLogin {
+    margin-top: 15px;
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.inicioInformacaoBox {
+    margin-top: 35px;
+    background: #fff8f3;
+    border: 1px solid #ffd6bb;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.inicioInformacaoBox h3 {
+    margin: 0 0 10px 0;
+    color: #ff5e00;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.inicioInformacaoBox p {
+    margin: 0;
+    color: #5f6368;
+    line-height: 1.6;
+}
+
+.inicioLoginArea {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.inicioRodape {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid #ececec;
+    text-align: center;
+}
+
+.inicioRodape p {
+    margin: 0;
+    color: #202938;
+    font-weight: 700;
+}
+
+.inicioRodape span {
+    display: block;
+    margin-top: 8px;
+    color: #8b93a1;
+    font-size: 0.9rem;
+}
+
+.inicioLogoCirculo {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 15px 35px rgba(255,
+            94,
+            0,
+            0.25);
+}
+
+.inicioLogoImagem {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+
+    .inicioContainer {
+        padding: 20px;
+    }
+
+    .inicioCardLogin {
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+
+    .inicioTituloPrincipal {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .inicioDescricaoLogin {
+        font-size: 0.95rem;
+    }
+
+    .inicioInformacaoBox {
+        padding: 18px;
+    }
+
+    .inicioLogoCirculo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .inicioLogoImagem {
+        width: 90px;
+        height: 90px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .inicioContainer {
+        padding: 15px;
+    }
+
+    .inicioCardLogin {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .inicioTituloPrincipal {
+        font-size: 1.5rem;
+    }
+
+    .inicioDescricaoLogin {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .inicioInformacaoBox {
+        margin-top: 25px;
+        padding: 15px;
+    }
+
+    .inicioInformacaoBox h3 {
+        font-size: 0.95rem;
+    }
+
+    .inicioInformacaoBox p {
+        font-size: 0.9rem;
+    }
+
+    .inicioLoginArea {
+        margin-top: 25px;
+        overflow-x: auto;
+    }
+
+    .inicioRodape {
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+
+    .inicioRodape p {
+        font-size: 0.9rem;
+    }
+
+    .inicioRodape span {
+        font-size: 0.8rem;
+    }
+
+    .inicioLogoCirculo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .inicioLogoImagem {
+        width: 80px;
+        height: 80px;
+    }
+
+}

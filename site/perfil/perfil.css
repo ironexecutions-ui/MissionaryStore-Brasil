@@ -1,0 +1,248 @@
+.perfilAreaContainer {
+    width: 90%;
+    min-height: 100vh;
+    padding: 60px;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff7b00);
+    display: flex;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.perfilAreaCard {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow:
+        0 20px 60px rgba(0,
+            0,
+            0,
+            0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.perfilAreaCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background:
+        linear-gradient(135deg,
+            #0d6efd,
+            #4a8dff);
+}
+
+.perfilAreaFoto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #ffffff;
+    box-shadow:
+        0 15px 35px rgba(0,
+            0,
+            0,
+            0.15);
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.perfilAreaNome {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1b2430;
+    text-align: center;
+}
+
+.perfilAreaCreditosLiberados,
+.perfilAreaCreditosBloqueados {
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+}
+
+.perfilAreaCreditosLiberados {
+    background:
+        linear-gradient(135deg,
+            #eefaf1,
+            #ffffff);
+    border: 2px solid #d4f3dc;
+}
+
+.perfilAreaCreditosBloqueados {
+    background:
+        linear-gradient(135deg,
+            #fff6f6,
+            #ffffff);
+    border: 2px solid #ffd8d8;
+}
+
+.perfilAreaTituloCredito {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.perfilAreaValorCredito {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #1d9b4d;
+    margin: 0;
+}
+
+.perfilAreaValorCreditoBloqueado {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #dc3545;
+    margin: 0;
+}
+
+.perfilAreaAvisoBloqueio {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #6c757d;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.perfilAreaBotaoAprovacao {
+    border: none;
+    cursor: pointer;
+    border-radius: 16px;
+    padding: 16px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background:
+        linear-gradient(135deg,
+            #dc3545,
+            #ff6b6b);
+    transition: 0.3s;
+}
+
+.perfilAreaBotaoAprovacao:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 30px rgba(220,
+            53,
+            69,
+            0.3);
+}
+
+.perfilAreaBotaoAprovacao:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+
+    .perfilAreaContainer {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .perfilAreaCard {
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+
+    .perfilAreaCard::before {
+        height: 140px;
+    }
+
+    .perfilAreaFoto {
+        width: 130px;
+        height: 130px;
+        margin-top: 10px;
+    }
+
+    .perfilAreaNome {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .perfilAreaCreditosLiberados,
+    .perfilAreaCreditosBloqueados {
+        width: 85%;
+        padding: 25px;
+    }
+
+    .perfilAreaValorCredito,
+    .perfilAreaValorCreditoBloqueado {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .perfilAreaContainer {
+        padding: 15px;
+    }
+
+    .perfilAreaCard {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .perfilAreaCard::before {
+        height: 120px;
+    }
+
+    .perfilAreaFoto {
+        width: 110px;
+        height: 110px;
+        border-width: 4px;
+    }
+
+    .perfilAreaNome {
+        font-size: 1.4rem;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+
+    .perfilAreaCreditosLiberados,
+    .perfilAreaCreditosBloqueados {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .perfilAreaTituloCredito {
+        font-size: 0.8rem;
+    }
+
+    .perfilAreaValorCredito,
+    .perfilAreaValorCreditoBloqueado {
+        font-size: 2rem;
+    }
+
+    .perfilAreaAvisoBloqueio {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .perfilAreaBotaoAprovacao {
+        width: 100%;
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+}

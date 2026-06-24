@@ -1,0 +1,253 @@
+.aprovacaoAdminContainer {
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff7b00);
+}
+
+.aprovacaoAdminCard {
+    width: 100%;
+    max-width: 700px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 30px 80px rgba(0,
+            0,
+            0,
+            0.18);
+}
+
+.aprovacaoAdminCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background:
+        linear-gradient(90deg,
+            #ff5e00,
+            #ff9a3d);
+}
+
+.aprovacaoAdminTitulo {
+    margin: 0;
+    margin-bottom: 35px;
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #202938;
+}
+
+.aprovacaoAdminFoto {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow:
+        0 15px 35px rgba(0,
+            0,
+            0,
+            0.15);
+}
+
+.aprovacaoAdminNome {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #202938;
+}
+
+.aprovacaoAdminStatus {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #5f6368;
+    margin-bottom: 10px;
+}
+
+.aprovacaoAdminCredito {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #22a447;
+    margin-bottom: 30px;
+}
+
+.aprovacaoAdminTexto {
+    max-width: 450px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    color: #6b7280;
+}
+
+.aprovacaoAdminBotao {
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 18px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff7b00);
+    transition: 0.25s;
+}
+
+.aprovacaoAdminBotao:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 35px rgba(255,
+            94,
+            0,
+            0.35);
+}
+
+.aprovacaoAdminBotao:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.aprovacaoAdminCameraArea {
+    margin-top: 35px;
+    padding: 25px;
+    background: #fafafa;
+    border-radius: 25px;
+    border: 2px solid #ececec;
+}
+
+#reader {
+    width: 100%;
+}
+
+.aprovacaoAdminSucesso {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #eefaf1;
+    border: 2px solid #d4f3dc;
+    color: #22a447;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+
+    .aprovacaoAdminContainer {
+        padding: 25px;
+    }
+
+    .aprovacaoAdminCard {
+        padding: 35px 25px;
+        border-radius: 25px;
+    }
+
+    .aprovacaoAdminTitulo {
+        font-size: 1.9rem;
+    }
+
+    .aprovacaoAdminFoto {
+        width: 130px;
+        height: 130px;
+    }
+
+    .aprovacaoAdminNome {
+        font-size: 1.5rem;
+    }
+
+    .aprovacaoAdminCredito {
+        font-size: 1.2rem;
+    }
+
+    .aprovacaoAdminTexto {
+        font-size: 0.95rem;
+    }
+
+    .aprovacaoAdminBotao {
+        width: 100%;
+    }
+
+    .aprovacaoAdminCameraArea {
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .aprovacaoAdminContainer {
+        padding: 15px;
+    }
+
+    .aprovacaoAdminCard {
+        padding: 25px 18px;
+        border-radius: 20px;
+    }
+
+    .aprovacaoAdminTitulo {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .aprovacaoAdminFoto {
+        width: 110px;
+        height: 110px;
+        border-width: 4px;
+    }
+
+    .aprovacaoAdminNome {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .aprovacaoAdminStatus {
+        font-size: 0.95rem;
+    }
+
+    .aprovacaoAdminCredito {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+    }
+
+    .aprovacaoAdminTexto {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .aprovacaoAdminBotao {
+        width: 100%;
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+
+    .aprovacaoAdminCameraArea {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .aprovacaoAdminSucesso {
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+
+    #reader__scan_region {
+        min-height: 220px !important;
+    }
+
+    #reader video {
+        border-radius: 15px;
+    }
+
+}

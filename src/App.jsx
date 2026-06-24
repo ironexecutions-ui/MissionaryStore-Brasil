@@ -17,7 +17,7 @@ import Perfil from "../site/perfil/perfil";
 import Aprovacao from "../site/perfil/aprovacao";
 import AprovacaoAdmin from "../site/perfil/aprovacao_admin";
 import Compra from "../site/perfil/pagamento/compra";
-
+import Sucesso from "../site/perfil/pagamento/sucesso";
 
 
 
@@ -38,7 +38,10 @@ export default function App() {
           path="/compras"
           element={<Cupons />}
         />
-
+        <Route
+          path="/sucesso"
+          element={<Sucesso />}
+        />
         <Route
           path="/painel"
           element={<Painel />}

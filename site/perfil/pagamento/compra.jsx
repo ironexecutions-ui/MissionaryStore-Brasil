@@ -268,7 +268,7 @@ export default function Compra() {
                 () => {
 
                     window.location.href =
-                        "/";
+                        "/sucesso";
 
                 },
                 2000

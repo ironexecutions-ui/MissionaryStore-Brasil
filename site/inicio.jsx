@@ -4,6 +4,8 @@ import {
     GoogleLogin
 } from "@react-oauth/google";
 
+import "./inicio.css";
+import logo from "../m.png";
 import {
     API_URL
 } from "../src/config";
@@ -73,28 +75,81 @@ export default function Inicio() {
                 className="inicioCardLogin"
             >
 
-                <h1
-                    className="inicioTituloPrincipal"
+                <div
+                    className="inicioCabecalhoSistema"
                 >
-                    Créditos CTM
-                </h1>
 
-                <p
-                    className="inicioDescricaoLogin"
+                    <div
+                        className="inicioLogoCirculo"
+                    >
+
+                        <img
+                            src={logo}
+                            alt="Logo CTM"
+                            className="inicioLogoImagem"
+                        />
+
+                    </div>
+                    <h1
+                        className="inicioTituloPrincipal"
+                    >
+                        Missionary Store Brasil
+                    </h1>
+
+                    <p
+                        className="inicioDescricaoLogin"
+                    >
+                        Plataforma oficial para consulta,
+                        gerenciamento e aprovação de créditos para funcionarios do CTM.
+                    </p>
+
+                </div>
+
+                <div
+                    className="inicioInformacaoBox"
                 >
-                    Entre utilizando sua conta Google
-                </p>
 
-                <GoogleLogin
-                    onSuccess={
-                        fazerLoginGoogle
-                    }
-                    onError={() =>
-                        alert(
-                            "Erro ao autenticar"
-                        )
-                    }
-                />
+                    <h3>
+                        Acesso Seguro
+                    </h3>
+
+                    <p>
+                        Utilize sua conta Google autorizada
+                        para acessar o sistema.
+                    </p>
+
+                </div>
+
+                <div
+                    className="inicioLoginArea"
+                >
+
+                    <GoogleLogin
+                        onSuccess={
+                            fazerLoginGoogle
+                        }
+                        onError={() =>
+                            alert(
+                                "Erro ao autenticar"
+                            )
+                        }
+                    />
+
+                </div>
+
+                <div
+                    className="inicioRodape"
+                >
+
+                    <p>
+                        Missionary store Brasil Creditos
+                    </p>
+
+                    <span>
+                        Sistema Oficial de Controle de Créditos
+                    </span>
+
+                </div>
 
             </div>
 

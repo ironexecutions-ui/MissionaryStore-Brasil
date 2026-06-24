@@ -8,7 +8,7 @@ import {
 import {
     API_URL
 } from "../../src/config";
-
+import "./perfil.css"
 import "./perfil.css";
 import Pagamento from "./pagamento/pagamento";
 export default function Perfil() {
@@ -123,6 +123,7 @@ export default function Perfil() {
                             >
                                 R$ {usuario.creditos}
                             </h2>
+                            <span className="pagamentoHistoricoData" >As datas de vencimento são todo dia primeiro do mês</span>
                             <br />
                             <Pagamento />
                         </div>

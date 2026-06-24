@@ -1,0 +1,261 @@
+.pagamentoContainer {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background:
+        transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.pagamentoCard {
+    max-width: 800px;
+    background: #ffffff;
+    border-radius: 30px;
+    margin-left: -23px;
+    padding: 35px;
+    box-shadow:
+        0 25px 60px rgba(0,
+            0,
+            0,
+            0.15);
+}
+
+.pagamentoTitulo {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #202938;
+}
+
+.pagamentoSaldo {
+    background: #eefaf1;
+    border: 2px solid #d4f3dc;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22a447;
+}
+
+.pagamentoInputValor {
+    height: 60px;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 0 18px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.pagamentoInputValor:focus {
+    border-color: #ff5e00;
+}
+
+.pagamentoBotaoGerar {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    background:
+        linear-gradient(135deg,
+            #ff5e00,
+            #ff7b00);
+    transition: 0.25s;
+}
+
+.pagamentoBotaoGerar:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 35px rgba(255,
+            94,
+            0,
+            0.35);
+}
+
+.pagamentoQrArea {
+    margin-top: 30px;
+    text-align: center;
+    background: #fafafa;
+    border: 2px solid #ececec;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.pagamentoQrArea h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #202938;
+}
+
+.pagamentoQrArea p {
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.pagamentoHistoricoArea {
+    width: 70%;
+    max-width: 800px;
+    background: white;
+    margin-left: -20px;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow:
+        0 25px 60px rgba(0,
+            0,
+            0,
+            0.15);
+}
+
+.pagamentoHistoricoArea h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #202938;
+}
+
+.pagamentoHistoricoCard {
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.pagamentoHistoricoCard:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(0,
+            0,
+            0,
+            0.05);
+}
+
+.pagamentoHistoricoLinha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagamentoHistoricoValor {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #202938;
+}
+
+.pagamentoHistoricoTipo {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #fff3eb;
+    color: #ff5e00;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.pagamentoHistoricoData {
+    margin-top: 10px;
+    color: #8b93a1;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+    .pagamentoContainer {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .pagamentoCard {
+        width: 100%;
+        padding: 25px;
+        border-radius: 25px;
+    }
+
+    .pagamentoHistoricoArea {
+        width: 100%;
+        padding: 25px;
+        border-radius: 25px;
+    }
+
+    .pagamentoTitulo {
+        font-size: 1.7rem;
+    }
+
+    .pagamentoHistoricoArea h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .pagamentoContainer {
+        padding: 15px;
+    }
+
+    .pagamentoCard {
+        width: 90%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .pagamentoHistoricoArea {
+        width: 80%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .pagamentoTitulo {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .pagamentoSaldo {
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+
+    .pagamentoInputValor {
+        height: 55px;
+        font-size: 0.95rem;
+    }
+
+    .pagamentoBotaoGerar {
+        height: 55px;
+        font-size: 0.95rem;
+    }
+
+    .pagamentoQrArea {
+        padding: 20px;
+    }
+
+    .pagamentoQrArea svg {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .pagamentoHistoricoLinha {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pagamentoHistoricoValor {
+        font-size: 1rem;
+    }
+
+    .pagamentoHistoricoTipo {
+        font-size: 0.75rem;
+    }
+
+}
