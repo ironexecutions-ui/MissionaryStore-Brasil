@@ -229,3 +229,45 @@
     }
 
 }
+
+.compraMensagemSemCompra {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compraCard {
+    width: 100%;
+    max-width: 750px;
+    background: #fff;
+    border-radius: 40px;
+    padding: 70px 50px;
+    text-align: center;
+    box-shadow:
+        0 30px 80px rgba(0,
+            0,
+            0,
+            0.15);
+}
+
+@media (max-width: 768px) {
+
+    .compraCard {
+        padding: 50px 25px;
+        border-radius: 30px;
+    }
+
+    .compraTitulo {
+        font-size: 32px;
+    }
+
+    .compraMensagemSemCompra {
+        font-size: 16px;
+    }
+
+}

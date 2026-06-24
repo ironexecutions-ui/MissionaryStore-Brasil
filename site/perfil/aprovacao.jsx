@@ -3,8 +3,7 @@ import React, {
     useState
 } from "react";
 
-import QRCode
-    from "react-qr-code";
+import QRCode from "react-qr-code";
 
 import {
     API_URL
@@ -53,11 +52,20 @@ export default function Aprovacao() {
             const dados =
                 await resposta.json();
 
+            console.log(
+                "DADOS:",
+                dados
+            );
+
             setUsuario(
                 dados
             );
 
-        } catch {
+        } catch (erro) {
+
+            console.error(
+                erro
+            );
 
             alert(
                 "Erro ao carregar dados"
@@ -73,11 +81,25 @@ export default function Aprovacao() {
 
     }
 
-    if (carregando) {
+    if (
+        carregando
+    ) {
 
         return (
             <h1>
                 Carregando...
+            </h1>
+        );
+
+    }
+
+    if (
+        !usuario
+    ) {
+
+        return (
+            <h1>
+                Erro ao carregar usuário
             </h1>
         );
 
@@ -111,6 +133,7 @@ export default function Aprovacao() {
                     {usuario.nome}
                 </h2>
 
+
                 <p
                     className="aprovacaoInstrutorTexto"
                 >
@@ -126,7 +149,9 @@ export default function Aprovacao() {
 
                     <QRCode
                         value={
-                            `https://www.missionarystorebrasil.com.br/aprovacao/${usuario.id}`
+                            usuario.id_criptografado
+                                ? `https://www.missionarystorebrasil.com.br/aprovacao/${usuario.id_criptografado}`
+                                : "erro"
                         }
                         size={250}
                     />

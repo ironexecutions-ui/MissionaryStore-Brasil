@@ -307,15 +307,42 @@ export default function Compra() {
     }
 
     if (
-        compra?.erro
+        !compra ||
+        !compra.compra_id
     ) {
 
         return (
-            <h1>
-                {
-                    compra.erro
-                }
-            </h1>
+
+            <div
+                className="compraContainer"
+            >
+
+                <div
+                    className="compraCard"
+                >
+
+                    <h1
+                        className="compraTitulo"
+                    >
+                        Nenhuma compra pendente
+                    </h1>
+
+                    <p
+                        className="compraMensagemSemCompra"
+                    >
+                        Esta solicitação expirou ou já foi processada.
+                    </p>
+
+                    <p
+                        className="compraMensagemSemCompra"
+                    >
+                        Peça ao instrutor para gerar uma nova solicitação de compra em sua conta.
+                    </p>
+
+                </div>
+
+            </div>
+
         );
 
     }

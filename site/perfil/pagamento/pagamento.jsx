@@ -206,7 +206,7 @@ export default function Pagamento() {
             }
 
             setQrLink(
-                `http://missionarystorebrasil.com.br/compra/${usuario.id}`
+                `https://missionarystorebrasil.com.br/compra/${usuario.id_criptografado}`
             );
             carregarHistorico();
         } catch {
