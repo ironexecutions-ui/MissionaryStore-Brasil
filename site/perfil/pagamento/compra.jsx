@@ -248,14 +248,12 @@ export default function Compra() {
                     dados.mensagem
                 );
 
-                setTimeout(
-                    () => {
+                setQrLido(
+                    false
+                );
 
-                        window.location.href =
-                            "/";
-
-                    },
-                    2000
+                setAbrirCamera(
+                    false
                 );
 
                 return;
@@ -284,14 +282,8 @@ export default function Compra() {
                 "Erro ao aprovar compra"
             );
 
-            setTimeout(
-                () => {
-
-                    window.location.href =
-                        "/";
-
-                },
-                2000
+            setQrLido(
+                false
             );
 
         } finally {
@@ -422,7 +414,28 @@ export default function Compra() {
                 }
 
             </div>
+            {
+                !abrirCamera && (
 
+                    <button
+                        className="compraBotao"
+                        onClick={() => {
+
+                            setQrLido(
+                                false
+                            );
+
+                            setAbrirCamera(
+                                true
+                            );
+
+                        }}
+                    >
+                        Abrir Scanner
+                    </button>
+
+                )
+            }
         </div>
 
     );
