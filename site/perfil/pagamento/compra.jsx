@@ -414,28 +414,7 @@ export default function Compra() {
                 }
 
             </div>
-            {
-                !abrirCamera && (
 
-                    <button
-                        className="compraBotao"
-                        onClick={() => {
-
-                            setQrLido(
-                                false
-                            );
-
-                            setAbrirCamera(
-                                true
-                            );
-
-                        }}
-                    >
-                        Abrir Scanner
-                    </button>
-
-                )
-            }
         </div>
 
     );
